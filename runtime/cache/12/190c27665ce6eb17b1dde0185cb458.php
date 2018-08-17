@@ -1,0 +1,4 @@
+<?php
+//000000000000
+ exit();?>
+a:16:{i:0;s:2:"id";i:1;s:5:"group";i:2;s:3:"pid";i:3;s:5:"title";i:4;s:4:"type";i:5;s:5:"value";i:6;s:6:"target";i:7;s:4:"icon";i:8;s:14:"lists_template";i:9;s:15:"detail_template";i:10;s:11:"create_time";i:11;s:11:"update_time";i:12;s:4:"sort";i:13;s:6:"status";s:3:"_pk";s:2:"id";s:5:"_type";a:14:{s:2:"id";s:16:"int(11) unsigned";s:5:"group";s:11:"varchar(11)";s:3:"pid";s:16:"int(11) unsigned";s:5:"title";s:11:"varchar(31)";s:4:"type";s:11:"varchar(15)";s:5:"value";s:4:"text";s:6:"target";s:11:"varchar(11)";s:4:"icon";s:11:"varchar(32)";s:14:"lists_template";s:11:"varchar(63)";s:15:"detail_template";s:11:"varchar(63)";s:11:"create_time";s:16:"int(11) unsigned";s:11:"update_time";s:16:"int(11) unsigned";s:4:"sort";s:19:"tinyint(3) unsigned";s:6:"status";s:10:"tinyint(3)";}}

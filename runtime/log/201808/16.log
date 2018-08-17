@@ -1,0 +1,515 @@
+---------------------------------------------------------------
+[ 2018-08-16T10:27:05+08:00 ] 47.95.28.198 101.227.132.28 GET /index.php/home/mindex/index1
+[ info ] lixiakonggu.youfai.cn/index.php/home/mindex/index1 [运行时间：0.455039s][吞吐率：2.20req/s] [内存消耗：18,918.45kb] [文件加载：113]
+[ error ] [8]Undefined index: LY_DEV_MODE[/mnt/www/lixiakonggu.youfai.cn/data/db.php:20]
+[ error ] [2]Invalid argument supplied for foreach()[/mnt/www/lixiakonggu.youfai.cn/application/common/behavior/InitConfig.php:60]
+[ error ] [2]Invalid argument supplied for foreach()[/mnt/www/lixiakonggu.youfai.cn/application/common/behavior/InitConfig.php:73]
+[ error ] [2]Invalid argument supplied for foreach()[/mnt/www/lixiakonggu.youfai.cn/application/common/behavior/InitConfig.php:73]
+[ error ] [2]Invalid argument supplied for foreach()[/mnt/www/lixiakonggu.youfai.cn/application/common/behavior/InitConfig.php:73]
+[ error ] [2]Illegal string offset 'type'[/mnt/www/lixiakonggu.youfai.cn/application/common/behavior/InitConfig.php:61]
+[ error ] [8]Uninitialized string offset: 0[/mnt/www/lixiakonggu.youfai.cn/application/common/behavior/InitConfig.php:61]
+[ error ] [2]Illegal string offset 'type'[/mnt/www/lixiakonggu.youfai.cn/application/common/behavior/InitConfig.php:61]
+[ error ] [8]Uninitialized string offset: 0[/mnt/www/lixiakonggu.youfai.cn/application/common/behavior/InitConfig.php:61]
+[ error ] [2]Invalid argument supplied for foreach()[/mnt/www/lixiakonggu.youfai.cn/application/common/behavior/InitConfig.php:73]
+[ error ] [8]Undefined index: WAP_MODE[/mnt/www/lixiakonggu.youfai.cn/application/common/behavior/InitConfig.php:159]
+[ error ] [8]Undefined index: default_module[/mnt/www/lixiakonggu.youfai.cn/application/common/behavior/InitConfig.php:195]
+[ error ] [2]Missing argument 2 for app\home\controller\Basic::curlpost(), called in /mnt/www/lixiakonggu.youfai.cn/application/home/controller/Basic.php on line 26 and defined[/mnt/www/lixiakonggu.youfai.cn/application/home/controller/Basic.php:34]
+[ error ] [8]未定义数组索引: state[/mnt/www/lixiakonggu.youfai.cn/application/home/controller/Loginbase.php:10]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitModule @app_init [ RunTime:0.014481s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitHook @app_init [ RunTime:0.006124s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitConfig @app_init [ RunTime:0.003954s ]
+[ info ] [ LANG ] /mnt/www/lixiakonggu.youfai.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'mindex',
+    2 => 'index1',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.124 Safari/537.36',
+  'accept' => '*/*',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.6,en;q=0.4',
+  'host' => 'lixiakonggu.youfai.cn',
+  'connection' => 'keep-alive',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  's' => '/home/mindex/index1',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'yfthink',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\home\controller\Mindex->index1[ /mnt/www/lixiakonggu.youfai.cn/application/home/controller/Mindex.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /mnt/www/lixiakonggu.youfai.cn/application/home/view/mobile3/indexl.html [ array (
+  0 => 'dang',
+  1 => 'company',
+  2 => 'nav',
+  3 => 'news',
+  4 => 'position_data',
+  5 => 'about_data',
+) ]
+[ info ] [ LOG ] INIT File
+[  ] SELECT `name`,`value`,`type` FROM `yf_admin_config` WHERE `status` = 1  [ RunTime:0.001030s ]
+[  ] SELECT `name` FROM `yf_admin_module` WHERE `status` = 1 AND `is_system` = 0  [ RunTime:0.000618s ]
+[  ] SELECT `name`,`addons` FROM `yf_admin_hook`  [ RunTime:0.000641s ]
+[  ] SELECT `id`,`name` FROM `yf_admin_addon` WHERE `status` = 1 AND `name` IN ('后台首页小工具')  [ RunTime:0.000689s ]
+[  ] SELECT `id`,`name` FROM `yf_admin_addon` WHERE `status` = 1 AND `name` IN ('Frog','RocketToTop')  [ RunTime:0.000222s ]
+[  ] SELECT `name`,`value`,`type` FROM `yf_admin_config` WHERE `status` = 1  [ RunTime:0.000247s ]
+[  ] SELECT * FROM `yf_admin_module` WHERE `status` = 1  [ RunTime:0.000241s ]
+[  ] SELECT * FROM `yf_admin_addon` WHERE `status` = '1'  [ RunTime:0.000201s ]
+[  ] SELECT `addons` FROM `yf_admin_hook` WHERE `name` = 'FormBuilderExtend' LIMIT 1   [ RunTime:0.000170s ]
+[  ] SELECT `config` FROM `yf_admin_addon` WHERE `name` = '' LIMIT 1   [ RunTime:0.000138s ]
+[  ] SELECT * FROM `yf_cms_article` WHERE `pid` = 28 AND `id` = 1 LIMIT 1   [ RunTime:0.000992s ]
+[  ] SELECT * FROM `yf_cms_article` WHERE `pid` = 28 AND `id` = 2 LIMIT 1   [ RunTime:0.000203s ]
+[  ] SELECT * FROM `yf_cms_article` WHERE `pid` IN (31,32,34,35) AND `authen_status` = 1 ORDER BY `id` desc LIMIT 0,10   [ RunTime:0.000383s ]
+[  ] SELECT * FROM `yf_admin_upload` WHERE `id` = 178 LIMIT 1   [ RunTime:0.000660s ]
+[  ] SELECT * FROM `yf_admin_upload` WHERE `id` = 154 LIMIT 1   [ RunTime:0.000203s ]
+[  ] SELECT * FROM `yf_admin_upload` WHERE `id` = 151 LIMIT 1   [ RunTime:0.000178s ]
+[  ] SELECT * FROM `yf_admin_upload` WHERE `id` = 150 LIMIT 1   [ RunTime:0.000178s ]
+[  ] SELECT * FROM `yf_admin_upload` WHERE `id` = 149 LIMIT 1   [ RunTime:0.000180s ]
+[  ] SELECT * FROM `yf_admin_upload` WHERE `id` = 147 LIMIT 1   [ RunTime:0.000173s ]
+[  ] SELECT * FROM `yf_admin_upload` WHERE `id` = 146 LIMIT 1   [ RunTime:0.000163s ]
+[  ] SELECT * FROM `yf_admin_upload` WHERE `id` = 145 LIMIT 1   [ RunTime:0.000171s ]
+[  ] SELECT * FROM `yf_admin_upload` WHERE `id` = 138 LIMIT 1   [ RunTime:0.000168s ]
+[  ] SELECT * FROM `yf_admin_upload` WHERE `id` = 129 LIMIT 1   [ RunTime:0.000163s ]
+---------------------------------------------------------------
+[ 2018-08-16T10:27:11+08:00 ] 47.95.28.198 101.226.113.48 GET /index.php/home/mindex/page1?type=100
+[ info ] lixiakonggu.youfai.cn/index.php/home/mindex/page1?type=100 [运行时间：0.123386s][吞吐率：8.10req/s] [内存消耗：17,190.98kb] [文件加载：107]
+[ error ] [8]Undefined index: LY_DEV_MODE[/mnt/www/lixiakonggu.youfai.cn/data/db.php:20]
+[ error ] [2]Invalid argument supplied for foreach()[/mnt/www/lixiakonggu.youfai.cn/application/common/behavior/InitConfig.php:60]
+[ error ] [2]Invalid argument supplied for foreach()[/mnt/www/lixiakonggu.youfai.cn/application/common/behavior/InitConfig.php:73]
+[ error ] [2]Invalid argument supplied for foreach()[/mnt/www/lixiakonggu.youfai.cn/application/common/behavior/InitConfig.php:73]
+[ error ] [2]Invalid argument supplied for foreach()[/mnt/www/lixiakonggu.youfai.cn/application/common/behavior/InitConfig.php:73]
+[ error ] [2]Illegal string offset 'type'[/mnt/www/lixiakonggu.youfai.cn/application/common/behavior/InitConfig.php:61]
+[ error ] [8]Uninitialized string offset: 0[/mnt/www/lixiakonggu.youfai.cn/application/common/behavior/InitConfig.php:61]
+[ error ] [2]Illegal string offset 'type'[/mnt/www/lixiakonggu.youfai.cn/application/common/behavior/InitConfig.php:61]
+[ error ] [8]Uninitialized string offset: 0[/mnt/www/lixiakonggu.youfai.cn/application/common/behavior/InitConfig.php:61]
+[ error ] [2]Invalid argument supplied for foreach()[/mnt/www/lixiakonggu.youfai.cn/application/common/behavior/InitConfig.php:73]
+[ error ] [8]Undefined index: WAP_MODE[/mnt/www/lixiakonggu.youfai.cn/application/common/behavior/InitConfig.php:159]
+[ error ] [8]Undefined index: default_module[/mnt/www/lixiakonggu.youfai.cn/application/common/behavior/InitConfig.php:195]
+[ error ] [8]未定义数组索引: state[/mnt/www/lixiakonggu.youfai.cn/application/home/controller/Loginbase.php:10]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitModule @app_init [ RunTime:0.009431s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitHook @app_init [ RunTime:0.002695s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitConfig @app_init [ RunTime:0.003096s ]
+[ info ] [ LANG ] /mnt/www/lixiakonggu.youfai.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'mindex',
+    2 => 'page1',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; .NET4.0C; .NET4.0E; InfoPath.3; rv:11.0) like Gecko',
+  'accept' => '*/*',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.6,en;q=0.4',
+  'host' => 'lixiakonggu.youfai.cn',
+  'connection' => 'keep-alive',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  's' => '/home/mindex/page1',
+  'type' => '100',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'yfthink',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\home\controller\Mindex->page1[ /mnt/www/lixiakonggu.youfai.cn/application/home/controller/Mindex.php ]
+[ info ] [ VIEW ] /mnt/www/lixiakonggu.youfai.cn/application/home/view/mobile3/lover.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+[  ] SELECT `name`,`value`,`type` FROM `yf_admin_config` WHERE `status` = 1  [ RunTime:0.000376s ]
+[  ] SELECT `name` FROM `yf_admin_module` WHERE `status` = 1 AND `is_system` = 0  [ RunTime:0.000197s ]
+[  ] SELECT `name`,`addons` FROM `yf_admin_hook`  [ RunTime:0.000176s ]
+[  ] SELECT `id`,`name` FROM `yf_admin_addon` WHERE `status` = 1 AND `name` IN ('后台首页小工具')  [ RunTime:0.000194s ]
+[  ] SELECT `id`,`name` FROM `yf_admin_addon` WHERE `status` = 1 AND `name` IN ('Frog','RocketToTop')  [ RunTime:0.000221s ]
+[  ] SELECT `name`,`value`,`type` FROM `yf_admin_config` WHERE `status` = 1  [ RunTime:0.000249s ]
+[  ] SELECT * FROM `yf_admin_module` WHERE `status` = 1  [ RunTime:0.000253s ]
+[  ] SELECT * FROM `yf_admin_addon` WHERE `status` = '1'  [ RunTime:0.000205s ]
+[  ] SELECT `addons` FROM `yf_admin_hook` WHERE `name` = 'FormBuilderExtend' LIMIT 1   [ RunTime:0.000171s ]
+[  ] SELECT `config` FROM `yf_admin_addon` WHERE `name` = '' LIMIT 1   [ RunTime:0.000143s ]
+---------------------------------------------------------------
+[ 2018-08-16T14:29:05+08:00 ] 47.95.28.198 61.151.226.62 GET /index.php/home/mindex/index1
+[ info ] lixiakonggu.youfai.cn/index.php/home/mindex/index1 [运行时间：0.518241s][吞吐率：1.93req/s] [内存消耗：18,918.31kb] [文件加载：113]
+[ error ] [8]Undefined index: LY_DEV_MODE[/mnt/www/lixiakonggu.youfai.cn/data/db.php:20]
+[ error ] [2]Invalid argument supplied for foreach()[/mnt/www/lixiakonggu.youfai.cn/application/common/behavior/InitConfig.php:60]
+[ error ] [2]Invalid argument supplied for foreach()[/mnt/www/lixiakonggu.youfai.cn/application/common/behavior/InitConfig.php:73]
+[ error ] [2]Invalid argument supplied for foreach()[/mnt/www/lixiakonggu.youfai.cn/application/common/behavior/InitConfig.php:73]
+[ error ] [2]Invalid argument supplied for foreach()[/mnt/www/lixiakonggu.youfai.cn/application/common/behavior/InitConfig.php:73]
+[ error ] [2]Illegal string offset 'type'[/mnt/www/lixiakonggu.youfai.cn/application/common/behavior/InitConfig.php:61]
+[ error ] [8]Uninitialized string offset: 0[/mnt/www/lixiakonggu.youfai.cn/application/common/behavior/InitConfig.php:61]
+[ error ] [2]Illegal string offset 'type'[/mnt/www/lixiakonggu.youfai.cn/application/common/behavior/InitConfig.php:61]
+[ error ] [8]Uninitialized string offset: 0[/mnt/www/lixiakonggu.youfai.cn/application/common/behavior/InitConfig.php:61]
+[ error ] [2]Invalid argument supplied for foreach()[/mnt/www/lixiakonggu.youfai.cn/application/common/behavior/InitConfig.php:73]
+[ error ] [8]Undefined index: WAP_MODE[/mnt/www/lixiakonggu.youfai.cn/application/common/behavior/InitConfig.php:159]
+[ error ] [8]Undefined index: default_module[/mnt/www/lixiakonggu.youfai.cn/application/common/behavior/InitConfig.php:195]
+[ error ] [2]Missing argument 2 for app\home\controller\Basic::curlpost(), called in /mnt/www/lixiakonggu.youfai.cn/application/home/controller/Basic.php on line 26 and defined[/mnt/www/lixiakonggu.youfai.cn/application/home/controller/Basic.php:34]
+[ error ] [8]未定义数组索引: state[/mnt/www/lixiakonggu.youfai.cn/application/home/controller/Loginbase.php:10]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitModule @app_init [ RunTime:0.014544s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitHook @app_init [ RunTime:0.006044s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitConfig @app_init [ RunTime:0.004397s ]
+[ info ] [ LANG ] /mnt/www/lixiakonggu.youfai.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'mindex',
+    2 => 'index1',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:50.0) Gecko/20100101 Firefox/50.0',
+  'accept' => '*/*',
+  'accept-language' => 'zh-CN,zh;q=0.8,en-US;q=0.6,en;q=0.4',
+  'host' => 'lixiakonggu.youfai.cn',
+  'connection' => 'keep-alive',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  's' => '/home/mindex/index1',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'yfthink',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\home\controller\Mindex->index1[ /mnt/www/lixiakonggu.youfai.cn/application/home/controller/Mindex.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /mnt/www/lixiakonggu.youfai.cn/application/home/view/mobile3/indexl.html [ array (
+  0 => 'dang',
+  1 => 'company',
+  2 => 'nav',
+  3 => 'news',
+  4 => 'position_data',
+  5 => 'about_data',
+) ]
+[ info ] [ LOG ] INIT File
+[  ] SELECT `name`,`value`,`type` FROM `yf_admin_config` WHERE `status` = 1  [ RunTime:0.001164s ]
+[  ] SELECT `name` FROM `yf_admin_module` WHERE `status` = 1 AND `is_system` = 0  [ RunTime:0.000601s ]
+[  ] SELECT `name`,`addons` FROM `yf_admin_hook`  [ RunTime:0.000587s ]
+[  ] SELECT `id`,`name` FROM `yf_admin_addon` WHERE `status` = 1 AND `name` IN ('后台首页小工具')  [ RunTime:0.000637s ]
+[  ] SELECT `id`,`name` FROM `yf_admin_addon` WHERE `status` = 1 AND `name` IN ('Frog','RocketToTop')  [ RunTime:0.000198s ]
+[  ] SELECT `name`,`value`,`type` FROM `yf_admin_config` WHERE `status` = 1  [ RunTime:0.000263s ]
+[  ] SELECT * FROM `yf_admin_module` WHERE `status` = 1  [ RunTime:0.000261s ]
+[  ] SELECT * FROM `yf_admin_addon` WHERE `status` = '1'  [ RunTime:0.000201s ]
+[  ] SELECT `addons` FROM `yf_admin_hook` WHERE `name` = 'FormBuilderExtend' LIMIT 1   [ RunTime:0.000170s ]
+[  ] SELECT `config` FROM `yf_admin_addon` WHERE `name` = '' LIMIT 1   [ RunTime:0.000138s ]
+[  ] SELECT * FROM `yf_cms_article` WHERE `pid` = 28 AND `id` = 1 LIMIT 1   [ RunTime:0.000989s ]
+[  ] SELECT * FROM `yf_cms_article` WHERE `pid` = 28 AND `id` = 2 LIMIT 1   [ RunTime:0.000201s ]
+[  ] SELECT * FROM `yf_cms_article` WHERE `pid` IN (31,32,34,35) AND `authen_status` = 1 ORDER BY `id` desc LIMIT 0,10   [ RunTime:0.000371s ]
+[  ] SELECT * FROM `yf_admin_upload` WHERE `id` = 178 LIMIT 1   [ RunTime:0.000722s ]
+[  ] SELECT * FROM `yf_admin_upload` WHERE `id` = 154 LIMIT 1   [ RunTime:0.000181s ]
+[  ] SELECT * FROM `yf_admin_upload` WHERE `id` = 151 LIMIT 1   [ RunTime:0.000183s ]
+[  ] SELECT * FROM `yf_admin_upload` WHERE `id` = 150 LIMIT 1   [ RunTime:0.000173s ]
+[  ] SELECT * FROM `yf_admin_upload` WHERE `id` = 149 LIMIT 1   [ RunTime:0.000166s ]
+[  ] SELECT * FROM `yf_admin_upload` WHERE `id` = 147 LIMIT 1   [ RunTime:0.000187s ]
+[  ] SELECT * FROM `yf_admin_upload` WHERE `id` = 146 LIMIT 1   [ RunTime:0.000162s ]
+[  ] SELECT * FROM `yf_admin_upload` WHERE `id` = 145 LIMIT 1   [ RunTime:0.000162s ]
+[  ] SELECT * FROM `yf_admin_upload` WHERE `id` = 138 LIMIT 1   [ RunTime:0.000171s ]
+[  ] SELECT * FROM `yf_admin_upload` WHERE `id` = 129 LIMIT 1   [ RunTime:0.000162s ]
+---------------------------------------------------------------
+[ 2018-08-16T14:58:39+08:00 ] 47.95.28.198 140.207.54.80 POST /admin.php/wechat/api.push/notify.html?signature=741f18ca36fb7340510bd1e3900f30ba87aee5c3&timestamp=1534402719&nonce=559360238&openid=o-vg_xHIXChzQchGfie4hAQZSjNQ
+[ info ] lixiakonggu.youfai.cn/admin.php/wechat/api.push/notify.html?signature=741f18ca36fb7340510bd1e3900f30ba87aee5c3&timestamp=1534402719&nonce=559360238&openid=o-vg_xHIXChzQchGfie4hAQZSjNQ [运行时间：0.124704s][吞吐率：8.02req/s] [内存消耗：17,553.67kb] [文件加载：105]
+[ error ] [8]Undefined index: LY_DEV_MODE[/mnt/www/lixiakonggu.youfai.cn/data/db.php:20]
+[ error ] [8]Undefined index: PATH_INFO[/mnt/www/lixiakonggu.youfai.cn/application/common/behavior/InitModule.php:56]
+[ error ] [2]Invalid argument supplied for foreach()[/mnt/www/lixiakonggu.youfai.cn/application/common/behavior/InitConfig.php:60]
+[ error ] [2]Invalid argument supplied for foreach()[/mnt/www/lixiakonggu.youfai.cn/application/common/behavior/InitConfig.php:73]
+[ error ] [2]Invalid argument supplied for foreach()[/mnt/www/lixiakonggu.youfai.cn/application/common/behavior/InitConfig.php:73]
+[ error ] [2]Invalid argument supplied for foreach()[/mnt/www/lixiakonggu.youfai.cn/application/common/behavior/InitConfig.php:73]
+[ error ] [2]Illegal string offset 'type'[/mnt/www/lixiakonggu.youfai.cn/application/common/behavior/InitConfig.php:61]
+[ error ] [8]Uninitialized string offset: 0[/mnt/www/lixiakonggu.youfai.cn/application/common/behavior/InitConfig.php:61]
+[ error ] [2]Illegal string offset 'type'[/mnt/www/lixiakonggu.youfai.cn/application/common/behavior/InitConfig.php:61]
+[ error ] [8]Uninitialized string offset: 0[/mnt/www/lixiakonggu.youfai.cn/application/common/behavior/InitConfig.php:61]
+[ error ] [2]Invalid argument supplied for foreach()[/mnt/www/lixiakonggu.youfai.cn/application/common/behavior/InitConfig.php:73]
+[ error ] [8]Undefined index: WAP_MODE[/mnt/www/lixiakonggu.youfai.cn/application/common/behavior/InitConfig.php:159]
+[ error ] [8]Undefined index: default_module[/mnt/www/lixiakonggu.youfai.cn/application/common/behavior/InitConfig.php:195]
+[ error ] [2]call_user_func_array() expects parameter 1 to be a valid callback, class 'think\facade\Env' does not have a method 'get'[/mnt/www/lixiakonggu.youfai.cn/thinkphp/library/think/Facade.php:123]
+[ error ] [2]call_user_func_array() expects parameter 1 to be a valid callback, class 'think\facade\Env' does not have a method 'get'[/mnt/www/lixiakonggu.youfai.cn/thinkphp/library/think/Facade.php:123]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitModule @app_init [ RunTime:0.011668s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitHook @app_init [ RunTime:0.004219s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitConfig @app_init [ RunTime:0.003529s ]
+[ info ] [ LANG ] /mnt/www/lixiakonggu.youfai.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'wechat',
+    1 => 'api.push',
+    2 => 'notify',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'user-agent' => 'Mozilla/4.0',
+  'accept' => '*/*',
+  'host' => 'lixiakonggu.youfai.cn',
+  'pragma' => 'no-cache',
+  'content-length' => '357',
+  'content-type' => 'text/xml',
+)
+[ info ] [ PARAM ] array (
+  's' => '/wechat/api.push/notify.html',
+  'signature' => '741f18ca36fb7340510bd1e3900f30ba87aee5c3',
+  'timestamp' => '1534402719',
+  'nonce' => '559360238',
+  'openid' => 'o-vg_xHIXChzQchGfie4hAQZSjNQ',
+)
+[ info ] [ RUN ] app\wechat\admin\api\Push->notify[ /mnt/www/lixiakonggu.youfai.cn/application/wechat/admin/api/Push.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[  ] SELECT `name`,`value`,`type` FROM `yf_admin_config` WHERE `status` = 1  [ RunTime:0.000537s ]
+[  ] SELECT `name` FROM `yf_admin_module` WHERE `status` = 1 AND `is_system` = 0  [ RunTime:0.000338s ]
+[  ] SELECT `name`,`addons` FROM `yf_admin_hook`  [ RunTime:0.000320s ]
+[  ] SELECT `id`,`name` FROM `yf_admin_addon` WHERE `status` = 1 AND `name` IN ('后台首页小工具')  [ RunTime:0.000342s ]
+[  ] SELECT `id`,`name` FROM `yf_admin_addon` WHERE `status` = 1 AND `name` IN ('Frog','RocketToTop')  [ RunTime:0.000216s ]
+[  ] SELECT `name`,`value`,`type` FROM `yf_admin_config` WHERE `status` = 1  [ RunTime:0.000263s ]
+[  ] SELECT * FROM `yf_admin_module` WHERE `status` = 1  [ RunTime:0.000239s ]
+[  ] SELECT * FROM `yf_admin_addon` WHERE `status` = '1'  [ RunTime:0.000212s ]
+[  ] SELECT `addons` FROM `yf_admin_hook` WHERE `name` = 'FormBuilderExtend' LIMIT 1   [ RunTime:0.000169s ]
+[  ] SELECT `config` FROM `yf_admin_addon` WHERE `name` = '' LIMIT 1   [ RunTime:0.000137s ]
+---------------------------------------------------------------
+[ 2018-08-16T14:58:40+08:00 ] 47.95.28.198 101.226.225.59 GET /
+[ info ] lixiakonggu.youfai.cn/ [运行时间：0.187469s][吞吐率：5.33req/s] [内存消耗：16,494.61kb] [文件加载：95]
+[ error ] [8]Undefined index: LY_DEV_MODE[/mnt/www/lixiakonggu.youfai.cn/data/db.php:20]
+[ error ] [8]Undefined index: PATH_INFO[/mnt/www/lixiakonggu.youfai.cn/application/common/behavior/InitModule.php:56]
+[ error ] [2]Invalid argument supplied for foreach()[/mnt/www/lixiakonggu.youfai.cn/application/common/behavior/InitConfig.php:60]
+[ error ] [2]Invalid argument supplied for foreach()[/mnt/www/lixiakonggu.youfai.cn/application/common/behavior/InitConfig.php:73]
+[ error ] [2]Invalid argument supplied for foreach()[/mnt/www/lixiakonggu.youfai.cn/application/common/behavior/InitConfig.php:73]
+[ error ] [2]Invalid argument supplied for foreach()[/mnt/www/lixiakonggu.youfai.cn/application/common/behavior/InitConfig.php:73]
+[ error ] [2]Illegal string offset 'type'[/mnt/www/lixiakonggu.youfai.cn/application/common/behavior/InitConfig.php:61]
+[ error ] [8]Uninitialized string offset: 0[/mnt/www/lixiakonggu.youfai.cn/application/common/behavior/InitConfig.php:61]
+[ error ] [2]Illegal string offset 'type'[/mnt/www/lixiakonggu.youfai.cn/application/common/behavior/InitConfig.php:61]
+[ error ] [8]Uninitialized string offset: 0[/mnt/www/lixiakonggu.youfai.cn/application/common/behavior/InitConfig.php:61]
+[ error ] [2]Invalid argument supplied for foreach()[/mnt/www/lixiakonggu.youfai.cn/application/common/behavior/InitConfig.php:73]
+[ error ] [8]Undefined index: WAP_MODE[/mnt/www/lixiakonggu.youfai.cn/application/common/behavior/InitConfig.php:159]
+[ error ] [8]Undefined index: default_module[/mnt/www/lixiakonggu.youfai.cn/application/common/behavior/InitConfig.php:195]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitModule @app_init [ RunTime:0.014128s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitHook @app_init [ RunTime:0.003589s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitConfig @app_init [ RunTime:0.004005s ]
+[ info ] [ LANG ] /mnt/www/lixiakonggu.youfai.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept' => 'text/vnd.wap.wml,text/html,application/vnd.wap.xhtml+xml,application/xhtml+xml',
+  'accept-charset' => 'gb2312,iso8859-1,utf-8',
+  'accept-encoding' => 'gzip,deflate',
+  'connection' => 'close',
+  'content-length' => '0',
+  'host' => 'lixiakonggu.youfai.cn',
+  'q-ua' => 'KQB22_GA/220020&KMTT_3/200020&JV2&151920&SunMicrosystemswtk&0&4309&V3',
+  'user-agent' => 'Mozilla/5.0 (Windows; U; Windows NT 5.1; zh-CN; rv:1.9b4) Gecko/2008030317 Firefox/3.0b4',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+  's' => '/',
+)
+[ info ] [ RUN ] app\home\controller\Index->index[ /mnt/www/lixiakonggu.youfai.cn/application/home/controller/Index.php ]
+[ info ] [ LOG ] INIT File
+[  ] SELECT `name`,`value`,`type` FROM `yf_admin_config` WHERE `status` = 1  [ RunTime:0.000465s ]
+[  ] SELECT `name` FROM `yf_admin_module` WHERE `status` = 1 AND `is_system` = 0  [ RunTime:0.000239s ]
+[  ] SELECT `name`,`addons` FROM `yf_admin_hook`  [ RunTime:0.000196s ]
+[  ] SELECT `id`,`name` FROM `yf_admin_addon` WHERE `status` = 1 AND `name` IN ('后台首页小工具')  [ RunTime:0.000218s ]
+[  ] SELECT `id`,`name` FROM `yf_admin_addon` WHERE `status` = 1 AND `name` IN ('Frog','RocketToTop')  [ RunTime:0.000263s ]
+[  ] SELECT `name`,`value`,`type` FROM `yf_admin_config` WHERE `status` = 1  [ RunTime:0.000290s ]
+[  ] SELECT * FROM `yf_admin_module` WHERE `status` = 1  [ RunTime:0.000310s ]
+[  ] SELECT * FROM `yf_admin_addon` WHERE `status` = '1'  [ RunTime:0.000234s ]
+[  ] SELECT `addons` FROM `yf_admin_hook` WHERE `name` = 'FormBuilderExtend' LIMIT 1   [ RunTime:0.000214s ]
+[  ] SELECT `config` FROM `yf_admin_addon` WHERE `name` = '' LIMIT 1   [ RunTime:0.000173s ]
+---------------------------------------------------------------
+[ 2018-08-16T14:58:40+08:00 ] 47.95.28.198 61.129.7.254 GET /index.php/home/mindex/index1
+[ info ] lixiakonggu.youfai.cn/index.php/home/mindex/index1 [运行时间：0.240685s][吞吐率：4.15req/s] [内存消耗：18,919.85kb] [文件加载：113]
+[ error ] [8]Undefined index: LY_DEV_MODE[/mnt/www/lixiakonggu.youfai.cn/data/db.php:20]
+[ error ] [2]Invalid argument supplied for foreach()[/mnt/www/lixiakonggu.youfai.cn/application/common/behavior/InitConfig.php:60]
+[ error ] [2]Invalid argument supplied for foreach()[/mnt/www/lixiakonggu.youfai.cn/application/common/behavior/InitConfig.php:73]
+[ error ] [2]Invalid argument supplied for foreach()[/mnt/www/lixiakonggu.youfai.cn/application/common/behavior/InitConfig.php:73]
+[ error ] [2]Invalid argument supplied for foreach()[/mnt/www/lixiakonggu.youfai.cn/application/common/behavior/InitConfig.php:73]
+[ error ] [2]Illegal string offset 'type'[/mnt/www/lixiakonggu.youfai.cn/application/common/behavior/InitConfig.php:61]
+[ error ] [8]Uninitialized string offset: 0[/mnt/www/lixiakonggu.youfai.cn/application/common/behavior/InitConfig.php:61]
+[ error ] [2]Illegal string offset 'type'[/mnt/www/lixiakonggu.youfai.cn/application/common/behavior/InitConfig.php:61]
+[ error ] [8]Uninitialized string offset: 0[/mnt/www/lixiakonggu.youfai.cn/application/common/behavior/InitConfig.php:61]
+[ error ] [2]Invalid argument supplied for foreach()[/mnt/www/lixiakonggu.youfai.cn/application/common/behavior/InitConfig.php:73]
+[ error ] [8]Undefined index: WAP_MODE[/mnt/www/lixiakonggu.youfai.cn/application/common/behavior/InitConfig.php:159]
+[ error ] [8]Undefined index: default_module[/mnt/www/lixiakonggu.youfai.cn/application/common/behavior/InitConfig.php:195]
+[ error ] [8]未定义数组索引: state[/mnt/www/lixiakonggu.youfai.cn/application/home/controller/Loginbase.php:10]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitModule @app_init [ RunTime:0.014813s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitHook @app_init [ RunTime:0.003652s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitConfig @app_init [ RunTime:0.004141s ]
+[ info ] [ LANG ] /mnt/www/lixiakonggu.youfai.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'mindex',
+    2 => 'index1',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,image/wxpic,image/sharpp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip',
+  'accept-language' => 'zh-CN,zh-CN;q=0.8,en-US;q=0.6',
+  'connection' => 'close',
+  'host' => 'lixiakonggu.youfai.cn',
+  'user-agent' => 'Mozilla/5.0 (Linux; Android 8.0; MHA-AL00 Build/HUAWEIMHA-AL00; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/57.0.2987.132 MQQBrowser/6.2 TBS/044205 Mobile Safari/537.36 MicroMessenger/6.6.7.1321(0x26060739) NetType/4G Language/zh_CN',
+  'x-forwarded-for' => '223.104.189.236',
+  'x-forwarded-for-pound' => '223.104.189.236',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  's' => '/home/mindex/index1',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'yfthink',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\home\controller\Mindex->index1[ /mnt/www/lixiakonggu.youfai.cn/application/home/controller/Mindex.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /mnt/www/lixiakonggu.youfai.cn/application/home/view/mobile3/indexl.html [ array (
+  0 => 'dang',
+  1 => 'company',
+  2 => 'nav',
+  3 => 'news',
+  4 => 'position_data',
+  5 => 'about_data',
+) ]
+[ info ] [ LOG ] INIT File
+[  ] SELECT `name`,`value`,`type` FROM `yf_admin_config` WHERE `status` = 1  [ RunTime:0.000344s ]
+[  ] SELECT `name` FROM `yf_admin_module` WHERE `status` = 1 AND `is_system` = 0  [ RunTime:0.000408s ]
+[  ] SELECT `name`,`addons` FROM `yf_admin_hook`  [ RunTime:0.000191s ]
+[  ] SELECT `id`,`name` FROM `yf_admin_addon` WHERE `status` = 1 AND `name` IN ('后台首页小工具')  [ RunTime:0.000193s ]
+[  ] SELECT `id`,`name` FROM `yf_admin_addon` WHERE `status` = 1 AND `name` IN ('Frog','RocketToTop')  [ RunTime:0.000241s ]
+[  ] SELECT `name`,`value`,`type` FROM `yf_admin_config` WHERE `status` = 1  [ RunTime:0.000292s ]
+[  ] SELECT * FROM `yf_admin_module` WHERE `status` = 1  [ RunTime:0.000320s ]
+[  ] SELECT * FROM `yf_admin_addon` WHERE `status` = '1'  [ RunTime:0.000229s ]
+[  ] SELECT `addons` FROM `yf_admin_hook` WHERE `name` = 'FormBuilderExtend' LIMIT 1   [ RunTime:0.000197s ]
+[  ] SELECT `config` FROM `yf_admin_addon` WHERE `name` = '' LIMIT 1   [ RunTime:0.000171s ]
+[  ] SELECT * FROM `yf_cms_article` WHERE `pid` = 28 AND `id` = 1 LIMIT 1   [ RunTime:0.000468s ]
+[  ] SELECT * FROM `yf_cms_article` WHERE `pid` = 28 AND `id` = 2 LIMIT 1   [ RunTime:0.000217s ]
+[  ] SELECT * FROM `yf_cms_article` WHERE `pid` IN (31,32,34,35) AND `authen_status` = 1 ORDER BY `id` desc LIMIT 0,10   [ RunTime:0.000481s ]
+[  ] SELECT * FROM `yf_admin_upload` WHERE `id` = 178 LIMIT 1   [ RunTime:0.000361s ]
+[  ] SELECT * FROM `yf_admin_upload` WHERE `id` = 154 LIMIT 1   [ RunTime:0.000201s ]
+[  ] SELECT * FROM `yf_admin_upload` WHERE `id` = 151 LIMIT 1   [ RunTime:0.000209s ]
+[  ] SELECT * FROM `yf_admin_upload` WHERE `id` = 150 LIMIT 1   [ RunTime:0.000217s ]
+[  ] SELECT * FROM `yf_admin_upload` WHERE `id` = 149 LIMIT 1   [ RunTime:0.000217s ]
+[  ] SELECT * FROM `yf_admin_upload` WHERE `id` = 147 LIMIT 1   [ RunTime:0.000205s ]
+[  ] SELECT * FROM `yf_admin_upload` WHERE `id` = 146 LIMIT 1   [ RunTime:0.000221s ]
+[  ] SELECT * FROM `yf_admin_upload` WHERE `id` = 145 LIMIT 1   [ RunTime:0.000223s ]
+[  ] SELECT * FROM `yf_admin_upload` WHERE `id` = 138 LIMIT 1   [ RunTime:0.000202s ]
+[  ] SELECT * FROM `yf_admin_upload` WHERE `id` = 129 LIMIT 1   [ RunTime:0.000278s ]
+---------------------------------------------------------------
+[ 2018-08-16T14:58:40+08:00 ] 47.95.28.198 120.204.200.81 GET /
+[ info ] lixiakonggu.youfai.cn/ [运行时间：0.156596s][吞吐率：6.39req/s] [内存消耗：16,494.61kb] [文件加载：95]
+[ error ] [8]Undefined index: LY_DEV_MODE[/mnt/www/lixiakonggu.youfai.cn/data/db.php:20]
+[ error ] [8]Undefined index: PATH_INFO[/mnt/www/lixiakonggu.youfai.cn/application/common/behavior/InitModule.php:56]
+[ error ] [2]Invalid argument supplied for foreach()[/mnt/www/lixiakonggu.youfai.cn/application/common/behavior/InitConfig.php:60]
+[ error ] [2]Invalid argument supplied for foreach()[/mnt/www/lixiakonggu.youfai.cn/application/common/behavior/InitConfig.php:73]
+[ error ] [2]Invalid argument supplied for foreach()[/mnt/www/lixiakonggu.youfai.cn/application/common/behavior/InitConfig.php:73]
+[ error ] [2]Invalid argument supplied for foreach()[/mnt/www/lixiakonggu.youfai.cn/application/common/behavior/InitConfig.php:73]
+[ error ] [2]Illegal string offset 'type'[/mnt/www/lixiakonggu.youfai.cn/application/common/behavior/InitConfig.php:61]
+[ error ] [8]Uninitialized string offset: 0[/mnt/www/lixiakonggu.youfai.cn/application/common/behavior/InitConfig.php:61]
+[ error ] [2]Illegal string offset 'type'[/mnt/www/lixiakonggu.youfai.cn/application/common/behavior/InitConfig.php:61]
+[ error ] [8]Uninitialized string offset: 0[/mnt/www/lixiakonggu.youfai.cn/application/common/behavior/InitConfig.php:61]
+[ error ] [2]Invalid argument supplied for foreach()[/mnt/www/lixiakonggu.youfai.cn/application/common/behavior/InitConfig.php:73]
+[ error ] [8]Undefined index: WAP_MODE[/mnt/www/lixiakonggu.youfai.cn/application/common/behavior/InitConfig.php:159]
+[ error ] [8]Undefined index: default_module[/mnt/www/lixiakonggu.youfai.cn/application/common/behavior/InitConfig.php:195]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitModule @app_init [ RunTime:0.014449s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitHook @app_init [ RunTime:0.003190s ]
+[ info ] [ BEHAVIOR ] Run app\common\behavior\InitConfig @app_init [ RunTime:0.003092s ]
+[ info ] [ LANG ] /mnt/www/lixiakonggu.youfai.cn/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept' => 'text/vnd.wap.wml,text/html,application/vnd.wap.xhtml+xml,application/xhtml+xml',
+  'accept-charset' => 'gb2312,iso8859-1,utf-8',
+  'accept-encoding' => 'gzip,deflate',
+  'connection' => 'close',
+  'content-length' => '0',
+  'host' => 'lixiakonggu.youfai.cn',
+  'q-ua' => 'KQB22_GA/220020&KMTT_3/200020&JV2&151920&SunMicrosystemswtk&0&4309&V3',
+  'user-agent' => 'Mozilla/5.0 (Windows; U; Windows NT 5.1; zh-CN; rv:1.9b4) Gecko/2008030317 Firefox/3.0b4',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+  's' => '/',
+)
+[ info ] [ RUN ] app\home\controller\Index->index[ /mnt/www/lixiakonggu.youfai.cn/application/home/controller/Index.php ]
+[ info ] [ LOG ] INIT File
+[  ] SELECT `name`,`value`,`type` FROM `yf_admin_config` WHERE `status` = 1  [ RunTime:0.000325s ]
+[  ] SELECT `name` FROM `yf_admin_module` WHERE `status` = 1 AND `is_system` = 0  [ RunTime:0.000355s ]
+[  ] SELECT `name`,`addons` FROM `yf_admin_hook`  [ RunTime:0.000178s ]
+[  ] SELECT `id`,`name` FROM `yf_admin_addon` WHERE `status` = 1 AND `name` IN ('后台首页小工具')  [ RunTime:0.000183s ]
+[  ] SELECT `id`,`name` FROM `yf_admin_addon` WHERE `status` = 1 AND `name` IN ('Frog','RocketToTop')  [ RunTime:0.000203s ]
+[  ] SELECT `name`,`value`,`type` FROM `yf_admin_config` WHERE `status` = 1  [ RunTime:0.000245s ]
+[  ] SELECT * FROM `yf_admin_module` WHERE `status` = 1  [ RunTime:0.000245s ]
+[  ] SELECT * FROM `yf_admin_addon` WHERE `status` = '1'  [ RunTime:0.000200s ]
+[  ] SELECT `addons` FROM `yf_admin_hook` WHERE `name` = 'FormBuilderExtend' LIMIT 1   [ RunTime:0.000201s ]
+[  ] SELECT `config` FROM `yf_admin_addon` WHERE `name` = '' LIMIT 1   [ RunTime:0.000149s ]
+---------------------------------------------------------------
+[ 2018-08-16T18:35:41+08:00 ] ::1 ::1 GET /kaixinxue/
+[ info ] localhost:88/kaixinxue/ [运行时间：1.183000s][吞吐率：0.85req/s] [内存消耗：8,910.39kb] [文件加载：76]
+[ error ] [8]Undefined index: LY_DEV_MODE[E:\anzhuan\object\kaixinxue\data\db.php:20]
+[ error ] [0]SQLSTATE[HY000] [2002] ����Ŀ�����������ܾ����޷����ӡ�
+[E:\anzhuan\object\kaixinxue\application\common\common\helper.php:61]
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-08-16T18:36:30+08:00 ] ::1 ::1 GET /kaixinxue/
+[ info ] localhost:88/kaixinxue/ [运行时间：1.142000s][吞吐率：0.88req/s] [内存消耗：8,910.39kb] [文件加载：76]
+[ error ] [8]Undefined index: LY_DEV_MODE[E:\anzhuan\object\kaixinxue\data\db.php:20]
+[ error ] [0]SQLSTATE[HY000] [2002] ����Ŀ�����������ܾ����޷����ӡ�
+[E:\anzhuan\object\kaixinxue\application\common\common\helper.php:61]
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File

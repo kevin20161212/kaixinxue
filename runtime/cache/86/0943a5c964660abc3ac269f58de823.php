@@ -1,0 +1,4 @@
+<?php
+//000000000000
+ exit();?>
+a:15:{i:0;s:2:"id";i:1;s:7:"uniacid";i:2;s:5:"title";i:3;s:5:"thumb";i:4;s:3:"pid";i:5;s:11:"isrecommand";i:6;s:11:"description";i:7;s:4:"sort";i:8;s:6:"status";i:9;s:6:"ishome";i:10;s:6:"advimg";i:11;s:6:"advurl";i:12;s:5:"level";s:3:"_pk";s:2:"id";s:5:"_type";a:13:{s:2:"id";s:7:"int(11)";s:7:"uniacid";s:7:"int(11)";s:5:"title";s:11:"varchar(50)";s:5:"thumb";s:12:"varchar(255)";s:3:"pid";s:7:"int(11)";s:11:"isrecommand";s:7:"int(10)";s:11:"description";s:12:"varchar(500)";s:4:"sort";s:19:"tinyint(3) unsigned";s:6:"status";s:10:"tinyint(1)";s:6:"ishome";s:10:"tinyint(3)";s:6:"advimg";s:12:"varchar(255)";s:6:"advurl";s:12:"varchar(500)";s:5:"level";s:10:"tinyint(3)";}}
