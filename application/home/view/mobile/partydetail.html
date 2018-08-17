@@ -1,0 +1,45 @@
+<!-- <!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{$title}</title>
+  <link rel="stylesheet" href="__MOBILE_DIST__/idangerous.swiper.css">
+<link  rel="stylesheet" href="__MOBILE_CSS__/css.css">
+<link rel="stylesheet" href="http://g.alicdn.com/de/prismplayer/2.6.0/skins/default/aliplayer-min.css" />
+     <script charset="utf-8" type="text/javascript" src="http://g.alicdn.com/de/prismplayer/2.6.0/aliplayer-min.js"></script>
+     <script type="text/javascript" src="__MOBILE_JS__/flexible.js"></script>
+     <link rel="stylesheet" type="text/css" href="__MOBILE_CSS__/font-awesome.css"/>
+    </head>
+</head> -->
+<extend name="temp/base" />
+<block name='body'>
+<body>
+  <div class="xinwenneirong">
+  	<div></div>
+  	<div class="xinwen">{$title}</div>
+  	<a href="javascript:history.back(-1)">
+  	  <img src="__MOBILE_IMG__/fanhuis.png" style="width:30px;height:30px;">
+  	</a>
+  </div>
+  <div class="ruzhihyuamgpmg">
+  	 <div class="heyuebu">{$data.title}</div>
+  	 <div class="riqi">{$data.create_time}</div>
+  </div>
+  <div>
+  	<div class="shouhangsuojin">{$data.content}</div>
+  </div>
+  <div class="shangyitaiop">
+    <if condition="$pre.id gt 0 ">
+    <a href="{:url('news_detail',['id'=>$pre.id])}">上一条</a> 
+    <else/>
+    <a hrer="#">没有上一条</a>  
+    </if>
+  	<if condition="$next.id gt 0 ">
+    <a href="{:url('news_detail',['id'=>$next.id])}">下一条</a>
+    <else/>
+    <a hrer="#">没有下一条</a>  
+    </if>
+  
+  </div>
+</body>
+</block>

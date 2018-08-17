@@ -1,0 +1,54 @@
+<extend name="$_admin_public_layout"/>
+<block name="style">
+    <include file="./application/common/util/yfthink/builder/style.html" />
+    <style type="text/css">
+        .col-left{
+            position: absolute;
+            top: 25px;
+            bottom: 0;
+            overflow-y: scroll;
+            padding: 15px 0px 15px 10px;
+        }
+        #pagelist .active{
+            background: #eee;
+        }
+        .pageid{
+            height: 45px;
+            line-height: 45px;
+        }
+    </style>
+</block>
+<block name="script">
+    <script type="text/javascript">
+        $(function(){
+            $(".pageid").on("click", function() {
+                //遍历选中当前权限的子权限
+                $('#pagelist > p').removeClass('active');
+                $(this).addClass('active');
+                $.ajax({
+                    url:"{:U('Page/pages')}",
+                    data:{'id':$(this).data('id'),'modal':1},
+                    success:function(result){
+                         $("#contents").html(result);
+                    },
+                    error:function(){
+                        //请求失败时
+                    }
+                })
+            });
+        });
+    </script>
+</block>
+<block name="main">
+    <!-- <div class=" col-left col-md-2 col-lg-2"> -->
+    <div class="col-left" id="pagelist">
+        <volist name="list" id="vo">
+          <p data-id="{$vo.id}" class="pageid"> {$vo.title_show} </p>
+        </volist>
+        </div>
+    <!-- </div> -->
+    <div class="col-md-10 col-lg-10 col-md-push-2 col-lg-push-2 col-left" id="contents">
+        <h1> {$data.title}</h1>
+        {$data.content}
+    </div>
+</block>

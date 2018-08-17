@@ -1,0 +1,101 @@
+<div class="zhucetoubiap yongsisi"  style="display:none;" id="dawad"><div class="duosjhaodw"><b>欢迎注册投标助手</b></div><div class="nilai">已有超过1000000家企业通过我们获取商机，填写以下信息，赶快加入</div><form class="layui-form cuohezhe tj1" action="{:url('home/index/register')}" name="register"><div class="layui-form-item"><label class="layui-form-label gongsiomingc">*公司名称：</label><div class="layui-input-block"><input type="text" name="company_name" lay-verify="title" autocomplete="off" placeholder="" class="layui-input shawanyi"></div></div><div class="layui-inline baifenbaia"><label class="layui-form-label gongsiomingc">*验证邮箱：</label><div class="layui-input-inline baishi"><input type="text" name="email" lay-verify="email" autocomplete="off" class="layui-input zhegeshi"></div></div><div class="layui-form-item qvdidab"><label class="layui-form-label gongsiomingc">*联系人：</label><div class="layui-input-block"><input type="text" name="contact_name" lay-verify="" autocomplete="off" placeholder="" class="layui-input shawanyi"></div></div> <div class="layui-form-item qvdidab"><label class="layui-form-label gongsiomingc">*密码：</label><div class="layui-input-block"><input type="password" name="password"  lay-verify="pass"  autocomplete="off" placeholder="" class="layui-input shawanyi"></div></div>
+    <div class="layui-form-item qvdidab"><label class="layui-form-label gongsiomingc">*确认密码:</label><div class="layui-input-block"><input type="password" name="repassword"  lay-verify="pass"  autocomplete="off" placeholder="" class="layui-input shawanyi"></div></div>
+    <div class="layui-inline baifenbaia haoba"><label class="layui-form-label gongsiomingc">*手机号：</label><div class="layui-input-inline baishi couhuo"><input type="tel" name="mobile" lay-verify="required|phone" autocomplete="off" class="layui-input liushil"><a class="layui-btn fenkais" id="yzm">获取验证码</a></div></div><div class="layui-form-item qvdidab"><label class="layui-form-label gongsiomingc">*验证码：</label><div class="layui-input-block"><input type="text" name="code" lay-verify="" autocomplete="off" placeholder="" class="layui-input shawanyi"></div></div><div class="shaazheshi"><a href="{:url('home/User/modify')}">忘记密码？</a><a href="#" class="denglusss">登录</a></div><div class="layui-form-item zhegebuxing"><div class="layui-input-block buxiangting"><a class="layui-btn saha  ajax-post confirm" target-form="tj"  lay-filter="demo1" data-succ="formsuccs">提交注册1</a></div></div></div></form></div>
+ <script type="text/javascript">
+ 	jQuery(document).ready(function($) {
+ 		$("input[name='repassword']").blur(function(event) {
+     /* Act on the event */
+    var password = $("input[name='password']").val();
+    var repassword = $("input[name='repassword']").val();
+    if(password != repassword){
+        layer.msg('俩次密码不一致',{icon: 5});
+    }
+ });
+$("#yzm").click(function(){
+    var phone = $("input[name='mobile']").val();
+    console.log(phone);
+    var re = isPhoneNo(phone);
+    if(re != true){
+       layui.use('layer', function(){
+          var layer = layui.layer;
+          layer.msg('请输入正确电话',{icon: 5});
+        });    
+    }else{
+        var countdown=60;  
+        var yzm = $("#yzm");
+        settime(yzm,countdown);
+        $.ajax({
+            url: '{:url("home/index/send_code")}',
+            type: 'post',
+            data: {mobile:phone},
+            success:function(data){
+
+            },
+            fail:function(re){
+
+            }
+        })    
+
+    }
+})  
+function settime(yzm,countdown) {  
+  if (countdown == 0) {  
+    yzm.attr("disabled",false);  
+    yzm.text("获取验证码"); 
+    countdown = 60;  
+    return false;  
+  } else {  
+    $("#yzm").attr("disabled", true);  
+    yzm.text("重新发送(" + countdown + ")");  
+    countdown--;  
+  } 
+  setTimeout(function() {  
+    settime(yzm,countdown);  
+  },1000);  
+}  
+function isPhoneNo(phone) { 
+ var pattern = /^1[34578]\d{9}$/; 
+ return pattern.test(phone); 
+}
+// $(".register").click(function(event) {
+//     /* Act on the event */
+//     var obj = $("form[name=register]").serialize();
+//     $.ajax({
+//         type: "POST",
+//         url: "{:url('home/index/register')}",
+//         data: obj,// 要提交的表单
+//         success: function (result) {
+//           if(result.code ==1){
+//             layer.msg(result.msg, {
+//                 icon: 6,
+//                 time: 2000 //2秒关闭（如果不配置，默认是3秒）
+//             }, function(){
+//                 $(".moni,#dawad").css("display","none");
+//                 $(".moni,#waou").css("display","block");
+//             });   
+//           }else{
+//              layer.msg(result.msg,{icon: 5});
+//           }
+//         },
+//         error: function (error) {
+//           alert(error);
+//         }
+//     });
+// });
+ 
+
+    })
+  function formsuccs(zhuce){
+ 
+if(zhuce.code==1){
+   layer.alert(c.msg)
+   setTimeout(function() {
+      $("#dawad").css("display","none")
+  $("#waou").css("display","block")
+},1000);
+
+}else{
+  layer.alert(c.msg)
+}
+}
+ </script>

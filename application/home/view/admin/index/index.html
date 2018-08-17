@@ -1,0 +1,179 @@
+<extend name="$_admin_public_layout"/>
+
+<block name="style">
+    <include file="./application/common/util/yfthink/builder/style.html" />
+</block>
+<block name="main">
+	<?php
+
+   
+   $ar2=array(
+               array("name"=>"衣服","value"=>00),
+               array("name"=>"外桃","value"=>10000),
+               array("name"=>"女装","value"=>30000),
+               array("name"=>"男装","value"=>50000),
+               array("name"=>"衣服2","value"=>10000),
+               array("name"=>"外桃1","value"=>10000),
+               array("name"=>"女装32","value"=>0000),
+               array("name"=>"男装4","value"=>50000),
+                array("name"=>"衣888服","value"=>10000),
+               array("name"=>"外88桃","value"=>10000),
+               array("name"=>"女88装","value"=>30000),
+               array("name"=>"男8装","value"=>50000),
+            );
+   $str2=json_encode($ar2);
+   
+	
+?>
+	<script type="text/javascript" src="/public/static/js/echarts/echarts.js"></script>
+	<script type="text/javascript" src="/public/libs/layui/layui.all.js"></script>
+	<script type="text/javascript" src="/public/static/js/echarts/tj_module.js"></script>
+	<style type="text/css">
+		 table,table tr th, table tr td { border:1px solid #ddd; }
+        table { padding: 10px 20px; width: 95%; margin: 20px auto; min-height: 25px; line-height: 25px; text-align: center; border-collapse: collapse; padding:2px;}   
+		
+		tbody{ width:100%;}
+		tr{ width:100%; text-align: center;}
+		tr th{ font-size:14px; padding: 10px 0px; text-align: center;}
+		td{ text-align: center; padding: 0px 0px; line-height: 30px; }
+		table tbody tr:nth-child(odd) td {background: #f6f6f6;}
+		td div{ border-bottom: 1px dashed #ddd;}
+		td div:last-child{ border: none;}
+		/*td div:nth-child(even)  {background: #fff;}*/
+		.search{ margin: 20px auto; margin-bottom: 0px; font-family: "微软雅黑";clear: both; padding: 10px 10px 10px 2.5%; ; background: #ddf3f5;  width:100%; margin: 0px auto; overflow: hidden;;}
+		.search select{ width:266px; height: 40px; line-height: 40px;  border-radius:0px}
+		.search button{ height: 30px;  padding: 0px 20px; background:#2699ED ; color: #fff; border: none; border-radius:3px}
+		.search .selectDate{ float:right; margin-right: 20px; display: inline-block;}
+		.search .selectDate ul{ margin: 0px; padding: 0px;}
+		.search .selectDate ul li{ list-style-type: none; margin-right:20px; line-height: 40px; height: 40px; float:right;}
+		.search .selectDate .selectDate_active a{ color: #03a2b6 !important;}
+	</style>
+	
+	<div class="search" style="">
+		<div style="width:auto; margin: 0px auto; float:left;">
+			<label style="margin-bottom: 0px;color: #03a2b6;">搜索条件：</lable>
+			<select onchange="search(this)" class="form-control lyui-select select">
+				<option id="one" value="0">选择城市</option>
+				<foreach name="address" item="vos">
+				<option value="{$key}">{$vos}</option>
+				</foreach>
+			
+			</select>
+		</div>
+		<div class="selectDate">
+				<ul>
+					
+						
+							
+								<li><a>本月</a></li>
+									<li><a >本周</a></li>
+									<li><a>本日</a></li>
+									<li class="selectDate_active"><a>总计</a></li>
+				</ul>
+			</div>
+		<script>
+			
+			var locarr=location.href.split("=");
+			
+			if(locarr[1])
+			{
+				$(".search select option").each(function(){
+					if(this.value==locarr[1])
+					{
+						$("#one").text(this.innerHTML.replace(/&nbsp;/g,""))
+						//$("#twotitle").text()
+					}
+				})
+			}
+		  	$("")
+		</script>
+		
+	</div>
+	<div style="margin-top: 20px;">
+		<div   data-data='[{"name":"\u5c71\u4e1c","value":10000},{"name":"\u65b0\u7586","value":10000},{"name":"\u5317\u4eac","value":30000},{"name":"\u5c71\u897f","value":50000},{"name":"\u5e7f\u4e1c","value":50000}]' data-title="质保卡详情" data-type="pie" data-sort="销量" class="echarts col-lg-6 col-md-6 col-sm-12" style="height:400px;"></div>
+	    <div   data-data='[{"name":"\u5c71\u4e1c","value":10000},{"name":"\u65b0\u7586","value":10000},{"name":"\u5317\u4eac","value":30000},{"name":"\u5c71\u897f","value":50000},{"name":"\u5e7f\u4e1c","value":50000}]' data-title="订单详情" data-type="pie" data-sort="销量" class="echarts col-lg-6 col-md-6 col-sm-12" style="height:400px;"></div>
+
+	    <!--<div  data-data=<?php  echo $str2; ?> data-color="red"  data-title="产量统计" data-type="bar" data-sort="产量" data-barWidth="70" class=" echarts col-lg-6 col-md-6 col-sm-12" style="height:400px;"></div>
+	   	    <div  data-data=<?php  echo $str2; ?> data-color="red"  data-title="产量统计" data-type="line" data-sort="产量" data-barWidth="70" class=" echarts col-lg-6 col-md-6 col-sm-12" style="height:400px;"></div>
+       -->
+	</div>
+	<div class="clear" style="clear: both; padding: 10px 0px;; height: 50px; background: #ddf3f5;  width:100%; margin: 0px auto;">
+		<span style="width:95%; margin: 0px auto; display: block; color: #03a2b6; height: 30px; line-height: 30px;" id="twotitle">经销商列表</span>
+	</div>
+    <table style="overflow-x: scroll; margin-bottom: 50px;;">
+    	<tbody>
+    		<tr>
+    		<th width="15%" >经销商</th>
+    		<th width="10%" >已使用卡</th>
+    		<th width="7%" >预约订单</th>
+    		<th width="7%" >已派单</th>
+    		<th width="7%" >已完成</th>
+    		<th width="20%">流出异地</th>
+    		<th width="20%">异地流入</th>
+    		</tr>
+    		
+			<foreach name="user" item="vos">
+			
+			<tr>
+    			
+				
+				<td>{$vos.nickname}</td>
+    			<td>{$vos.use_card_num}</td>
+    			<td>{$vos.yuyue_order_num}</td>
+    			<td>{$vos.paidan_order_num}</td>
+    			<td>{$vos.wancheng_order_num}</td>
+    			<td>					
+    				<foreach name="vos['liuchu_list']" item="vo">					
+    				<div>{$vo.name}：{$vo.num} 单</div>
+    				</foreach>    				   				   			
+				</td>
+    			<td>					
+    				<foreach name="vos['liuru_list']" item="vo">					
+    				<div>{$vo.name}：{$vo.num} 单</div>
+    				</foreach>    				   				
+    			</td>
+    		</tr>   		
+    		</foreach>
+
+    	</tbody>
+    </table>
+    <script>
+      function search(obj)
+      {window.location.href="http://zhibaoka.youfai.cn/admin.php/jxs/index/xstj.html?address="+obj.value
+      }
+      $(function(){
+      	
+	      	$(".selectDate ul li a").click(function(){
+	      		
+	      		var str="";
+	      		//alert(this.innerHTML)
+	      		switch (this.innerHTML)
+	      		{
+	      			case "总计" :
+	      			if(locarr[1])
+	      			{str="/admin.php/jxs/index/xstj.html?address="+locarr[1]}
+	      			else{str="/admin.php/jxs/index/xstj.html"}
+	      			 
+	      			break;
+	      			case "本周" :
+
+	      			if(locarr[1]){str="/admin.php/jxs/index/xstj_week.html?address="+locarr[1]}
+	      			else{str="/admin.php/jxs/index/xstj_week.html"}
+	      			 
+	      			break;
+	      			case "本日" :
+	      			 if(locarr[1]){str="/admin.php/jxs/index/xstj_day.html?address="+locarr[1]}
+	      			else{str="/admin.php/jxs/index/xstj_day.html"}
+	      			break;
+	      			case "本月" :
+	      			 if(locarr[1]){str="/admin.php/jxs/index/xstj_month.html?address="+locarr[1]}
+	      			else{str="/admin.php/jxs/index/xstj_month.html"}
+	      			break;
+	      			
+	      		}
+	      		//alert(str)
+	      		location.href=str;
+	      	})
+      })
+    </script>
+</block>

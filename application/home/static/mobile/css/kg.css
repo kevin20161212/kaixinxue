@@ -1,0 +1,8 @@
+@charset "utf-8";
+/* CSS Document */
+
+.kg{ height:25px; line-height:25px; background:#6bde5d;; width:60px; border-radius:20px; border:1px solid rgb(76, 217, 100); position:relative; float:right;}
+.hk{  height:25px; width:25px; border-radius:25px; background:#fff; display: block; margin-left:35px; transition: margin-left 0.3s}
+.kg label{ height:25px; line-height:25px; width:35px; text-align:center; color:#fff; position:absolute; left:0px; top:0px; font-size:12px;}
+.move1{ margin-left:0px;}
+.move2{ margin-left:35px;}

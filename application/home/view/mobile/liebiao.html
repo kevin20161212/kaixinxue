@@ -1,0 +1,56 @@
+<!-- <!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{$title}</title>
+	<link rel="stylesheet" href="__MOBILE_DIST__/idangerous.swiper.css">
+	<link  rel="stylesheet" href="__MOBILE_CSS__/css.css">
+	<link rel="stylesheet" href="http://g.alicdn.com/de/prismplayer/2.6.0/skins/default/aliplayer-min.css" />
+	<script charset="utf-8" type="text/javascript" src="http://g.alicdn.com/de/prismplayer/2.6.0/aliplayer-min.js"></script>
+	<script type="text/javascript" src="__MOBILE_JS__/jquery-1.10.1.min.js"></script>
+	<script type="text/javascript" src="__MOBILE_DIST__/idangerous.swiper.min.js"></script>
+	<script type="text/javascript" src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+	<script type="text/javascript" src="__MOBILE_JS__/flexible.js"></script>
+	<script type="text/javascript" src="__MOBILE_JS__/iscroll.js"></script>
+	<script type="text/javascript" src="__MOBILE_JS__/navbarscroll.js"></script> -->
+
+<extend name="temp/base" />
+<block name="style">
+<style>
+	.dawdeaf{background:url(__MOBILE_IMG__/beijign.png) no-repeat;width:100%;height:50px; display: flex;
+  justify-content: center;
+  align-items: center;} 
+	.gkaiw{padding:2%;}
+	.konguiku{ display: flex;
+  justify-content: space-between;
+  align-items: center;width:100%;padding:0 3%;}
+  .dawdeaf{margin:2% 0;}
+</style>
+ <link rel="stylesheet" href="//g.alicdn.com/de/prismplayer/2.6.0/skins/default/aliplayer-min.css">
+     <script type="text/javascript" src="//g.alicdn.com/de/prismplayer/2.6.0/aliplayer-min.js"></script>
+</block>
+<block name='body'>
+<body  onmousewheel="return false;">
+<img src="__MOBILE_IMG__/xiashu.jpg">
+<div class="gkaiw">
+<volist name='cate' id='vo'>
+<a class="dawdeaf" href="{:url('branch',array('id'=>$vo.id))}">
+	<div class="konguiku">
+	<div>{$vo.title}</div>
+	<img src="__MOBILE_IMG__/fan.png" style="width:20px;height:20px;">
+	</div>
+</a>
+</volist>
+
+</div>
+<div class="suoyouban">
+	<p>页面版权所有：{:config('WEB_SITE_COPYRIGHT')}</p>
+	<p>{:config('WEB_SITE_ICP')}</p>
+</div>
+</body>
+<script type="text/javascript">
+    
+	
+</script>
+
+</block>

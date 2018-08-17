@@ -1,0 +1,207 @@
+<html>
+	<head>
+		<title></title>
+		<meta charset="UTF-8"/>
+		<style>
+			/* CSS Document */
+body {
+	font-size: 12px;
+	color: #666;
+	background-color: #fff;
+}
+body, ul, h1, h2, h3, h4, h5, h6, form, p, dl, dd {
+	margin: 0;
+	padding: 0;
+}
+.clearfix:after {
+	content: "/200B";
+	display: block;
+	height: 0;
+	clear: both;
+	overflow: hidden;
+}
+.clearfix {
+ *zoom:1;
+}
+a {
+	text-decoration: none;
+	color: #000;
+	cursor: pointer;
+}
+a:hover {
+	text-decoration: none;
+}
+ul {
+	list-style: none;
+}
+.fl {
+	float: left;
+}
+.fr {
+	float: right;
+}
+.clear {
+	clear: both;
+}
+.hide {
+	display: none;
+}
+.alignc {
+	text-align: center;
+}
+* {
+	box-sizing: border-box;
+}
+img {
+	border: 0;
+}
+table {
+	border-collapse: collapse;
+}
+.dawdw{display:flex;align-items: center;font-size:36px;background-color:#009300;color:#FFF;padding:3%;}
+.dianjki{width:100%;display: flex;
+  justify-content: space-between;  align-items: center;background-color:#FFF;}
+.dianjki>div{width:50%; text-align: center;font-size:36px;padding:3%;}
+.zhaobiao{border-bottom:1px solid #009300;color:#009300;}
+.libiao{background-color:#009300;color:#FFF;padding:3%;font-size:36px;}
+.bushuo{display: flex;
+  justify-content: space-between;  align-items: center;font-size:36px;border-bottom:1px solid #EEE;margin-bottom:6%;padding-bottom:3%;}
+  .baise{background-color:#FFF;padding:2%;}
+  .tulaio>div{line-height:1.6;}
+  .mingbao{background-color:#009300;color:#FFF;text-align: center;padding:1%;}
+  .xiangqing{color:#009300;margin-top:2%;}
+  .dawf>a{border-bottom:1px solid #2c2c2c;}
+		</style>
+		  <script type="text/javascript" src="__MOBILE_JS__/jquery-1.11.3.min.js"></script>
+  
+	</head>
+	<body>
+		<!-- <div class="dawdw">
+			<img src="__MOBILE_IMG__/zhousi.png" class="fl">
+			<div style="width:100%;text-align:center;margin-left:-3%;">{$meta_title}</div>
+		</div>
+		<div class="dianjki">
+		  <div class="zhaobiao" dataid="gong">招标公告</div>
+		  <div>中标公告</div>
+		</div>
+		<img src="{:get_cover(C('TENDER_COVER'))}" style="width:100%;">
+			<div class="libiao">招标公告列表</div>
+		<div class="baise" id="yi" >
+	
+			<a href="#" class="bushuo">
+				<div style="width:70%;" class="tulaio">
+					<h3>历山双语学校男生公寓楼楼梯加固项目竞争性磋商公告</h3>
+					<div>招标负责人：李经理</div>
+					<div>联系电话：0531-55699641</div>
+					<div>截止日期：2018年7月21日</div>
+				</div>
+				<div style="width:30%;">
+					<div class="mingbao" >报名中</div>
+					<div class="xiangqing">>>详情</div>
+				</div>
+			</a>
+			<a href="#" class="bushuo">
+				<div style="width:70%;" class="tulaio">
+					<h3>历下文体档案中心项目初步设计概算招标竞争性磋商公告</h3>
+					<div>招标负责人：王经理</div>
+					<div>联系电话：0531-81917631</div>
+					<div>截止日期：2018年7月20日</div>
+				</div>
+				<div style="width:30%;">
+					<div class="mingbao" style="background:#F71205;">已截止</div>
+					<div class="xiangqing">>>详情</div>
+				</div>
+			</a> -->
+		<!-- 	<a href="#" class="bushuo">
+				<div style="width:70%;" class="tulaio">
+					<h3>济南中央商务区展厅中心设计竞争性磋商公告</h3>
+					<div>招标负责人：李经理</div>
+					<div>联系电话：15863137087</div>
+					<div>截止日期：2018年7月16日</div>
+				</div>
+				<div style="width:30%;">
+					<div class="mingbao" style="background:#F71205;">已截止</div>
+					<div class="xiangqing">>>详情</div>
+				</div>
+			</a>
+			<a href="#" class="bushuo">
+				<div style="width:70%;" class="tulaio">
+					<h3>济南历下控股集团劳务派遣服务项目竞争性磋商公告</h3>
+					<div>招标负责人：陈经理</div>
+					<div>联系电话：0531-55699655</div>
+					<div>截止日期：2018年7月16日</div>
+				</div>
+				<div style="width:30%;">
+					<div class="mingbao" style="background:#F71205;">已截止</div>
+					<div class="xiangqing">>>详情</div>
+				</div>
+			</a> -->
+			
+		<!-- </div>
+		<div class="baise dawf" style="display:none;">
+			<a href="#" class="bushuo">
+				<div style="width:100%;" class="tulaio">
+					<h3>集团及二级公司档案信息数字化扫描采购项目成交公示</h3>
+					<div>中标单位：山东汇中信息咨询有限公司 </div>
+					<div>发布日期：2018年7月17日</div>	
+				</div>
+			</a>
+			<a href="#" class="bushuo">
+				<div style="width:100%;" class="tulaio">
+					<h3>历山双语学校餐厅装修改造工程中标公示</h3>
+					<div>中标单位：济南林海装饰工程有限公司 </div>
+					<div>发布日期：2018年7月16日</div>	
+				</div>
+			</a>
+			<a href="#" class="bushuo">
+				<div style="width:100%;" class="tulaio">
+					<h3>历山双语学校艺术楼改造加固项目成交公示</h3>
+					<div>中标单位：山东建勘集团有限公司</div>
+					<div>发布日期：2018年7月16日</div>	
+				</div>
+			</a>
+			<a href="#" class="bushuo">
+				<div style="width:100%;" class="tulaio">
+					<h3>历山双语学校智能化系统采购及安装成交公示</h3>
+					<div>中标单位：山东鲁光信息工程有限公司</div>
+					<div>发布日期：2018年7月16日</div>	
+				</div>
+			</a>
+			<a href="#" class="bushuo">
+				<div style="width:100%;" class="tulaio">
+					<h3>历山双语学校男生公寓楼楼梯加固项目竞争性磋商公告</h3>
+					<div>中标单位：深圳市再荣利达机电设备有限公司</div>
+					<div>发布日期：2018年7月18日</div>	
+				</div>
+			</a>		
+		</div> -->
+		<div style="display:flex;background-color:#009300;color:#FFF;font-size:50px;align-items: center;padding:2%;">
+          <a href="{:url('Mindex/tender')}"><img src="__MOBILE_IMG__/hui.png" style="width:80px;height:80px;"></a>
+          <div style="width:80%;text-align:center;">招标公告详情</div>
+		</div>
+		<div style="padding:3%;">
+		     <h2 style="width:100%;text-align: center;">{$data.title}</h2>
+  <div class="message" style="width:100%;text-align:center;border-bottom:1px solid #2c2c2c;padding:5% 0;">
+   <span class="skim"><em>浏览次数：{$data.num}</em>&nbsp;&nbsp;<span id="visitedCount"></span></span>
+      <span class="date"><em>日期：</em>{$data.create_time}
+</span>
+	</div>           
+  <div class="summary">
+   </div>
+  <div class="describe htmledit" id="infoContent">
+  	{$data.content}
+  </div>
+	</body>
+	<script>
+           $(".dianjki>div").click(function(){
+           	if($(this).attr("dataid")=="gong"){
+                  $(".libiao").text("招标公告列表")
+           	}else{
+ $(".libiao").text("中标公告列表")
+           	}
+           	$(this).addClass("zhaobiao").siblings().removeClass("zhaobiao")
+           	var index=$(this).index()
+            $(".baise:eq("+index+")").css("display","block").siblings(".baise").css("display","none")
+           })
+	</script>
+</html>

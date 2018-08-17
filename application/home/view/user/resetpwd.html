@@ -1,0 +1,138 @@
+<extend name="temp/base" />
+<block name="body"/>
+<include file="temp/top1" />
+	<form class="layui-form" action="" name="subReset">
+	<div class="ci-shaa">
+	   <div class="wenben-fabiao jieshi duiqi-chong" style="padding:2%;">
+	   	    <div>
+	   	    	<img src="__HOME_IMG__/chongzhi.png">
+	   	    <div class="haixing">
+  <div class="layui-form-item">
+    <label class="layui-form-label" style="width:20%;">手机验证码</label>
+    <div class="layui-input-block">
+      <input type="text" name="code" lay-verify="" autocomplete="off" placeholder="请输入验证码" style="width:60%;" class="layui-input">
+    </div>
+     <input type="hidden" name="mobile" lay-verify="" autocomplete="off" value="{$mobile}" style="width:60%;" class="layui-input">
+  </div>
+   <div class="layui-form-item">
+    <label class="layui-form-label" style="width:20%;">新密码</label>
+    <div class="layui-input-block">
+      <input type="password" name="password" lay-verify="pass" autocomplete="off" placeholder="请输入新密码" style="width:60%;" class="layui-input">
+    </div>
+  </div>
+    <div class="layui-form-item">
+    <label class="layui-form-label" style="width:20%;">确认密码</label>
+    <div class="layui-input-block">
+      <input type="password" name="repassword" lay-verify="pass" autocomplete="off" placeholder="请输入新密码" style="width:60%;" class="layui-input">
+    </div>
+  </div>
+    <div class="layui-form-item">
+    <label class="layui-form-label" style="width:20%;">图形验证码</label>
+    <div class="layui-input-block bushinagehanshu">
+      <input type="text" name="verifyCode" lay-verify="" autocomplete="off" placeholder="请输入图形验证码" style="width:44.5%;" class="layui-input">
+       <div>{:captcha_img()}</div>
+    </div>
+  </div>
+   <div class="natianuoushi"> <a class="layui-btn layui-btn-normal subReset" style="background-color:#0287E1;width:42%;">重置密码</a></div>
+   </div>
+     
+  </form>
+  
+	   	    </div>
+	   	</div>
+	   	</div>
+	  {:widget('PublicWidget/get_bottom')} 
+    <div class="moni"  style="display:none;"></div>
+    {:widget('PublicWidget/deng_lu')} 
+<script src="__HOME_CSS__/layui-v2.2.6/layui/layui.js"></script>
+<script src="__HOME_JS__/jquery.js"></script>
+<script>
+	$(".nishis-shouji").click(function(){
+
+$(this).parent().next().css("display","block")
+		$(".xian-shouji").css("display","none")
+	})
+	$(".zanzhuanle").click(function(){
+		$(this).parent().next().css("display","block")
+		$(".shouji-yin").css("display","none")
+	})
+layui.use(['form', 'layedit', 'laydate'], function(){
+  var form = layui.form
+  ,layer = layui.layer
+  ,layedit = layui.layedit
+  ,laydate = layui.laydate;
+  
+  //日期
+  laydate.render({
+    elem: '#date'
+  });
+  laydate.render({
+    elem: '#date1'
+  });
+  
+  //创建一个编辑器
+  var editIndex = layedit.build('LAY_demo_editor');
+ 
+  //自定义验证规则
+  form.verify({
+    title: function(value){
+      if(value.length < 5){
+        return '标题至少得5个字符啊';
+      }
+    }
+    ,pass: [/(.+){6,12}$/, '密码必须6到12位']
+    ,content: function(value){
+      layedit.sync(editIndex);
+    }
+  });
+  
+  //监听指定开关
+  form.on('switch(switchTest)', function(data){
+    layer.msg('开关checked：'+ (this.checked ? 'true' : 'false'), {
+      offset: '6px'
+    });
+    layer.tips('温馨提示：请注意开关状态的文字可以随意定义，而不仅仅是ON|OFF', data.othis)
+  });
+  
+  //监听提交
+  form.on('submit(demo1)', function(data){
+    layer.alert(JSON.stringify(data.field), {
+      title: '最终的提交信息'
+    })
+    return false;
+  });
+  
+  
+});
+$('.moni').click(function(event) {
+  $(".moni,#waou").css("display","none");
+});
+$(".subReset").click(function(event) {
+  var data = $('Form[name="subReset"]').serialize();
+  $.ajax({
+        type: "POST",
+        url: "{:url('home/user/subReset')}",
+        data: data,// 要提交的表单
+        success: function (result) {
+          console.log(result);
+          if(result.code ==1){
+            layer.msg(result.msg, {
+                icon: 6,
+                time: 2000 //2秒关闭（如果不配置，默认是3秒）
+            }, function(){
+              $(".moni,#waou").css("display","block");
+            });   
+          }else{
+            layer.msg(result.msg,{icon: 5});
+          }
+        },
+        error: function (error) {
+          alert(error);
+        }
+    });
+
+});
+//subReset
+</script>
+
+</block>

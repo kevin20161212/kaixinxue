@@ -1,0 +1,226 @@
+<!-- <!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{$title}</title>
+<link rel="stylesheet" href="__MOBILE_DIST__/idangerous.swiper.css">
+<link  rel="stylesheet" href="__MOBILE_CSS__/css.css">
+<link rel="stylesheet" href="http://g.alicdn.com/de/prismplayer/2.6.0/skins/default/aliplayer-min.css" />
+     <script charset="utf-8" type="text/javascript" src="http://g.alicdn.com/de/prismplayer/2.6.0/aliplayer-min.js"></script>
+     <script type="text/javascript" src="__MOBILE_JS__/flexible.js"></script>
+     <link rel="stylesheet" type="text/css" href="__MOBILE_CSS__/font-awesome.css"/>
+    <style>
+       .jiazaigenduo{background-color:#EEEEEE;width:100%;text-align: center;position:fixed;left:0;bottom:0;}
+       .akdiawgaise{color:#222;position:relative;margin:1% 0;}
+       .qifei{position:absolute;top:10%;left:0;width:100%;}
+     
+       .s{
+          width: 33%;
+          display:inline-block;
+          line-height: 30px;
+        }
+        .ssd{ width: 50px;}
+        .dis{width: 90%;display: flex;align-items: center;margin:auto;}
+        .kliehia{margin-bottom:3%;}
+        .kliehia>a{display: block;}
+        .jianyi{ display: flex;
+  justify-content: space-between;width:90%; margin:auto;}
+  .lanxse{color:#0000CC;}
+    </style>
+</head> -->
+<extend name="temp/base" />
+  <block name='style'>
+  <style>
+      .jiazaigenduo{background-color:#EEEEEE;width:100%;text-align: center;position:fixed;left:0;bottom:0;}
+       .akdiawgaise{color:#222;position:relative;margin:1% 0;}
+       .qifei{position:absolute;top:10%;left:0;width:100%;}
+     
+       .s{
+          width: 33%;
+          display:inline-block;
+          line-height: 30px;
+        }
+        .ssd{ width: 50px;}
+        .dis{width: 90%;display: flex;align-items: center;margin:auto;}
+        .kliehia{margin-bottom:3%;}
+        .kliehia>a{display: block;}
+        .jianyi{ display: flex;
+  justify-content: space-between;width:90%; margin:auto;}
+  .lanxse{color:#0000CC;}
+  </style>
+  </block>
+<block name='body'>
+<body>
+<div>
+  <!-- <div class="kaikuang">
+   人才招聘：  
+  </div> -->
+  <div class="kliehia">
+
+  </div>
+   <!--  <div>
+      <span>岗位</span><span>人数</span><span>日期</span>
+    </div> -->
+<!--   <volist name='data' id='item' empty="暂时没有数据">
+  <a href="{:url('news_detail',['id'=>$item.id])}">
+  <div class="dawissk">
+    <img src="{$item.thumb}" style="width:100%;height:150px;">
+  <div>{$item.textarea}</div>
+  </div>
+  </a>
+  </volist> -->
+  <!-- <a href="{:url('news_detail')}">
+  <div class="dawissk">
+    <img src="__MOBILE_IMG__/huijin.jpg" style="width:100%;height:150px;">
+  <div>济南历下控股集团有限公司是经济南市历下区人民政府批准组建成立的国有独资集团公司，为响应济南市委、市政府“打造四个中心。</div>
+  </div>
+  </a> -->
+  <!-- <a href="{:url('news_detail')}">
+  <div class="dawissk">
+    <img src="__MOBILE_IMG__/huijin.jpg" style="width:100%;height:150px;">
+  <div>济南历下控股集团有限公司是经济南市历下区人民政府批准组建成立的国有独资集团公司，为响应济南市委、市政府“打造四个中心。</div>
+  </div>
+  </a>
+  <div class="dawissk">
+    <img src="__MOBILE_IMG__/huijin.jpg" style="width:100%;height:150px;">
+  <div>济南历下控股集团有限公司是经济南市历下区人民政府批准组建成立的国有独资集团公司，为响应济南市委、市政府“打造四个中心。</div>
+  </div>
+  <div class="dawissk">
+    <img src="__MOBILE_IMG__/huijin.jpg" style="width:100%;height:150px;">
+  <div>济南历下控股集团有限公司是经济南市历下区人民政府批准组建成立的国有独资集团公司，为响应济南市委、市政府“打造四个中心。</div>
+  </div> -->
+</div>
+<img src="__MOBILE_IMG__/fanhuid.png" class="guding" id="myBtn" style="display:none;" onclick="topFunction()">
+<div class="jiazaigenduo" style="color:#222;padding:2% 0;">加载更多</div>
+<script src="__MOBILE_JS__/jquery-1.11.3.min.js"></script>
+<script src="__MOBILE_JS__/jquery.sliderBar.js"></script>
+<script type="text/javascript">
+ wao=1
+ cate=0
+ $.ajax({
+    url: "{:url('job_list')}",
+    type: 'post',
+    dataType: 'JSON',
+    data: {
+      page:wao,
+      cate:cate,
+
+    },
+    error: function(ee) {
+       console.log(ee)
+      return false;
+    },
+    success: function(data) {
+    if(data.data.lengt<0){
+      var zanwu="<div>暂无数据</div>"
+       $(".kliehia").append(zanwu)
+    }
+    for(var i=0;i<data.data.length;i++){
+ var haixing='<a href="{:url("job_detail")}?id='+data.data[i].id+'" class="akdiawgaise"><img src="__MOBILE_IMG__/xians.png"><div class="qifei"><div class="dis"><span class="ssd"><img src="__MOBILE_IMG__/rentou.png" style="width:10px;hegiht:10px;"></span><span class="s">岗位:'+data.data[i].title+'</span><span class="s">人数:'+data.data[i].num+'</span><span class="s">日期:'+data.data[i].create_time+'</span></div><div class="jianyi"><div>'+data.data[i].salary+'/月</div><div class="lanxse">详情》</div></div></div></a>'
+ $(".kliehia").append(haixing)
+    }
+
+      
+    }
+  })
+$(function(){
+  $('.sliderbar-container').sliderBar({
+    open : false,           // 默认是否打开，true打开，false关闭
+        top : 0,             // 距离顶部多高
+        width : 150,           // body内容宽度
+        height : 800,          // body内容高度
+        theme : 'green',       // 主题颜色
+        position : 'left'      // 显示位置，有left和right两种
+  });
+});
+setTimeout(function(){
+  $('.sliderbar-container').css("height","100%")
+  $('.sliderbar-container').css("background","#FFF")
+    $('.sliderbar-container').css("border","1px solid #B7041A")
+  $('.title').css("top","78px")
+}, 1000)
+setTimeout(function(){
+$('.title').css("background","#B7041A")
+  $('.title').css("top","78px")
+}, 1)
+window.onscroll = function() {scrollFunction()};
+ 
+function scrollFunction() {console.log(121);
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("myBtn").style.display = "block";
+    } else {
+        document.getElementById("myBtn").style.display = "none";
+    }
+}
+ 
+// 点击按钮，返回顶部
+function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
+$(".jiazaigenduo").click(function(){
+
+$(".jiazaigenduo").text("正在加载.......")
+
+  wao=wao+1
+ setTimeout(function(){
+$.ajax({
+    url: "{:url('job_list')}",
+    type: 'post',
+    dataType: 'JSON',
+    data: {
+      page:wao,
+      cate:0,
+    },
+    error: function(ee){
+       console.log(ee)
+      return false;
+    },
+    success: function(data) {
+    console.log(data)
+      if(data.data==""){
+     $(".jiazaigenduo").text("暂无数据")
+    }else{
+      $(".jiazaigenduo").text("加载更多")
+    }
+    for(var i=0;i<data.data.length;i++){
+ var haixing='<a href="{:url("job_detail")}?id='+data.data[i].id+'" class="akdiawgaise"><img src="__MOBILE_IMG__/xians.png"><div class="qifei"><div class="dis"><img src="__MOBILE_IMG__/rentou.png" style="width:20px;hegiht:20px;"><span class="s">岗位:'+data.data[i].title+'</span><span class="s">人数:'+data.data[i].num+'</span><span class="s">日期:'+data.data[i].create_time+'</span></div><div class="jianyi"><div>'+data.data[i].salary+'元/月</div><div class="lanxse">详情》</div></div></div></a>';
+ $(".kliehia").append(haixing)
+    } 
+    }
+  })
+
+
+ },1000)
+
+})
+$(".shujuzi").click(function(){
+  // $(this)
+  wao=1
+  cate=$(this).attr("idda")
+  $.ajax({
+    url: "{:url('job_list')}",
+    type: 'post',
+    dataType: 'JSON',
+    data: {
+      page:wao,
+      cate:cate,
+    },
+    error: function(ee){
+       console.log(ee)
+      return false;
+    },
+    success: function(data) {
+
+    for(var i=0;i<data.data.length;i++){
+ var haixing='<a href="{:url("news_detail")}?id='+data.data[i].id+'" class="akdiawgaise"><div class="dawissk"><img src="'+data.data[i].thumb+'" style="width:100%;height:150px;"><div>'+data.data[i].title+'</div></div></a>'
+ $(".kliehia").html(haixing)
+    } 
+    }
+  })
+  $(".title").trigger("click")
+  $(".jiazaigenduo").text("加载更多")
+})
+</script>
+</body>
+</block>

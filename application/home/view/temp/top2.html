@@ -1,0 +1,31 @@
+<div class="guanjic-ci">
+	<img src="__HOME_IMG__/guanjainci.png">
+	<div class="ci-jiushi">
+	  <form class="layui-form ci-foei" action="{:url('home/index/index')}" method="get">
+  <div class="layui-form-item zouzoua">
+    <div class="layui-input-block xianjiade">
+      <input id="hotKey" type="text" name="hotKey" lay-verify="title" autocomplete="off" placeholder="请输入您要搜索的内容"  class="layui-input gaidian">
+    <button class="layui-btn yanse"><img src="__HOME_IMG__/sousuo.png" style="max-width:47%;height:0 auto;"></button>
+    </div>
+  </div>
+   </form>
+   <div class="resou c-rese">
+    	<div>热搜关键字：</div>
+      <volist name='data' id='item'>
+    	<div class="hotKey">{$item.keyword}</div>
+      </volist>
+    	<!-- <div class="hotKey">景观</div>
+    	<div class="hotKey">阀门</div>
+    	<div class="hotKey">软件</div>
+    	<div class="hotKey">网站</div> -->
+    </div>
+	</div>
+</div>
+<script type="text/javascript">
+  jQuery(document).ready(function($) {
+    $('.hotKey').click(function(event) {
+        var hotKey = $(this).text();
+        $("#hotKey").val(hotKey);
+    });
+  });
+</script>

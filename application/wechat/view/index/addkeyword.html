@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script type="text/javascript" src="__MOBILE_JS__/jquery.js"></script>
+		<script type="text/javascript" src="__MOBILE_JS__/module.js"></script>
+		<script type="text/javascript" src="__MOBILE_JS__/rem.js"></script>
+		<script type="text/javascript" src="__MOBILE_JS__/layer.js"></script>
+		<script type="text/javascript" src="__MOBILE_JS__/city.js"></script>
+		<script type="text/javascript" src="__MOBILE_JS__/bscroll.min.js"></script>
+		
+		<link rel="stylesheet" href="__MOBILE_CSS__/layer.css" />
+		<link rel="stylesheet" href="__MOBILE_CSS__/style.css" />
+	
+		<link rel="stylesheet" type="text/css" href="__MOBILE_CSS__/move_top.css"/>
+		
+		 <link rel="stylesheet" type="text/css" href="__MOBILE_CSS__/city.css"/>
+		 <link rel="stylesheet" type="text/css" href="__MOBILE_CSS__/reset.css"/>
+		<title></title>
+	</head>
+	<style>
+		body{ margin: 0px auto; font-family: "微软雅黑"; background: #f6f6f6;}
+	  .content,.content2{ background: #fff; padding:1rem 1rem; margin-bottom: 1rem;}
+	  .content .content_title{ margin: 0 0px; padding: 0px 0px ; line-height:4rem; height: 4rem; color:#c4c4c4;  text-align: center; font-size: 1.2rem;;}	
+	  .content ul{ margin: 0px auto; background: #fff; padding: 0rem 0rem;}
+	  .content ul li{ padding: 1.5rem 1rem 1.5rem 1rem; position: relative; list-style-type: none; display: flex; display: -webkit-flex; flex-flow:row nowrap; align-items: center; ;}
+	  .content ul li span{flex:none; font-size: 1.2rem; color: #1f1f1f}
+	  	  .content ul li a{flex:none; width:1.8rem}
+	  .content ul li img{width:100%}
+	  .content ul li input{flex:auto;  border: 1px solid #ddd;; margin: 0px auto; margin:0px 10px; height: 3.5rem; line-height: 3.5rem; font-size: 1.2rem;}
+	  
+	  .content ul li .close{ position: absolute;; right: 4.5rem; width:1.5rem; }
+	  
+	   .dq{ background: #f4f3f8; border-radius:5px; margin: 0rem 3rem; padding: 0.7rem; text-align: center;; font-size: 1.2rem; color:#1f1f1f ;}
+	   
+	   
+	    /*
+	     * +
+	     */
+	  .content_list{ border-bottom: 1px solid #e3e3e3;clear: both; overflow: hidden; padding-bottom: 1rem; }
+	  .content_list a{ display: flex; display: -webkit-flex;; flex-flow:row nowrap; align-items: center; padding: 1rem 0rem;;}
+	  .content_list a span{ flex:auto; font-size: 1.2rem; color: #1f1f1f;}
+	  .content_list a img:first-child{ width:1.7rem; margin-right: 10px;;}
+	  .content_list a img:last-child{ flex:none; width:0.7rem;}
+	  .content_list  ul{ margin: 0px; padding: 0px 0px; }
+	  .content_list ul li{ list-style-type: none; float: left; margin-right: 10px;  color: gray; font-size: 1.2rem;}
+	  .content_list:last-child{ border-bottom: none; padding-bottom: 0rem;;}
+	  .tj_log{ background: #fe737a; clear: both; margin-top: 2rem; }
+	  /*
+	   * city
+	   */
+	  .city{ background: #fff; height: 100%; overflow-y: scroll; -webkit-overflow-scrolling: touch;}
+	  .city .city-wrapper{width: 100%;max-width: 1000px;}
+	  .city .city-wrapper .cities .title{ font-size: 1.0rem; padding: 0.5rem 0rem; clear: both; height: auto; padding-left: 1rem;}
+	   .city .city-wrapper{ position: static; top:10rem; z-index: -1; }
+	   .city .city-wrapper .cities .item{ float: left; padding: 0.5rem 1rem ; border-radius:2px; border: 1px solid #ddd; font-size: 1rem; margin: 7px 7px;}
+	   .city .city-wrapper .cities .item span{ font-size: 1.0rem; height: auto; line-height: none;}
+	   .cities-hook{ margin: 0px; padding: 0px 0px; overflow: hidden; background: #fff; padding-bottom: 1rem; }
+	   
+	   .shortcut-hook{ top:10rem;right:50px;}
+	   .city .city-wrapper .shortcut .item{ height: auto;}
+	   .city .city-wrapper .shortcut{ right: 0.5rem;}
+	   
+	  .shortcut-hook ul li a{ color: #ff7700;}
+	  .addressactive{ background: url(__MOBILE_IMG__/bj.jpg); color: #fff;}
+	  /*
+	   * type
+	   */
+	  .type{ height: 100%;overflow-y: scroll; -webkit-overflow-scrolling: touch;;}
+	   .content_type{ background: #fff; padding: 0rem 1rem; margin-bottom: 5rem;}
+	  .content_type .title{ padding: 1rem 0px; color: #1f1f1f; font-size: 1.2rem;}
+	  
+	  .content_type ul { margin: 0px auto; padding: 0px 0px;}
+	  .content_type ul li{ list-style-type: none; display: flex; display: -webkit-flex;
+	  flex-flow:row nowrap; align-items: center; padding: 1.5rem 0rem;
+	  border-bottom: 1px solid #d3d3d3;
+	  }
+	  .content_type ul li:last-child{ border-bottom: none;}
+	  .content_type ul li:first-child{ padding-top: 0rem;}
+	  .content_type ul li a{ flex:none; border-radius:3px; border: 1px solid #d3d3d3; width:8rem; text-align: center;; margin-right: 1rem; padding: 0.5rem 0rem; background:#f5f4fa ; color: #1f1f1f; font-size: 1.2rem;}
+	  .content_type ul li p{flex:auto ; line-height: 2rem; font-size: 1rem; color: #1f1f1f;}
+	  .content_type ul li .typeactive{ background: url(__MOBILE_IMG__/bj.jpg); color: #fff; }
+	   
+	</style>
+	<body>
+		<div class="top">
+			<img src="__MOBILE_IMG__/back.png">
+			<span>招标订阅</span>
+		</div>
+		<div class="toptwo">
+			<span>添加关键词</span>
+			<a href=""><!--<img src="__MOBILE_IMG__/sz.png">--><label style="color: #0c89db;">完成</label></a>
+		</div>
+		<!--名称-->
+		<div class="content">
+			<ul>
+				<li>
+					<span></span>
+					<input type="text" value="" >
+					<a href=""><img src="__MOBILE_IMG__/select.png"></a>
+					<img src="__MOBILE_IMG__/close.png" class="close">
+				</li>
+			</ul>
+		</div>
+		<!--属性入口-->
+		<div class="content2">
+			<div class="content_list">
+				<a href="#" class="search_one" data-succ="addressShow" data-showClass="silde_right_two"  data-hideClass="closeaddress" data-speed="300"><img src="__MOBILE_IMG__/dz.png"><span>订阅地区</span><img src="__MOBILE_IMG__/next.png"></a>
+				<ul>
+					<li>全部</li><li>全部</li><li>全部</li><li>全部</li><li>全部</li><li>全部</li><li>全部</li>
+				</ul>
+			</div>
+			
+			<div class="content_list">
+				<a href="#" class="search_one"  data-showClass="silde_right_three"  data-hideClass="closetype" data-speed="300"><img src="__MOBILE_IMG__/type.png"><span>订阅类型</span><img src="__MOBILE_IMG__/next.png"></a>
+				<ul>
+					<li>全部</li>
+				</ul>
+			</div>
+		</div>
+		<!--地区-->
+		
+		<div class="city silde_right silde_right_two">
+		  <div class="city-wrapper city-wrapper-hook">
+		  	    <div class="top">
+					<img src="__MOBILE_IMG__/back.png" class="closeaddress">
+					<span>订阅地区</span>
+				</div>
+				<div class="toptwo">
+				<span>订阅地区</span>
+				<a href=""><label style="color: #0c89db;">完成</label></a>
+			</div>
+			    <div class="scroller-hook">
+			      <div class="cities cities-hook"></div>
+			    </div>
+			    <div class="shortcut shortcut-hook" style="display: none;"></div>
+		  </div>
+		</div> 
+	    <!--类型 -->
+	    <div class="type silde_right silde_right_three">
+	    	<div class="top">
+			  <img src="__MOBILE_IMG__/back.png" class="closetype">
+			   <span>招标订阅</span>
+		    </div>
+			<div class="toptwo">
+				<span>订阅类型</span>
+				<a href=""><!--<img src="__MOBILE_IMG__/sz.png">--><label style="color: #0c89db;">完成</label></a>
+			</div>
+			<div class="content_type">
+				<p class="title">信息类型</p>
+				<ul>
+					<li>
+						<a class="active">全部</a>
+						<p></p>
+					</li>
+					<li>
+						<a>拟建项目</a>
+						<p>采集建筑工程、信息化等类项目在招标前由发改委等部门审批的信息，并向用户提供“拟建项目预告”功能。</p>
+					</li>
+					<li>
+						<a>招标预告</a>
+						<p>在正式招标之前发布的公告信息，主要有采购计划、项目预告、彩购预告、招标文件预公示、招标方式公示等信息。</p>
+					</li>
+					<li>
+						<a>招标公告</a>
+						<p>包括公开招标、邀请招标、询价采购、竞争性谈判、单一来源、公开竞价、电子反拍、变更公告等公告信息。</p>
+					</li>
+					<li>
+						<a>招标结果</a>
+						<p>包括中标公示、成交公告、废标公告、流标公告等。</p>
+					</li>
+					<li>
+						<a>其信信息</a>
+						<p>包括合同公告、验收公告、违规处理等。</p>
+					</li>
+				</ul>
+			</div>
+	    </div>
+	    <!------->
+	</body>
+</html>
+<script>
+	$(function(){
+		$(".content .close").click(function(){
+			$("input").val("").focus()
+		})
+	})
+</script>
+
+
+<script>
+var cityWrapper = document.querySelector('.city-wrapper-hook');
+var cityScroller = document.querySelector('.scroller-hook');
+var cities = document.querySelector('.cities-hook');
+var shortcut = document.querySelector('.shortcut-hook');
+
+
+var scroll;
+
+var shortcutList = [];
+var anchorMap = {};
+
+function initCities() {
+  var y = 0;
+  var titleHeight = 28;
+  var itemHeight = 44;
+
+  var lists = '';
+  var en = '<ul>';
+  cityData.forEach(function (group) {
+    var name = group.name;
+    lists += '<div class="title" ><a id="aa'+name+'">'+name+'</a></div>'; 
+    lists += '<ul>';
+    group.cities.forEach(function(g) {
+      lists += '<li class="item ly" data-name="'+ g.name +'" data-id="'+ g.cityid +'"><span class="border-1px name">'+ g.name +'</span></li>';
+    });
+    lists += '</ul>';
+
+
+   var name = group.name.substr(0, 1);
+   if(name!="全")
+   {
+     en += '<li data-anchor="'+name+'" class="item"><a  id="'+name+'" onclick="tiaozhuan(event)">'+name+'</li>';
+   }
+    var len = group.cities.length;
+    anchorMap[name] = y;
+    y -= titleHeight + len * itemHeight;
+
+  });
+  en += '</ul>';
+
+ cities.innerHTML = lists;
+
+  shortcut.innerHTML = en;
+  
+}
+
+function tiaozhuan(e){
+	var str=(e.target.id)
+	if(!str){return;}
+	
+var y=($("#aa"+str)[0].offsetTop)
+
+var city=document.querySelector('.city');
+
+city.scrollTo(0,y)
+}
+
+
+initCities()
+$(function(){
+	$(".ly").on("click",function(){
+		if($(this).hasClass("addressactive"))
+		{
+			$(this).removeClass("addressactive")
+		}
+		else{
+			$(this).addClass("addressactive")
+		}
+	})
+})
+function addressShow(){$(".shortcut-hook").show();return true;}
+</script>
+<script type="text/javascript">
+$(function(){
+
+	$(".content_type ul li a").click(function(){
+		if($(this).hasClass("typeactive"))
+		{
+			$(this).removeClass("typeactive")
+		}
+		else
+		{
+			$(this).addClass("typeactive")
+		}
+	})
+})
+</script>
+

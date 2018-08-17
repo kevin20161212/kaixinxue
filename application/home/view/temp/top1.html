@@ -1,0 +1,23 @@
+ <div class="nav">
+ 	<if condition="($Request.session.username eq null)">
+ 	<a href="#" class="zehjinq" id="zehjinq">您好，欢迎来到投标助手[登录]</a>
+ 	<else/>
+ 	<a href="{:url('home/index/logout')}" class=" " id="zehjinq">您好，{$Request.session.username} 欢迎来到投标助手[退出]</a>
+ 	</if>
+ 	<div>
+ 		<if condition="($Request.session.username neq null)">
+ 		<a href="{:url('home/user/myinfo')}">我的会员中心</a>
+ 		<else/>
+ 		<a href="#" class="zehjinq">我的会员中心</a>
+ 		</if>
+ 		<span>|</span>
+ 		<a href="#">资费标准</a>
+ 	</div>
+ </div>
+ <script type="text/javascript">
+ 	jQuery(document).ready(function($) {
+    	$(".zehjinq").click(function(){
+    	$(".moni,#waou").css("display","block")
+    })
+  });
+ </script>

@@ -1,0 +1,264 @@
+<!-- <!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{$title}</title>
+<link rel="stylesheet" href="__MOBILE_DIST__/idangerous.swiper.css">
+<link  rel="stylesheet" href="__MOBILE_CSS__/css.css">
+<link rel="stylesheet" href="http://g.alicdn.com/de/prismplayer/2.6.0/skins/default/aliplayer-min.css" />
+     <script charset="utf-8" type="text/javascript" src="http://g.alicdn.com/de/prismplayer/2.6.0/aliplayer-min.js"></script>
+     <script type="text/javascript" src="__MOBILE_JS__/flexible.js"></script>
+     <link rel="stylesheet" type="text/css" href="__MOBILE_CSS__/font-awesome.css"/>
+    <style>
+       .jiazaigenduo{background-color:#EEEEEE;width:100%;text-align: center;position:fixed;left:0;bottom:0;}
+       .akdiawgaise{color:#222;}
+       .dawissk{margin-bottom:75px;}
+    </style>
+</head> -->
+<extend name="temp/base" />
+  <block name='style'>
+  <style>
+       .jiazaigenduo{background-color:#EEEEEE;width:100%;text-align: center;position:fixed;left:0;bottom:0;}
+       .akdiawgaise{color:#222;display:block;}
+    .kliehia{margin-bottom:75px;}
+       .suibiangai{width:100%;background-color:#FFF;height:auto;position:fixed;left:0;padding:2%;border-bottom:1px solid #B7041A;color:#FFF;}
+       .henkuai{position:relative;height:100%;}
+       .dakwixj{position:absolute;top:107%;right:5%;}
+       .shujuzi{padding:2% 0;border-bottom:1px solid #fff;}
+       .suibiangai{background-color:#EEE;}
+       .moren{margin-top:2%;}
+      .dawissk{margin:2%;}
+.shujuzi{color:#222;}
+.henkuai{display:flex;}
+.henkuai>div{width:25%;text-align: center;}
+.shujuzi{ display: flex;
+  justify-content: center;
+  align-items: center;}
+  #modelView{background-color:#DDDDDD;z-index:0;opacity:0.7;height: 100%;width: 100%;position: relative;}
+.playvideo{padding-top: auto;z-index: 9999;position: relative;}
+.zy_media{z-index: 999999999}
+.qianjian{width:20px;height:20px;}
+.cuoles>a{padding:0;}
+.cuoles img{height:140px;}
+.cuoles{padding:0 3%;}
+.bdaiwu{width:70%;overflow:hidden;white-space: nowrap;text-overflow: ellipsis;}
+.wangxia{margin-top:5px;}
+/*.kliehia>a{border:1px solid #9c9c9c;display:block;padding:2%;margin:1% 0;}*/
+.wrapper01 .scroller li a{line-height:1rem;}
+.wrapper01{height:1rem;border-bottom:1px solid #eee;}
+.askdwi{background:#FFF;}
+.xinake{padding-bottom:0;height:280px;}
+.xiangmu{padding:15px 3%;}
+.cuoles{padding:2% 3%;}
+.wangxia{padding-left:5%;}
+.zheisi{border-bottom:1px solid #EEE;}
+.akdiawgaise{margin:2% 0;border:1px solid #eee;}
+.kliehia{padding:3% 4%;}
+  </style>
+  </block>
+<block name='body'>
+<body>
+<div>
+<div class="henkuai">
+  <volist name='cate' id='item' empty="暂时没有数据">
+    <div href="#" class="shujuzi" target="_parent" idda="{$item.id}" style="display:flex;">
+      <span>{$item.title}</span>
+    </div>
+    </volist>
+   <!--  <div style="width:28px;height:120px;background:url(__MOBILE_IMG__/shuqian.png) no-repeat; color:#FFF;padding-top:5px;text-align: center;font-size:15px;" dataolop="1" class="dakwixj">
+    新闻分类
+    </div> -->
+   
+</div>
+</div>
+<div>
+  
+<div  class="kliehia"></div>
+
+</div>
+
+<!-- <div class="sliderbar-container" style="width:100%;height:100%;">
+  <div class="title" ><img src="__MOBILE_IMG__/new.png"> 新闻分类</div>
+  <div class="body">
+    <volist name='cate' id='item' empty="暂时没有数据">
+    <a href="#" class="shujuzi" idda="{$item.id}">
+      <span>{$item.title}</span>
+
+    </a>
+    </volist>
+  </div>
+  
+</div> -->
+
+<img src="__MOBILE_IMG__/fanhuid.png" class="guding" id="myBtn" style="display:none;" onclick="topFunction()">
+<div class="jiazaigenduo" style="color:#222;padding:2% 0;">加载更多</div>
+<script src="__MOBILE_JS__/jquery-1.11.3.min.js"></script>
+<script src="__MOBILE_JS__/jquery.sliderBar.js"></script>
+<script type="text/javascript">
+$(".shujuzi>span:eq(0)").css("color","red")
+$(".shujuzi>span").click(function(){
+ $(".shujuzi>span").css("color","#222222")
+  $(this).css("color","red")
+})
+$(".shujuzi:last").css("border-bottom","0")
+var jia=$('.suibiangai').height()+10
+
+$(".suibiangai").css("top","-"+jia+"px")
+$(".dakwixj").click(function(){
+  if($(this).attr("dataolop")=="1"){
+        $(".suibiangai").animate({
+    top:'0px',
+  });
+        $(this).attr("dataolop","2")
+      }else{
+    var jian=$('.suibiangai').height()+18
+  $(".suibiangai").animate({
+    top:"-"+jian+'px',
+  });
+   $(this).attr("dataolop","1")
+      }
+     // $(".suibiangai").animate({top,"0px"})
+  
+// $(".suibiangai").css("top","0")
+})
+ wao=1
+ cate=0
+ $.ajax({
+    url: "{:url('news')}",
+    type: 'post',
+    dataType: 'JSON',
+    data: {
+      page:wao,
+      cate:cate,
+
+    },
+    error: function(ee) {
+       console.log(ee)
+      return false;
+    },
+    success: function(data) {
+    if(data.data.lengt<0){
+      var zanwu="<div>暂无数据</div>"
+       $(".kliehia").append(zanwu)
+    }
+    for(var i=0;i<data.data.length;i++){
+ var haixing='<a href="{:url("news_detail")}?id='+data.data[i].id+'" class="akdiawgaise"><div class="dawissk"><img src="'+data.data[i].thumb+'" style="width:100%;"><div class="moren">'+data.data[i].title+'</div></div></a>'
+ $(".kliehia").append(haixing)
+    }
+
+      
+    }
+  })
+$(function(){
+  $('.sliderbar-container').sliderBar({
+    open : false,           // 默认是否打开，true打开，false关闭
+        top : 0,             // 距离顶部多高
+        width : 150,           // body内容宽度
+        height : 800,          // body内容高度
+        theme : 'green',       // 主题颜色
+        position : 'left'      // 显示位置，有left和right两种
+  });
+});
+setTimeout(function(){
+  $('.sliderbar-container').css("height","100%")
+  $('.sliderbar-container').css("background","#FFF")
+    $('.sliderbar-container').css("border","1px solid #B7041A")
+  $('.title').css("top","78px")
+}, 1000)
+setTimeout(function(){
+$('.title').css("background","#B7041A")
+  $('.title').css("top","78px")
+}, 1)
+window.onscroll = function() {scrollFunction()};
+ 
+function scrollFunction() {console.log(121);
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("myBtn").style.display = "block";
+    } else {
+        document.getElementById("myBtn").style.display = "none";
+    }
+}
+ 
+// 点击按钮，返回顶部
+function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
+$(".jiazaigenduo").click(function(){
+
+$(".jiazaigenduo").text("正在加载.......")
+
+  wao=wao+1
+ setTimeout(function(){
+$.ajax({
+    url: "{:url('news')}",
+    type: 'post',
+    dataType: 'JSON',
+    data: {
+      page:wao,
+      cate:cate,
+    },
+    error: function(ee){
+       console.log(ee)
+      return false;
+    },
+    success: function(data) {
+    console.log(data)
+      if(data.data==""){
+     $(".jiazaigenduo").text("暂无数据")
+    }else{
+      $(".jiazaigenduo").text("加载更多")
+    }
+    for(var i=0;i<data.data.length;i++){
+ var haixing='<a href="{:url("news_detail")}?id='+data.data[i].id+'" class="akdiawgaise"><div class="dawissk"><img src="'+data.data[i].thumb+'" style="width:100%;"><div  class="moren">'+data.data[i].title+'</div></div></a>'
+ $(".kliehia").append(haixing)
+    } 
+    }
+  })
+
+
+ },1000)
+
+})
+$(".shujuzi").click(function(){
+  // $(this)
+  wao=1
+  cate=$(this).attr("idda")
+  $.ajax({
+    url: "{:url('news')}",
+    type: 'post',
+    dataType: 'JSON',
+    data: {
+      page:wao,
+      cate:cate,
+    },
+    error: function(ee){
+       console.log(ee)
+      return false;
+    },
+    success: function(data) {
+       $(".kliehia").html("")
+var jian=$('.suibiangai').height()+18
+  $(".suibiangai").animate({
+    top:"-"+jian+'px',
+  });
+   $(this).attr("dataolop","1")
+   if(data.data.length<=0){
+ $(".kliehia").html("")
+  $(".jiazaigenduo").text("暂无数据")
+   }else{
+
+      for(var i=0;i<data.data.length;i++){
+ var haixing='<a href="{:url("news_detail")}?id='+data.data[i].id+'" class="akdiawgaise"><div class="dawissk"><img src="'+data.data[i].thumb+'" style="width:100%;"><div  class="moren">'+data.data[i].title+'</div></div></a>'
+ $(".kliehia").append(haixing)
+    } 
+   }
+  
+    }
+  })
+  $(".title").trigger("click")
+  $(".jiazaigenduo").text("加载更多")
+})
+</script>
+</body>
+</block>

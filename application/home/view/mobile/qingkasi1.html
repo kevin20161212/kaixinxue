@@ -1,0 +1,273 @@
+<html>
+	<head>
+		<title></title>
+		<meta charset="UTF-8"/>
+		<style>
+			/* CSS Document */
+body {
+	font-size: 12px;
+	color: #666;
+	background-color: #fff;
+}
+body, ul, h1, h2, h3, h4, h5, h6, form, p, dl, dd {
+	margin: 0;
+	padding: 0;
+}
+.clearfix:after {
+	content: "/200B";
+	display: block;
+	height: 0;
+	clear: both;
+	overflow: hidden;
+}
+.clearfix {
+ *zoom:1;
+}
+a {
+	text-decoration: none;
+	color: #000;
+	cursor: pointer;
+}
+a:hover {
+	text-decoration: none;
+}
+ul {
+	list-style: none;
+}
+.fl {
+	float: left;
+}
+.fr {
+	float: right;
+}
+.clear {
+	clear: both;
+}
+.hide {
+	display: none;
+}
+.alignc {
+	text-align: center;
+}
+* {
+	box-sizing: border-box;
+}
+img {
+	border: 0;
+}
+table {
+	border-collapse: collapse;
+}
+.dawdw{display:flex;align-items: center;font-size:36px;background-color:#009300;color:#FFF;padding:3%;}
+.dianjki{width:100%;display: flex;
+  justify-content: space-between;  align-items: center;background-color:#FFF;}
+.dianjki>div{width:50%; text-align: center;font-size:36px;padding:3%;}
+.zhaobiao{border-bottom:1px solid #009300;color:#009300;}
+.libiao{background-color:#009300;color:#FFF;padding:3%;font-size:36px;}
+.bushuo{display: flex;
+  justify-content: space-between;  align-items: center;font-size:36px;border-bottom:1px solid #EEE;margin-bottom:6%;padding-bottom:3%;}
+  .baise{background-color:#FFF;padding:2%;}
+  .tulaio>div{line-height:1.6;}
+  .mingbao{background-color:#009300;color:#FFF;text-align: center;padding:1%;}
+  .xiangqing{color:#009300;margin-top:2%;}
+  .dawf>a{border-bottom:1px solid #2c2c2c;}
+		</style>
+		  <script type="text/javascript" src="__MOBILE_JS__/jquery-1.11.3.min.js"></script>
+  
+	</head>
+	<body>
+		<!-- <div class="dawdw">
+			<img src="__MOBILE_IMG__/zhousi.png" class="fl">
+			<div style="width:100%;text-align:center;margin-left:-3%;">{$meta_title}</div>
+		</div>
+		<div class="dianjki">
+		  <div class="zhaobiao" dataid="gong">招标公告</div>
+		  <div>中标公告</div>
+		</div>
+		<img src="{:get_cover(C('TENDER_COVER'))}" style="width:100%;">
+			<div class="libiao">招标公告列表</div>
+		<div class="baise" id="yi" >
+	
+			<a href="#" class="bushuo">
+				<div style="width:70%;" class="tulaio">
+					<h3>历山双语学校男生公寓楼楼梯加固项目竞争性磋商公告</h3>
+					<div>招标负责人：李经理</div>
+					<div>联系电话：0531-55699641</div>
+					<div>截止日期：2018年7月21日</div>
+				</div>
+				<div style="width:30%;">
+					<div class="mingbao" >报名中</div>
+					<div class="xiangqing">>>详情</div>
+				</div>
+			</a>
+			<a href="#" class="bushuo">
+				<div style="width:70%;" class="tulaio">
+					<h3>历下文体档案中心项目初步设计概算招标竞争性磋商公告</h3>
+					<div>招标负责人：王经理</div>
+					<div>联系电话：0531-81917631</div>
+					<div>截止日期：2018年7月20日</div>
+				</div>
+				<div style="width:30%;">
+					<div class="mingbao" style="background:#F71205;">已截止</div>
+					<div class="xiangqing">>>详情</div>
+				</div>
+			</a> -->
+		<!-- 	<a href="#" class="bushuo">
+				<div style="width:70%;" class="tulaio">
+					<h3>济南中央商务区展厅中心设计竞争性磋商公告</h3>
+					<div>招标负责人：李经理</div>
+					<div>联系电话：15863137087</div>
+					<div>截止日期：2018年7月16日</div>
+				</div>
+				<div style="width:30%;">
+					<div class="mingbao" style="background:#F71205;">已截止</div>
+					<div class="xiangqing">>>详情</div>
+				</div>
+			</a>
+			<a href="#" class="bushuo">
+				<div style="width:70%;" class="tulaio">
+					<h3>济南历下控股集团劳务派遣服务项目竞争性磋商公告</h3>
+					<div>招标负责人：陈经理</div>
+					<div>联系电话：0531-55699655</div>
+					<div>截止日期：2018年7月16日</div>
+				</div>
+				<div style="width:30%;">
+					<div class="mingbao" style="background:#F71205;">已截止</div>
+					<div class="xiangqing">>>详情</div>
+				</div>
+			</a> -->
+			
+		<!-- </div>
+		<div class="baise dawf" style="display:none;">
+			<a href="#" class="bushuo">
+				<div style="width:100%;" class="tulaio">
+					<h3>集团及二级公司档案信息数字化扫描采购项目成交公示</h3>
+					<div>中标单位：山东汇中信息咨询有限公司 </div>
+					<div>发布日期：2018年7月17日</div>	
+				</div>
+			</a>
+			<a href="#" class="bushuo">
+				<div style="width:100%;" class="tulaio">
+					<h3>历山双语学校餐厅装修改造工程中标公示</h3>
+					<div>中标单位：济南林海装饰工程有限公司 </div>
+					<div>发布日期：2018年7月16日</div>	
+				</div>
+			</a>
+			<a href="#" class="bushuo">
+				<div style="width:100%;" class="tulaio">
+					<h3>历山双语学校艺术楼改造加固项目成交公示</h3>
+					<div>中标单位：山东建勘集团有限公司</div>
+					<div>发布日期：2018年7月16日</div>	
+				</div>
+			</a>
+			<a href="#" class="bushuo">
+				<div style="width:100%;" class="tulaio">
+					<h3>历山双语学校智能化系统采购及安装成交公示</h3>
+					<div>中标单位：山东鲁光信息工程有限公司</div>
+					<div>发布日期：2018年7月16日</div>	
+				</div>
+			</a>
+			<a href="#" class="bushuo">
+				<div style="width:100%;" class="tulaio">
+					<h3>历山双语学校男生公寓楼楼梯加固项目竞争性磋商公告</h3>
+					<div>中标单位：深圳市再荣利达机电设备有限公司</div>
+					<div>发布日期：2018年7月18日</div>	
+				</div>
+			</a>		
+		</div> -->
+		<div style="padding:3%;">
+		     <h2 style="width:100%;text-align: center;">历山双语学校男生公寓楼楼梯加固项目竞争性磋商公告</h2>
+  <div class="message" style="width:100%;text-align:center;border-bottom:1px solid #2c2c2c;padding:5% 0;">
+   <span class="skim"><em>浏览次数：</em><span id="visitedCount"></span></span>
+      <span class="date"><em>日期：</em>2018年7月17日
+</span>
+	</div>           
+  <div class="summary">
+   </div>
+  <div class="describe htmledit" id="infoContent"><div>
+	1、采购条件</div>
+<div>
+	本采购项目历山双语学校男生公寓楼楼梯加固项目已批准采购，资金来自自筹，项目出资比例为100%，采购人为山东丽山教育投资有限公司。项目已具备采购条件，现对该项目以竞争性磋商方式进行采购。</div>
+<div>
+	2、项目概况与采购内容</div>
+<div>
+	2.1项目概况：历山双语学校位于济南市历下区历山路10号，项目占地面积约4.5公顷。其中，历山双语学校男生公寓楼共计5层，拟对男生公寓楼楼梯进行加固。</div>
+<div>
+	2.2采购内容：包括男生公寓楼楼梯加固深化设计、楼梯基础加固及外墙柱梁施工、新加楼梯施工、现场清理、垃圾外运、结构鉴定（需提供具有资质的第三方出具的结构鉴定报告）及根据设计及相关规范需要提供的其他相关服务，通过相关部门验收。具体内容详见竞争性磋商文件。</div>
+<div>
+	2.3标段划分：本项目共划分为1个标段。</div>
+<div>
+	3、报价人资格要求</div>
+<div>
+	3.1在中国境内注册，具有独立法人资格，持有有效营业执照；</div>
+<div>
+	3.2具有建设行政主管部门颁发的特种专业工程（结构补强）资质及地基基础工程专业承包三级及以上资质，具有有效安全生产许可证；</div>
+<div>
+	3.3拟派项目经理应持有注册贰级及以上建造师证证书（建筑工程专业），具备有效的安全生产考核合格证书（B类）；</div>
+<div>
+	3.4 2015年1月1日至今承揽过类似工程业绩（公建项目结构加固工程），以合同签订时间为准；</div>
+<div>
+	3.5本项目不接受联合体报价。</div>
+<div>
+	4、报名及竞争性磋商文件的获取</div>
+<div>
+	4.1凡有意参加报价者，请于2018年7月17日&mdash;2018年7月21日每日上午8:30时至12：00时，下午13:00时至17：00时（北京时间，下同）前，携带以下资料的原件及加盖公章的复印件各一套（复印件简单装订），到济南市高新区舜华南路汉峪金谷A2-3号楼18层招标二部报名并领取竞争性磋商文件：</div>
+<div>
+	（1）营业执照；</div>
+<div>
+	（2）资质证书（可仅提供带有二维码并加盖公章的复印件）、安全生产许可证；</div>
+<div>
+	（3）企业承揽过的类似业绩合同；</div>
+<div>
+	（4）法人授权委托书及被授权人身份证明。</div>
+<div>
+	本项目实行资格后审，报名合格不代表资格审查通过。</div>
+<div>
+	4.2竞争性磋商文件售价：300元/份，售后不退。</div>
+<div>
+	5、响应文件的递交</div>
+<div>
+	5.1 递交响应文件截止时间（报价截止时间）：详见竞争性磋商文件。</div>
+<div>
+	5.2 响应文件递交地点（开标地点）：详见竞争性磋商文件。</div>
+<div>
+	6.公告发布媒介</div>
+<div>
+	本公告在中国招标投标公共服务平台（www.cebpubservice.com）、历下控股集团官网（www.lixiahg.cn）及海逸恒安项目管理有限公司（www.sdhyha.com）网站同时发布。</div>
+<div>
+	7、联系方式</div>
+<div>
+	采购人：山东丽山教育投资有限公司</div>
+<div>
+	地 &nbsp;址：济南市经十东路9999号黄金时代B座</div>
+<div>
+	联系人：李经理 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</div>
+<div>
+	电 &nbsp;话：0531-55699641</div>
+<div>
+	采购代理机构：海逸恒安项目管理有限公司</div>
+<div>
+	地 &nbsp;址：济南市高新区舜华南路汉峪金谷A2-3号楼18层</div>
+<div>
+	联系人：张洋洋、刘英姿 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</div>
+<div>
+	电 &nbsp;话：0531-82667938、82661567</div>
+<div>
+	电子邮箱：hyha2007@126.com</div></div>  
+  <p>
+		</p>
+			</div>
+	</body>
+	<script>
+           $(".dianjki>div").click(function(){
+           	if($(this).attr("dataid")=="gong"){
+                  $(".libiao").text("招标公告列表")
+           	}else{
+ $(".libiao").text("中标公告列表")
+           	}
+           	$(this).addClass("zhaobiao").siblings().removeClass("zhaobiao")
+           	var index=$(this).index()
+            $(".baise:eq("+index+")").css("display","block").siblings(".baise").css("display","none")
+           })
+	</script>
+</html>

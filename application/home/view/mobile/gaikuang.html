@@ -1,0 +1,58 @@
+<!-- <!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{$title}</title>
+  <link rel="stylesheet" href="__MOBILE_DIST__/idangerous.swiper.css">
+<link  rel="stylesheet" href="__MOBILE_CSS__/css.css">
+<link rel="stylesheet" href="http://g.alicdn.com/de/prismplayer/2.6.0/skins/default/aliplayer-min.css" />
+     <script charset="utf-8" type="text/javascript" src="http://g.alicdn.com/de/prismplayer/2.6.0/aliplayer-min.js"></script>
+     <script type="text/javascript" src="__MOBILE_JS__/flexible.js"></script>
+    </head>
+</head> -->
+<extend name="temp/base" />
+  <block name='style'>
+  <style>
+      .jiazaigenduo{background-color:#EEEEEE;width:100%;text-align: center;position:fixed;left:0;bottom:0;}
+      .akdiawgaise{color:#222;}
+      .dwakio img{width:100%;display:block;text-align:center;}
+      .kaikuang{font-size:15px;}
+  </style>
+  </block>
+<block name='body'>
+<body>
+<div>
+  <div class="kaikuang">
+   公司概况：  
+  </div>
+  <div style="padding: 2%;">
+  {$data.2.content}
+  </div>
+</div>
+<div class="jianzhi">
+  <div class="kaikuang">
+   公司定位：  
+  </div>
+  <div class="dwakio">
+  {$data.1.content}
+  </div>
+</div>
+<!-- <div class="jianzhi">
+  <div class="kaikuang">
+   公司定位：  
+  </div>
+  <div class="dwakio">
+  <div>公司坚持以创造价值、服务城市发展为中心，坚持以政府为引导、资本为纽带、市场为导向、重大项目为带动，推动集团公司规模化、集约化、专业化、品牌化发展，服务和带动历下区城市建设升级。旨在打造集招商引资、项目建设、棚改旧改、投资融资为一体的城市运营服务平台，为城市发展建设提供全方位、优质完善的资源配置服务。</div>
+  <img src="__MOBILE_IMG__/huijin.jpg">
+  </div>
+</div> -->
+<div class="jianzhi">
+  <div class="kaikuang">
+   组织架构：  
+  </div>
+  <div class="dwakio">
+   {$data.0.content}
+  </div>
+</div>
+</body>
+</block>

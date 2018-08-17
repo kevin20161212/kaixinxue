@@ -1,0 +1,186 @@
+html{ width: 100%;}
+body {margin:0; padding:0; font:14px/1.5 Helvetica; background:#fff; text-align:center; color: #333;  overflow: hidden;}
+div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,blockquote,p,img{padding:0; margin:0; border:0;}
+ol,ul {list-style:none;}
+li{list-style-type:none;}
+img{vertical-align:top;border:0;}
+h1,h2,h3,h4,h5,h6{font-size:inherit; font-weight:normal;}
+address,cite,code,em,th,i{font-weight:normal; font-style:normal;}
+.clearfix{*zoom:1;}
+.clearfix:after{display:block; overflow:hidden; clear:both; height:0; visibility:hidden; content:".";}
+a:link,a:visited,a:hover,a:active{text-decoration:none;  color: #fff;}
+.Box{overflow:hidden;width:100%;height:100%;text-align:left;}
+.Box{background:url(http://skin.kankanews.com/v5/iloveshanghai/images/cover/new_back.jpg) no-repeat;background-size:100% 100%;}
+
+.bottom{position:fixed;bottom:0;left:0;}
+.bottom img{display:inline-block;vertical-align:middle;}
+a{
+	color: #fff;
+}
+.middle{
+	display: inline-block;
+	opacity: 1;  position: absolute; z-index: 10; color: #ffffff;
+}
+.middle a{
+	display: inline-block;
+}
+.wrapper{
+	display: none;
+}
+/*
+1 沪语童谣 0s*/
+.icon1{
+	top: 85%;
+	left: 10%;
+	-webkit-animation: one 8s linear infinite both;
+	animation:one 8s  linear infinite both;
+	-webkit-backface-visibility:hidden;backface-visibility:hidden;
+	-webkit-transform-style: preserve-3d;transform-style: preserve-3d;
+}
+/*3 日出上海 3s*/
+.icon2{
+	top: 80%;
+	right: 10%;
+	-webkit-animation: two 8s 3s linear infinite both;
+	animation:two  8s 3s linear infinite both;
+	-webkit-backface-visibility:hidden;backface-visibility:hidden;
+	-webkit-transform-style: preserve-3d;transform-style: preserve-3d;
+}
+/*实时看上海 9s*/
+.icon3{
+	top: 20%;
+	left: 10px;
+	-webkit-animation: three 12s 9s linear infinite both;
+	animation:three  12s 9s linear infinite both;
+	-webkit-backface-visibility:hidden;backface-visibility:hidden;
+	-webkit-transform-style: preserve-3d;transform-style: preserve-3d;
+}
+/*4 Buzz words 5s*/
+.icon4{
+	top: 15%;
+	left: 10px;
+	-webkit-animation: four 12s 5s linear infinite both;
+	animation:four  12s 5s linear infinite both;
+	-webkit-backface-visibility:hidden;backface-visibility:hidden;
+	-webkit-transform-style: preserve-3d;transform-style: preserve-3d;
+}
+/*What’s on 7s*/
+.icon5{
+	top: 65%;
+	left: 10%;
+	-webkit-animation: five 10s  6s  linear infinite both;
+	animation:five  10s 6s  linear infinite both;
+	-webkit-backface-visibility:hidden;backface-visibility:hidden;
+	-webkit-transform-style: preserve-3d;transform-style: preserve-3d;
+}
+/*Talk Shanghai 8s*/
+.icon6{
+	top: 25%;
+	right: 5%;
+	-webkit-animation: six 10s linear infinite both;
+	animation:six  10s  linear infinite both;
+	-webkit-backface-visibility:hidden;backface-visibility:hidden;
+	-webkit-transform-style: preserve-3d;transform-style: preserve-3d;
+}
+/*THealth Promotion 6s*/
+.icon7{
+	top: 5%;
+	left: 0;
+	-webkit-animation: seven 10s linear infinite both;
+	animation:seven  10s  linear infinite both;
+	-webkit-backface-visibility:hidden;backface-visibility:hidden;
+	-webkit-transform-style: preserve-3d;transform-style: preserve-3d;
+}
+.middle .en{
+	font-size: 1.9em;
+	font-weight: bolder;
+	text-shadow: 0 0 10px #000;
+}
+.middle .ch{
+	font-weight: bolder;
+	font-size: 1.5em;
+	margin-top: -10px;
+}
+.shadow {
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	display: none;
+}
+.shadow a{
+	display: block;
+}
+.btn{
+	position: fixed;
+	top: 3%;
+	right: 0px;
+	width: 100%;
+	text-align: right;
+	opacity: 1;
+}
+.click .btn{
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	-webkit-animation: alp 1.5s infinite both;
+	animation: alp 1.5s infinite both;
+}
+.shadow div{
+	margin-top: 4.5%;
+}
+.shadow .s1{
+	text-align: right;
+	margin-top: 45%;
+}
+.shadow .s2{
+	text-align: right;
+}
+.shadow .s3{
+	text-align: left;
+}
+.shadow .s4{
+	text-align: right; 
+}
+.shadow .s5{
+	text-align: left;
+}
+.shadow .s6{
+	text-align: right;
+}
+.active .wrapper{
+	display: block;
+}
+.active .shadow{
+	display: none;
+}
+@media (min-width: 640px){
+	.middle .en{
+		font-size: 1.9em;
+		font-weight: bolder;
+		text-shadow: 0 0 10px #000;
+	}
+	.middle .ch{
+		font-weight: bolder;
+		font-size: 1.5em;
+		margin-top: -10px;
+	}
+
+}
+@media (max-height:500px){
+	.middle .en{  
+		font-weight: bolder;
+		font-size: 1.5em;
+		text-shadow: 0 0 10px #000;
+	}
+	.middle .ch{  
+		font-weight: bolder;
+		font-size: 1em;
+		margin-top: -10px;
+	}
+	.shadow .s1{
+		text-align: right;
+		margin-top: 35%;
+	}
+	.shadow div{
+		margin-top: 4%;
+	}
+}

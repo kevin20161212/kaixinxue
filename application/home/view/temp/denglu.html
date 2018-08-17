@@ -1,0 +1,37 @@
+<div class="zhucetoubiap  tongyong" id="waou" style="display:none;"><div class="duosjhaodw"><b>欢迎登录投标助手</b></div><form class="layui-form cuohezhe tj" action="{:url('home/index/login')}" method="post" name="denglu">
+  	<div class="laoshibuxing">
+  	<div class="layui-form-item genzhe hiaideai"><label class="layui-form-label go"><img src="__HOME_IMG__/yonghu.png"></label><div class="layui-input-block zhenhuai"><input type="text" placeholder="请输入您的手机账号" name="mobile" autocomplete="off" placeholder="" class="layui-input shawanyi"></div></div>
+  	</div>
+  	<div class="laoshibuxing">
+  	<div class="layui-form-item genzhe hiaideai"><label class="layui-form-label go"><img src="__HOME_IMG__/suo.png"></label><div class="layui-input-block zhenhuai"><input type="password" name="password"  placeholder="请输入您的密码"lay-verify="pass" autocomplete="off" placeholder="" class="layui-input shawanyi"></div></div>
+  	</div>
+  	<div class="layui-form-item qvlebian"><div class="layui-input-block buxiangting"><a class="layui-btn saha denglubian ajax-post confirm" lay-submit=""   target-form="tj" data-succ="formsuccp" >立即登录{$controller}</a></div></div>
+  	<div class="layui-inline baifenbaia"></div><div class="shaazheshi" ><a href="{:url('home/User/modify')}">忘记密码？</a><a href="#" class="zhuce">注册新用户</a></div>
+  <div class="wangxia" style="position:relative;">
+  	  <div class="xuanzedisanfang">
+  	      <div style="border-bottom:2px solid #eee;width:100%;"></div>
+  	  	<div style="position:absolute;left:30%;top:-14%;width:40%;background:#FFF;text-align: center;">选择第三方账号登录</div>
+  
+  	  </div>
+  	  <a class="duidui"><img src="__HOME_IMG__/weixin.png"></a>
+  </div>
+  </div></form></div>
+  <script type="text/javascript">
+    jQuery(document).ready(function($) {
+      $('.zhuce').click(function(event) {
+          $(".moni,#waou").css("display","none");
+          $(".moni,#dawad").css("display","block");
+      });
+    });
+    function formsuccp(c){
+console.log(c)
+if(c.code==1){
+		layer.msg(c.msg)
+		setTimeout(function(){window.location.href="{:url('home/index/index')}"},1000);
+
+}else{
+	layer.alert(c.msg)
+}
+
+    }
+  </script>

@@ -1,0 +1,211 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link href="https://v3.bootcss.com/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <title>地图</title>
+</head>
+<body>
+<style>
+body{overflow:hidden; }
+.shayisi{font-size:30px;}
+.fowakis>div{margin:2% 0;}
+.fowakis input{height:70px;border:1px solid #eee;width:77%;}
+.fowakis label{width:18%;text-align: left;}
+.konggujituan,.shawanyiss{font-size:40px;}
+.shawanyiss{display:flex;}
+.xiaodexiang{padding:3%;}
+.zhidias{width:18%;}
+a:hover{text-decoration:none;}
+#button{background-color:#eee;width:95%;text-align:center;display: block;color:#000;height:70px;line-height:70px;}
+</style>
+     <div id="pos-area" style="display:none;" >
+        <p id="demo">点击下面的按钮，获得对应信息：<br /></p>
+    </div>
+<p  style="display:none;">通过腾讯地图规划驾车路线，并展示运动轨迹</p>
+
+<input type="text" style="width: 63%;display:none;" 
+ value="http://apis.map.qq.com/ws/direction/v1/walking/?from=39.915285,116.403857&to=39.915285,116.803857&key=AIYBZ-CVE3Q-RHZ52-GX5VL-UBVSZ-WJFQF" />
+
+<button class="btn btn-xs btn-primary hidden" style="display:none;">查看路线</button>
+<input type="button" class="btn btn-xs btn-primary hidden" value="开始动画" id="start"/>
+<input type="button" class="btn btn-xs btn-primary hidden" value="暂停动画" id="pause"/>
+<input type="button" class="btn btn-xs btn-primary hidden" value="继续动画" id="resume"/>
+<input type="button" class="btn btn-xs btn-primary hidden" value="停止动画" id="stop"/>
+<div id="container" style="height: 1100px; width: 80%"></div>
+<div class="xiaodexiang">
+ <div class="konggujituan">
+<!--  	<div>{:config('COMPANY_TITLE')}</div> -->
+ 	<div class="shawanyiss">
+ 		<div class="zhidias">电话：</div>
+ 		<div><a href="tel:+0531-55699600{:config('COMPANY_PHONE')}" style="margin-left:-2%;display:block;">{:config('COMPANY_PHONE')}</a></div>
+ 	</div>
+ 	<div class="shawanyiss">
+ 		<div class="zhidias">地址：</div>
+ 		<div>{:config('COMPANY_ADDRESS')}</div>
+ 	</div>
+ </div>
+ </div>
+<div class="shayisi">
+
+<div class="fowakis" style="padding-top:5%;padding-left:3%;">
+    <div><label>姓名：</label><input type="text" placeholder="  请填写您的姓名" id="name"></div>
+    <div><label>手机号：</label><input type="text" id="shoujihao" placeholder="  请填写您的手机号码"pattern="^1[3-9]\d{9}$" required ></div>
+    <div><label>预约日期：</label><input placeholder="  请选择预约日期" type="date" style="background-color:#fff;" id="riqi"></div>
+    <div style="margin-left:-0.05%;margin-top:20px;padding-bottom:5%;width:100%;" class="tijaios"><a id="button" type="submit">提交</a></div>
+ </div>
+</div>
+<script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://webapi.amap.com/maps?v=1.4.6&key=高德地图key"></script>
+<script type="text/javascript" src="https://3gimg.qq.com/lightmap/components/geolocation/geolocation.min.js"></script>
+<script>
+
+
+$("#container").css("width", document.body.clientWidth+"px")
+// $("#container").css("height", $(window).height()+"px")
+         var geolocation = new qq.maps.Geolocation("OB4BZ-D4W3U-B7VVO-4PJWW-6TKDJ-WPB77", "myapp");
+ 
+        document.getElementById("pos-area").style.height = (document.body.clientHeight - 110) + 'px';
+ 
+        var positionNum = 0;
+        var options = {timeout: 8000};
+        function showPosition(position) {
+            positionNum ++;
+            document.getElementById("demo").innerHTML += "序号：" + positionNum;
+            document.getElementById("demo").appendChild(document.createElement('pre')).innerHTML = JSON.stringify(position, null, 4);
+            document.getElementById("pos-area").scrollTop = document.getElementById("pos-area").scrollHeight;
+         
+           var jing=position.lng
+           var wei=position.lat
+
+           ditu(jing,wei)
+        };
+ 
+        function showErr() {
+            positionNum ++;
+            document.getElementById("demo").innerHTML += "序号：" + positionNum;
+            document.getElementById("demo").appendChild(document.createElement('p')).innerHTML = "定位失败！";
+            document.getElementById("pos-area").scrollTop = document.getElementById("pos-area").scrollHeight;
+        };
+ 
+        function showWatchPosition() {
+            document.getElementById("demo").innerHTML += "开始监听位置！<br /><br />";
+            geolocation.watchPosition(showPosition);
+            document.getElementById("pos-area").scrollTop = document.getElementById("pos-area").scrollHeight;
+        };
+ 
+        function showClearWatch() {
+            geolocation.clearWatch();
+            document.getElementById("demo").innerHTML += "停止监听位置！<br /><br />";
+            document.getElementById("pos-area").scrollTop = document.getElementById("pos-area").scrollHeight;
+        };
+        
+geolocation.getLocation(showPosition, showErr, options)
+        var map = new AMap.Map('container', {
+            resizeEnable: true,
+            zoom:5,
+            center: [117.114140, 36.660780]
+        });
+       function ditu(jing,wei){
+      
+            map.clearMap();
+            var urlAll = $('input').val();
+            //获取参数
+            var arr = urlAll.split('?');
+            var url = arr[0];
+            var canshu = arr[1].split('&');
+            var dataParam = {
+                output : 'jsonp'
+            };
+
+            for(var i=0; i<canshu.length; i++) {
+                var can = canshu[i].split('=');
+                if(can[0] == 'from') {
+                    dataParam.from = can[1];
+                }
+                if(can[0] == 'to') {
+                    dataParam.to = can[1];
+                }
+                if(can[0] == 'waypoints') {
+                    dataParam.waypoints = can[1];
+                }
+                if(can[0] == 'key') {
+                    dataParam.key = can[1];
+                }
+            }
+            //始点
+            var kaishi = dataParam.from;
+            var kaishiArr = kaishi.split(',');
+            new AMap.Marker({
+                map: map,
+                position: [jing, wei],
+                icon: "http://lixiakonggu.youfai.cn/application/home/static/img/end.png"
+            });
+            //终点
+            var zhong = dataParam.to;
+            var zhongArr = zhong.split(',');
+            new AMap.Marker({
+                map: map,
+                position: [117.112000, 36.663000],
+                icon: "http://lixiakonggu.youfai.cn/application/home/static/img/zhong.png"
+            });
+            map.setFitView();
+       }
+</script>
+<script src="__MOBILE_JS__/layui-v2.2.6/layui/layui.js"></script>
+<script>
+layui.use('layer', function(){ //独立版的layer无需执行这一句
+  var $ = layui.jquery, layer = layui.layer; //独立版的layer无需执行这一句
+$(".tijaios").click(function(){
+var mingzi=$("#name").val()
+var shoujihao=$("#shoujihao").val()
+var riqi=$("#riqi").val()
+if(mingzi==""){
+ layer.msg("请填写姓名");
+ $("#name").focus()
+ return
+}
+if(shoujihao==""||shoujihao.length<11){
+ layer.msg("请填写正确的手机号");
+ $("#shoujihao").focus()
+ return
+}
+if(riqi==""){
+layer.msg("请填写正日期");
+$("#riqi").focus()
+return
+}
+  $.ajax({
+    url: 'http://lixiakonggu.youfai.cn/index.php/home/mindex/subscribe',
+    type: 'post',
+    dataType: 'JSON',
+    data: {
+      name:mingzi,
+      shouji:shoujihao,
+      riqi:riqi
+    },
+    error: function() {
+      return false;
+    },
+    success: function(data) {
+    console.log(data)
+   layer.msg(data.msg);
+      
+    }
+  })
+})
+
+  
+  
+   
+  
+});
+//text.oninput=function(){
+//text.setCustomValidity("");
+//};
+//text.oninvalid=function(){
+//text.setCustomValidity("请不要输入火星的手机号好吗？");
+//};
+</script>
+</body>
+</html>

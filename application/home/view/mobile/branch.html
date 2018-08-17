@@ -1,0 +1,203 @@
+<!-- <!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{$title}</title>
+  <link rel="stylesheet" href="__MOBILE_DIST__/idangerous.swiper.css">
+<link  rel="stylesheet" href="__MOBILE_CSS__/css.css">
+<link rel="stylesheet" href="http://g.alicdn.com/de/prismplayer/2.6.0/skins/default/aliplayer-min.css" />
+     <script charset="utf-8" type="text/javascript" src="http://g.alicdn.com/de/prismplayer/2.6.0/aliplayer-min.js"></script>
+     <script type="text/javascript" src="__MOBILE_JS__/flexible.js"></script>
+     <link rel="stylesheet" type="text/css" href="__MOBILE_CSS__/font-awesome.css"/>
+    </head>
+</head> -->
+<extend name="temp/base" />
+<block name='body'>
+<body>
+<style>
+.kaikuang{  display: flex;
+  justify-content: space-between;}
+</style>
+  <style>
+       .jiazaigenduo{background-color:#EEEEEE;width:100%;text-align: center;position:fixed;left:0;bottom:0;}
+       .akdiawgaise{color:#222;display:block;}
+    .kliehia{margin-bottom:75px;}
+       .suibiangai{width:100%;background-color:#FFF;height:auto;position:fixed;left:0;padding:2%;border-bottom:1px solid #B7041A;color:#FFF;}
+       .henkuai{position:relative;height:100%;}
+       .dakwixj{position:absolute;top:107%;right:5%;}
+       .shujuzi{padding:2% 0;border-bottom:1px solid #fff;color:#222;}
+       .suibiangai{background-color:#EEE;}
+       .moren{margin-top:2%;}
+      .dawissk{margin:1%;border:1px solid #eee;}
+.dianji{transform:rotate(180deg);}
+.zhucezijin{box-sizing:border-box;width:100%;}
+.zhucezijin img{width:100%!important;text-align: center;display:block;}
+
+  </style>
+
+<div>
+  <div class="kaikuang">
+
+       <div class="xuanze">{$data.title}：</div>
+<!--        <img src="__MOBILE_IMG__/xiala.png" style="width:20px;height:20px;" class="dianjis">	
+       <img src="__MOBILE_IMG__/xiala.png" style="width:20px;height:20px;display:none;" class="dianji">	 -->
+  </div>
+  	<!-- <img src="__MOBILE_IMG__/bb.jpg"> -->
+  <div class="zhucezijin">
+  
+  	 {$data.content}
+  </div>
+</div>
+<div class="suibiangai" style="top:5%;display:none;">
+<!-- <div class="henkuai">
+  <volist name='cate' id='item' empty="暂时没有数据">
+    <div  class="shujuzi" idda="{$item.id}" style="display:block;">
+      <span>{$item.title}</span>
+    </div>
+    </volist>
+   
+   
+</div> -->
+</div>
+
+<!-- <div class="sliderbar-container" style="width:100%;height:100%;">
+	<div class="title" ><img src="__MOBILE_IMG__/new.png"> 下属公司</div>
+	<div class="body">
+		<volist name='cate' id='item'>
+		<a href="{:url('branch',['id'=>$item.id])}">
+			<span>{$item.title}</span>
+		</a>
+		</volist> -->
+		<!-- <a href="#">
+			<span>济南市历下区国有资产运营有限公司</span>
+		
+		</a>
+		<a href="#">
+			<span>济南市历下区城市更新建设发展有限公司</span>
+			
+		</a>
+		<a href="#">
+			<span>济南名府城投资建设有限公司</span>
+		
+		</a>
+		<a href="#">
+			<span>济南科金投资管理有限公司</span>
+		
+		</a>
+		<a href="#">
+			<span>济南丽山教育投资有限公司</span>
+		
+		</a>
+		<a href="#">
+			<span>济南易通城市建设集团有限公司</span>
+		</a>
+		<a href="#">
+			<span>济南历下金控投资管理有限公司</span>
+		</a>
+		<a href="#">
+			<span>济南历下绿城物业管理有限公司</span>
+		</a> -->
+	<!-- </div>
+	
+</div> -->
+<img src="__MOBILE_IMG__/fanhuid.png" class="guding" id="myBtn" style="display:none;" onclick="topFunction()">
+<script src="__MOBILE_JS__/jquery-1.11.3.min.js"></script>
+<script src="__MOBILE_JS__/jquery.sliderBar.js"></script>
+<script type="text/javascript">
+// $(".shujuzi:last").css("border","0")
+// $(".shujuzi").click(function(){
+// 	var id=$(this).attr("idda")
+// 	 $.ajax({
+//     url: "{:url('branch1')}",
+//     type: 'post',
+//     dataType: 'JSON',
+//     data: {
+//       id:id 
+
+//     },
+//     error: function(ee) {
+    	
+//        console.log(ee)
+//       return false;
+//     },
+//     success: function(data) {
+// $(".dianji,.suibiangai").css("display","none")
+
+// 	$(".dianjis").css("display","block")
+// $(".xuanze").text(data.data.title)
+//       $(".zhucezijin").html(data.data.content)
+//     }
+//   })
+// })
+//  wao=1
+//  cate=0
+//  $.ajax({
+//     url: "{:url('branch1')}",
+//     type: 'post',
+//     dataType: 'JSON',
+//     data: {
+     
+
+//     },
+//     error: function(ee) {
+    	
+//        console.log(ee)
+//       return false;
+//     },
+//     success: function(data) {
+
+// $(".xuanze").text(data.data.title)
+//       $(".zhucezijin").html(data.data.content)
+//     }
+//   })
+// $(".dianjis").click(function(){
+// 	$(this).css("display","none")
+
+// 	$(".suibiangai,.dianji").css("display","block")
+// })
+// $(".dianji").click(function(){
+// 	$(".dianji,.suibiangai").css("display","none")
+
+// 	$(".dianjis").css("display","block")
+// })
+$(function(){
+	$('.sliderbar-container').sliderBar({
+		open : false,           // 默认是否打开，true打开，false关闭
+        top : 0,             // 距离顶部多高
+        width : 360,           // body内容宽度
+        height : $("body").height(),          // body内容高度
+        theme : 'green',       // 主题颜色
+        position : 'left'      // 显示位置，有left和right两种
+	});
+});
+setTimeout(function(){
+	$('.sliderbar-container').css("height","100%")
+	$('.sliderbar-container').css("background","#FFF")
+		$('.sliderbar-container').css("border","1px solid #B7041A")
+		$(".body").css("width:100%")
+		$(".body").css("height:100%")
+	
+}, 1000)
+setTimeout(function(){
+$('.title').css("background","#B7041A")
+	$('.title').css("top","78px")
+	$('.title').css("top","100px")
+	$(".content,.title").css("width","100%")
+}, 1)
+window.onscroll = function() {scrollFunction()};
+ 
+function scrollFunction() {console.log(121);
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("myBtn").style.display = "block";
+    } else {
+        document.getElementById("myBtn").style.display = "none";
+    }
+}
+// 点击按钮，返回顶部
+function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
+</script>
+</body>
+</block>

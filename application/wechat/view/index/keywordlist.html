@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script type="text/javascript" src="__MOBILE_JS__/jquery.js"></script>
+		
+		<script type="text/javascript" src="__MOBILE_JS__/module.js"></script>
+		<script type="text/javascript" src="__MOBILE_JS__/rem.js"></script>
+		<script type="text/javascript" src="__MOBILE_JS__/layer.js"></script>
+		
+		
+		<link rel="stylesheet" href="__MOBILE_CSS__/layer.css" />
+		<link rel="stylesheet" href="__MOBILE_CSS__/style.css" />
+		<link rel="stylesheet" type="text/css" href="__MOBILE_CSS__/iconfont/demo.css"/>
+		<link rel="stylesheet" type="text/css" href="__MOBILE_CSS__/iconfont/iconfont.css"/>
+		<link rel="stylesheet" type="text/css" href="__MOBILE_CSS__/move_top.css"/>
+		<title></title>
+	</head>
+	<style>
+		body{ margin: 0px auto; font-family: "微软雅黑";}
+	  .content{ background: #fff; padding-bottom: 1rem;}
+	  .content .content_title{ margin: 0 0px; padding: 0px 0px ; line-height:4rem; height: 4rem; color:#c4c4c4;  text-align: center; font-size: 1.2rem;;}	
+	  .content ul{ margin: 0px auto; padding: 0px 0px; background: #fff; padding: 0rem 0rem;}
+	  .content ul li{ padding: 0rem 1rem 1.5rem 1rem; list-style-type: none; display: flex; display: -webkit-flex; flex-flow:row nowrap; align-items: center; ;}
+	  .content ul li span{flex:none; font-size: 1.2rem; color: #1f1f1f}
+	  	  .content ul li a{flex:none; width:1.8rem}
+	  .content ul li img{width:100%}
+	  .content ul li input{flex:auto; margin: 0px auto; margin:0px 10px; height: 3.5rem; line-height: 3.5rem; font-size: 1.2rem;}
+	  
+	  
+	  
+	   
+	   
+	</style>
+	<body>
+		<div class="top">
+			<img src="__MOBILE_IMG__/back.png">
+			<span>招标订阅</span>
+		</div>
+		<div class="toptwo">
+			<span>订阅关键词</span>
+			<a href="{:url('home/Msubscribe/push_set')}"><img src="__MOBILE_IMG__/sz.png"><label>推送设置</label></a>
+		</div>
+		<div class="content">
+			<p class="content_title">最多可设置6组关键词</p>
+			<ul>
+				<li>
+					<span>1.</span>
+					<input type="text" value="" disabled="disabled">
+					<a href=""><img src="__MOBILE_IMG__/select.png"></a>
+				</li>
+				
+				<li>
+					<span>1.</span>
+					<input type="text" value="" disabled="disabled">
+					<a href=""><img src="__MOBILE_IMG__/select.png"></a>
+				</li>
+			</ul>
+			<a class="tj_log" href="{:url('home/Msubscribe/add')}"><img src="__MOBILE_IMG__/jia.png"><span>添加关键词</span></a>
+		</div>
+	</body>
+</html>
