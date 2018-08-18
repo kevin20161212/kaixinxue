@@ -29,6 +29,7 @@ class Module extends Admin
         // dump(APP_DIR);exit;
         $module_object = D('Module');
         $data_list     = $module_object->getAll();
+        //dump($data_list);exit;
         // 使用Builder快速建立列表页面
         $builder = new \yfthink\builder\ListBuilder();
         $builder->setMetaTitle('模块列表') // 设置页面标题
@@ -128,7 +129,6 @@ class Module extends Admin
                 return false;
             }
         }
-
         // 获取后台菜单
         if ($config_info['admin_menu']) {
             // 将key值赋给id
@@ -261,11 +261,9 @@ class Module extends Admin
         }
         $config_info = include $config_file;
         $data        = $config_info['info'];
-
         // 读取数据库已有配置
         $db_moduel_config = D('Module')->getFieldByName($name, 'config');
         $db_moduel_config = json_decode($db_moduel_config, true);
-
         // 处理模块配置
         if ($config_info['config']) {
             $temp_arr = $config_info['config'];
