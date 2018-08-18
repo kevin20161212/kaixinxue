@@ -23,7 +23,7 @@ class Index extends Admin
      * @author <youfai@youfai.cn>
      */
     public function index()
-    {
+    {   
         $index_count['module'] = D('Admin/Module')->count();
         $index_count['addon']  = D('Admin/Addon')->count();
         $index_count['users']  = D('Admin/User')->count();

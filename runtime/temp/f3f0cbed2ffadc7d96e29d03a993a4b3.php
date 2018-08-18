@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:67:"E:\anzhuan\object\kaixinxue/application/admin\view\index\index.html";i:1532426719;s:43:"./application/admin/view/public/layout.html";i:1532426649;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:67:"E:\anzhuan\object\kaixinxue/application/admin\view\index\index.html";i:1534496721;s:43:"./application/admin/view/public/layout.html";i:1534495539;}*/ ?>
 <!doctype html>
 <html lang="zh">
 <head>
@@ -358,11 +358,7 @@
                             <?php echo hook('AdminIndex'); ?>
                         </div>
                     </div>
-                    
-                    
-                    
-                    
-                   
+                     
                 </div>
                   
                 <div class="clearfix footer hidden-xs">
@@ -370,7 +366,7 @@
                         <div class="container-fluid">
                             <div class="navbar-header">
                                 <a class="navbar-brand" target="_blank" href="http://www.youfai.cn">
-                                    <span>历下控股集团</span>
+                                    <span>有范科技</span>
                                 </a>
                             </div>
                             <div class="collapse navbar-collapse navbar-collapse-bottom">
@@ -382,7 +378,7 @@
                                     </li>
                                 </ul>
                                 <ul class="nav navbar-nav navbar-right">
-                                    <li><a target="_blank" href="http://www.youfai.cn" class="text-muted pull-right">Powered By 历下控股集团</a></li>
+                                    <li><a target="_blank" href="http://www.youfai.cn" class="text-muted pull-right">Powered By 有范科技</a></li>
                                 </ul>
                             </div>
                         </div>

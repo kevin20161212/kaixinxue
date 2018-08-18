@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:17:{s:64:"./application/common/util/yfthink/builder/layout/admin/list.html";i:1531464282;s:43:"./application/admin/view/public/layout.html";i:1532426649;s:52:"./application/common/util/yfthink/builder/style.html";i:1524315840;s:58:"./application/common/util/yfthink/builder/listbuilder.html";i:1531465756;s:60:"./application/common/util/yfthink/builder/widget/hidden.html";i:1524315840;s:57:"./application/common/util/yfthink/builder/widget/num.html";i:1524315840;s:57:"./application/common/util/yfthink/builder/widget/uid.html";i:1524315840;s:58:"./application/common/util/yfthink/builder/widget/uids.html";i:1524315840;s:59:"./application/common/util/yfthink/builder/widget/price.html";i:1524315840;s:60:"./application/common/util/yfthink/builder/widget/toggle.html";i:1524315840;s:59:"./application/common/util/yfthink/builder/widget/radio.html";i:1524315840;s:62:"./application/common/util/yfthink/builder/widget/checkbox.html";i:1524315840;s:60:"./application/common/util/yfthink/builder/widget/select.html";i:1531295839;s:58:"./application/common/util/yfthink/builder/widget/date.html";i:1524315840;s:62:"./application/common/util/yfthink/builder/widget/datetime.html";i:1524315840;s:59:"./application/common/util/yfthink/builder/widget/clock.html";i:1524315840;s:57:"./application/common/util/yfthink/builder/javascript.html";i:1524315840;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:17:{s:64:"./application/common/util/yfthink/builder/layout/admin/list.html";i:1531464282;s:43:"./application/admin/view/public/layout.html";i:1534495539;s:52:"./application/common/util/yfthink/builder/style.html";i:1524315840;s:58:"./application/common/util/yfthink/builder/listbuilder.html";i:1531465756;s:60:"./application/common/util/yfthink/builder/widget/hidden.html";i:1524315840;s:57:"./application/common/util/yfthink/builder/widget/num.html";i:1524315840;s:57:"./application/common/util/yfthink/builder/widget/uid.html";i:1524315840;s:58:"./application/common/util/yfthink/builder/widget/uids.html";i:1524315840;s:59:"./application/common/util/yfthink/builder/widget/price.html";i:1524315840;s:60:"./application/common/util/yfthink/builder/widget/toggle.html";i:1524315840;s:59:"./application/common/util/yfthink/builder/widget/radio.html";i:1524315840;s:62:"./application/common/util/yfthink/builder/widget/checkbox.html";i:1524315840;s:60:"./application/common/util/yfthink/builder/widget/select.html";i:1531295839;s:58:"./application/common/util/yfthink/builder/widget/date.html";i:1524315840;s:62:"./application/common/util/yfthink/builder/widget/datetime.html";i:1524315840;s:59:"./application/common/util/yfthink/builder/widget/clock.html";i:1524315840;s:57:"./application/common/util/yfthink/builder/javascript.html";i:1524315840;}*/ ?>
 <!doctype html>
 <html lang="zh">
 <head>
@@ -833,7 +833,7 @@
                                     <div class="container－fluid">
                                         <div class="navbar-header">
                                             <a class="navbar-brand" target="_blank" href="http://www.youfai.cn">
-                                                <span>历下控股集团</span>
+                                                <span>有范科技</span>
                                             </a>
                                         </div>
                                         <div class="collapse navbar-collapse navbar-collapse-bottom">
@@ -845,7 +845,7 @@
                                                 </li>
                                             </ul>
                                             <ul class="nav navbar-nav navbar-right">
-                                                <li><a target="_blank" href="http://www.youfai.cn" class="text-muted pull-right">Powered By 历下控股集团</a></li>
+                                                <li><a target="_blank" href="http://www.youfai.cn" class="text-muted pull-right">Powered By 有范科技</a></li>
                                             </ul>
                                         </div>
                                     </div>

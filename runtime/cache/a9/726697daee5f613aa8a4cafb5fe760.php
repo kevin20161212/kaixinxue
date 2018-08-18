@@ -1,4 +1,0 @@
-<?php
-//000000000000
- exit();?>
-a:19:{i:0;s:2:"id";i:1;s:3:"pid";i:2;s:5:"title";i:3;s:5:"thumb";i:4;s:7:"laiyuan";i:5;s:5:"zuoze";i:6;s:6:"mobile";i:7;s:10:"tender_com";i:8;s:8:"textarea";i:9;s:7:"content";i:10;s:6:"reason";i:11;s:13:"authen_status";i:12;s:11:"create_time";i:13;s:11:"authen_time";i:14;s:13:"tender_status";i:15;s:3:"num";i:16;s:10:"start_time";s:3:"_pk";s:2:"id";s:5:"_type";a:17:{s:2:"id";s:7:"int(11)";s:3:"pid";s:7:"int(11)";s:5:"title";s:12:"varchar(255)";s:5:"thumb";s:12:"varchar(255)";s:7:"laiyuan";s:12:"varchar(255)";s:5:"zuoze";s:12:"varchar(255)";s:6:"mobile";s:11:"varchar(20)";s:10:"tender_com";s:11:"varchar(50)";s:8:"textarea";s:4:"text";s:7:"content";s:8:"longtext";s:6:"reason";s:12:"varchar(255)";s:13:"authen_status";s:6:"int(2)";s:11:"create_time";s:7:"int(11)";s:11:"authen_time";s:11:"varchar(20)";s:13:"tender_status";s:6:"int(1)";s:3:"num";s:7:"int(11)";s:10:"start_time";s:11:"varchar(20)";}}
