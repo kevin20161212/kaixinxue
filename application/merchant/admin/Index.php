@@ -25,7 +25,7 @@ class Index extends Admin {
      * @author youfai.cn <280962430@qq.com>
      */
     public function index() {
-        dump(2112);exit;
+        //dump(2112);exit;
         $keyword       = I('keyword', '', 'string');
         $condition     = array('like', '%' . $keyword . '%');
         if(!empty(I('pid'))){
@@ -40,7 +40,7 @@ class Index extends Admin {
         // 获取所有配置
      
         $p             = !empty($_GET["p"]) ? $_GET['p'] : 1;
-        $access_object = D('cms_article');
+        $access_object = D('MerchantMember');
         $data_list     = $access_object
             ->page($p, C('ADMIN_PAGE_ROWS'))
             ->where($map)
@@ -50,14 +50,14 @@ class Index extends Admin {
             $access_object->where($map)->count(),
             C('ADMIN_PAGE_ROWS')
         );
-        $data = [];
-        $data_lists=D('CmsCategory')->treelists();
-        foreach($data_list as $k=>$v){
-            $data_list[$k]['pid'] = M('cms_category')->where(array('id'=>$v['pid']))->getField('title');
-        }
-        foreach ($data_lists as $key=>$val) {
-            $data[$val['id']] = $val['title_show'];
-        }
+        // $data = [];
+        // $data_lists=D('CmsCategory')->treelists();
+        // foreach($data_list as $k=>$v){
+        //     $data_list[$k]['pid'] = M('cms_category')->where(array('id'=>$v['pid']))->getField('title');
+        // }
+        // foreach ($data_lists as $key=>$val) {
+        //     $data[$val['id']] = $val['title_show'];
+        // }
         $attr['name']  = '查看';
         $attr['title'] = '查看';
         $attr['class'] = 'label label-primary-outline label-pill';
@@ -75,11 +75,11 @@ class Index extends Admin {
                 //->addSearchItem('keyword', 'text', '关键字','ID/文章标题')
                 //->setTopAlert($count)
                 ->addTableColumn("id", "ID")
-                ->addTableColumn("thumb", "图片","picture")
-                ->addTableColumn("pid", "分类")
-                ->addTableColumn("title", "文章标题")
-                // ->addTableColumn("laiyuan", "来源")
-                ->addTableColumn("authen_status", "审核状态",'callback','authen_type')
+                ->addTableColumn("title", "机构名称")
+                ->addTableColumn("linkman", "联系人")
+                ->addTableColumn("contact_mobile", "联系电话")
+                ->addTableColumn("point", "积分")
+                //->addTableColumn("authen_status", "审核状态",'callback','authen_type')
                 ->addTableColumn("create_time", "创建时间", "time")
                 ->addTableColumn("right_button", "操作", "btn")
                 ->setTableDataList($data_list)     // 数据列表
@@ -125,50 +125,56 @@ class Index extends Admin {
 
     public function add(){
         if (request()->isPost()) {
-            $data = D("CmsArticle")->create();
-            // dump($model_object);exit;
+            $data = D("MerchantMember")->create();
+            dump($data);exit;
             if ($data) {
-                if (D("CmsArticle")->add($data)) {
+                if (D("MerchantMember")->add($data)) {
                     $this->success('新增成功', U('index'));
                 } else {
                     $this->error('新增失败');
                 }
             } else {
-                $this->error(D("CmsArticle")->getError());
+                $this->error(D("MerchantMember")->getError());
             }
         } else {
-            $data_list=D('CmsCategory')->treelists();
-            foreach ($data_list as $key=>$val) {
-                $datalist[$val['id']] = $val['title_show'];
-            }
+            // $data_list=D('CmsCategory')->treelists();
+            // foreach ($data_list as $key=>$val) {
+            //     $datalist[$val['id']] = $val['title_show'];
+            // }
             // 使用FormBuilder快速建立表单页面
             $builder = new \yfthink\builder\FormBuilder();
             $builder->setMetaTitle("新增")  // 设置页面标题
                     ->setPostUrl(U("add"))      // 设置表单提交地址
-                    ->addFormItem('pid', 'select', '选择分类', '选择分类', $datalist)
-                    ->addFormItem("title", "text", "文章标题", "文章标题")
-                    ->addFormItem('thumb', 'picture', '图片', '切换图片')
-                    ->addFormItem('laiyuan', 'text', '来源', '来源')
-                    ->addFormItem('zuoze', 'text', '作者', '作者')
-                    ->addFormItem('textarea', 'textarea', '文章简介', '文章简介')
-                    ->addFormItem('content', 'ueditor', '文章内容', '文章内容')
-                 
+                    ->addFormItem("title", "text", "机构名称", "机构名称")
+                    ->addFormItem('logo', 'picture', '机构logo', '机构logo')
+                    ->addFormItem('describe', 'textarea', '描述', '描述')
+                    ->addFormItem('merch_name', 'text', "账户名", '账户名')
+                     ->addFormItem('merch_password','password', "账户密码", '账户密码')
+                    ->addFormItem('linkman', 'text', '联系人', '联系人')
+                    ->addFormItem('contact_mobile', 'num', '联系人电话', '联系人电话')
+                    ->addFormItem('province_id', 'district', '城市', '城市')
+                    ->addFormItem('merch_address', 'text', '机构地址', '机构地址')
+                    ->addFormItem('merch_mobile', 'num', '机构电话', '机构电话')
+                    ->addFormItem('merch_lng', 'text', '经度', '经度')
+                    ->addFormItem('merch_lat', 'text', '纬度', '纬度')
+                    ->addFormItem('bank_name', 'select', '银行机构', '银行机构',array('中国工商银行','中国人民银行','中国建设银行','中国交通银行'))
+                    ->addFormItem('bank_num', 'text', '银行卡号', '银行卡号')
+                    ->addFormItem('level', 'text', '等级', '等级')
                     ->display();
         }
     }
-
     public function edit($id){
         if (request()->isPost()) {
-            $data = D("CmsArticle")->create();
-           
+            $data = D("MerchantMember")->create();
+           dump($data);exit;
             if ($data) {
-                if (D("CmsArticle")->save($data)) {
+                if (D("MerchantMember")->save($data)) {
                     $this->success('更新成功', U('index'));
                 } else {
                     $this->error('更新失败');
                 }
             } else {
-                $this->error(D("CmsArticle")->getError());
+                $this->error(D("MerchantMember")->getError());
             }
         } else {
             $data_list=D('CmsCategory')->treelists();

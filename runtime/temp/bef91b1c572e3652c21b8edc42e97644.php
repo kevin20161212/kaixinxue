@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:38:{s:64:"./application/common/util/yfthink/builder/layout/admin/form.html";i:1524315840;s:43:"./application/admin/view/public/layout.html";i:1534495539;s:52:"./application/common/util/yfthink/builder/style.html";i:1524315840;s:58:"./application/common/util/yfthink/builder/formbuilder.html";i:1530925170;s:60:"./application/common/util/yfthink/builder/widget/hidden.html";i:1524315840;s:60:"./application/common/util/yfthink/builder/widget/static.html";i:1524315840;s:57:"./application/common/util/yfthink/builder/widget/num.html";i:1524315840;s:57:"./application/common/util/yfthink/builder/widget/uid.html";i:1524315840;s:58:"./application/common/util/yfthink/builder/widget/uids.html";i:1524315840;s:59:"./application/common/util/yfthink/builder/widget/price.html";i:1524315840;s:58:"./application/common/util/yfthink/builder/widget/text.html";i:1524315840;s:62:"./application/common/util/yfthink/builder/widget/textarea.html";i:1524315840;s:59:"./application/common/util/yfthink/builder/widget/array.html";i:1524315840;s:62:"./application/common/util/yfthink/builder/widget/password.html";i:1524315840;s:60:"./application/common/util/yfthink/builder/widget/toggle.html";i:1524315840;s:59:"./application/common/util/yfthink/builder/widget/radio.html";i:1524315840;s:62:"./application/common/util/yfthink/builder/widget/checkbox.html";i:1524315840;s:60:"./application/common/util/yfthink/builder/widget/select.html";i:1531295839;s:61:"./application/common/util/yfthink/builder/widget/selects.html";i:1524315840;s:58:"./application/common/util/yfthink/builder/widget/icon.html";i:1524315840;s:58:"./application/common/util/yfthink/builder/widget/date.html";i:1524315840;s:62:"./application/common/util/yfthink/builder/widget/datetime.html";i:1524315840;s:59:"./application/common/util/yfthink/builder/widget/clock.html";i:1524315840;s:61:"./application/common/util/yfthink/builder/widget/picture.html";i:1532156316;s:66:"./application/common/util/yfthink/builder/widget/picture_temp.html";i:1524315840;s:62:"./application/common/util/yfthink/builder/widget/pictures.html";i:1524315840;s:67:"./application/common/util/yfthink/builder/widget/pictures_temp.html";i:1524315840;s:58:"./application/common/util/yfthink/builder/widget/file.html";i:1524315840;s:59:"./application/common/util/yfthink/builder/widget/files.html";i:1524315840;s:59:"./application/common/util/yfthink/builder/widget/media.html";i:1524315840;s:60:"./application/common/util/yfthink/builder/widget/medias.html";i:1524315840;s:64:"./application/common/util/yfthink/builder/widget/summernote.html";i:1524315840;s:64:"./application/common/util/yfthink/builder/widget/kindeditor.html";i:1524315840;s:61:"./application/common/util/yfthink/builder/widget/ueditor.html";i:1531121379;s:62:"./application/common/util/yfthink/builder/widget/editormd.html";i:1524315840;s:58:"./application/common/util/yfthink/builder/widget/tags.html";i:1524315840;s:59:"./application/common/util/yfthink/builder/widget/board.html";i:1524315840;s:57:"./application/common/util/yfthink/builder/javascript.html";i:1524315840;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:39:{s:64:"./application/common/util/yfthink/builder/layout/admin/form.html";i:1524315840;s:43:"./application/admin/view/public/layout.html";i:1534495539;s:52:"./application/common/util/yfthink/builder/style.html";i:1524315840;s:58:"./application/common/util/yfthink/builder/formbuilder.html";i:1534753238;s:60:"./application/common/util/yfthink/builder/widget/hidden.html";i:1524315840;s:60:"./application/common/util/yfthink/builder/widget/static.html";i:1524315840;s:57:"./application/common/util/yfthink/builder/widget/num.html";i:1524315840;s:57:"./application/common/util/yfthink/builder/widget/uid.html";i:1524315840;s:58:"./application/common/util/yfthink/builder/widget/uids.html";i:1524315840;s:59:"./application/common/util/yfthink/builder/widget/price.html";i:1524315840;s:58:"./application/common/util/yfthink/builder/widget/text.html";i:1524315840;s:62:"./application/common/util/yfthink/builder/widget/textarea.html";i:1524315840;s:59:"./application/common/util/yfthink/builder/widget/array.html";i:1524315840;s:62:"./application/common/util/yfthink/builder/widget/password.html";i:1524315840;s:60:"./application/common/util/yfthink/builder/widget/toggle.html";i:1524315840;s:59:"./application/common/util/yfthink/builder/widget/radio.html";i:1524315840;s:62:"./application/common/util/yfthink/builder/widget/checkbox.html";i:1524315840;s:60:"./application/common/util/yfthink/builder/widget/select.html";i:1531295839;s:61:"./application/common/util/yfthink/builder/widget/selects.html";i:1524315840;s:58:"./application/common/util/yfthink/builder/widget/icon.html";i:1524315840;s:58:"./application/common/util/yfthink/builder/widget/date.html";i:1524315840;s:62:"./application/common/util/yfthink/builder/widget/datetime.html";i:1524315840;s:59:"./application/common/util/yfthink/builder/widget/clock.html";i:1524315840;s:61:"./application/common/util/yfthink/builder/widget/picture.html";i:1532156316;s:66:"./application/common/util/yfthink/builder/widget/picture_temp.html";i:1524315840;s:62:"./application/common/util/yfthink/builder/widget/pictures.html";i:1524315840;s:67:"./application/common/util/yfthink/builder/widget/pictures_temp.html";i:1524315840;s:58:"./application/common/util/yfthink/builder/widget/file.html";i:1524315840;s:59:"./application/common/util/yfthink/builder/widget/files.html";i:1524315840;s:59:"./application/common/util/yfthink/builder/widget/media.html";i:1524315840;s:60:"./application/common/util/yfthink/builder/widget/medias.html";i:1524315840;s:64:"./application/common/util/yfthink/builder/widget/summernote.html";i:1524315840;s:64:"./application/common/util/yfthink/builder/widget/kindeditor.html";i:1524315840;s:61:"./application/common/util/yfthink/builder/widget/ueditor.html";i:1531121379;s:62:"./application/common/util/yfthink/builder/widget/district.html";i:1534756222;s:62:"./application/common/util/yfthink/builder/widget/editormd.html";i:1524315840;s:58:"./application/common/util/yfthink/builder/widget/tags.html";i:1524315840;s:59:"./application/common/util/yfthink/builder/widget/board.html";i:1524315840;s:57:"./application/common/util/yfthink/builder/javascript.html";i:1524315840;}*/ ?>
 <!doctype html>
 <html lang="zh">
 <head>
@@ -1876,6 +1876,161 @@
     }
    
 </script>
+<?php break; case "district": ?>
+
+    <!--
+        如果选项的值是自定义数组(必须定义key为title的元素)需要解析，如果选项的值是常规字符串直接显示
+        此处主要是用来给option定义更多的属性，比如data-ia=1，那么option应为
+        $option = array('title' => 标题, 'data-id' => 1);
+    -->
+    <input type="hidden" id="province_id" value="<?php echo $form['value']['province']; ?>" />
+    <input type="hidden" id="city_id" value="<?php echo $form['value']['city']; ?>" />
+    <input type="hidden" id="district_id" value="<?php echo $form['value']['district']; ?>" />
+    <input type="hidden" id="adressid" value="1" />
+    <div class="form-group item_<?php echo $form['name']; ?> <?php echo (isset($form['extra']['class']) && ($form['extra']['class'] !== '')?$form['extra']['class']:''); ?>">
+
+        <label class="left control-label"><?php echo $form['title']; ?>：</label>
+        <div class="right">
+             <select name="province" id="seleAreaNext"  class="form-control lyui-select select inputBg"  style="width:150px;" onchange="GetProvince();getSelCity();">
+                 <option value="">请选择省</option>
+            </select>
+            <select name="city" id="seleAreaThird"  class="form-control lyui-select select inputBg" style="width:150px;" onchange="getSelCity();" >
+                <option value="">请选择市</option>
+            </select>
+            <select name="district" id="seleAreaFouth"  class="form-control lyui-select select inputBg" style="width:150px;" >
+                <option value="-1">请选择区/县</option>
+            </select>
+        </div>
+    </div>
+    <script>    
+    var province=$("#provinceid").val();
+    var city=$("#cityid").val();
+    var district=$("#districtid").val();
+    var selProvince=$("#seleAreaNext")[0];
+    for (var i = selProvince.length - 1; i >= 0; i--) {
+        selProvince.options[i] = null;
+    }
+    var opt = new Option("请选择省", "-1");
+    selProvince.options.add(opt);
+        //添加省
+        $.ajax({
+            type : "post",
+            url : "<?php echo U('admin/index/getprovince'); ?>",
+            dataType : "json",
+            success : function(data) {
+                if (data != null && data.length > 0) {
+                    for (var i = 0; i < data.length; i++) {
+                        var opt = new Option(data[i].name, data[i].id);
+                        selProvince.options.add(opt);
+                    }
+                    $("#seleAreaNext").val(province);
+                }
+            }
+        });
+    var address_id=$("#adressid").val();
+    if(address_id!=0){
+        //查询这个收货地址的详细地址
+        //加载市
+                var selCity = $("#seleAreaThird")[0];
+                for (var i = selCity.length - 1; i >= 0; i--) {
+                    selCity.options[i] = null;
+                }
+                var opt = new Option("请选择市", "-1");
+                selCity.options.add(opt);
+                $.ajax({
+                    type: "post",
+                    url: "<?php echo U('admin/index/getCity'); ?>",
+                    dataType: "json",
+                    data: { "province_id": province },
+                    success: function (data) {
+                        if (data != null && data.length > 0) {
+                            for (var i = 0; i < data.length; i++) {
+                                var opt = new Option(data[i].name, data[i].id);
+                                selCity.options.add(opt);
+                            }
+                        $("#seleAreaThird").val(city);
+                        }
+                    }
+                });
+                //加载区县
+            var selArea = $("#seleAreaFouth")[0];
+                for (var i = selArea.length - 1; i >= 0; i--) {
+                    selArea.options[i] = null;
+                }
+                var opt = new Option("请选择区/县", "-1");
+                selArea.options.add(opt);
+                $.ajax({
+                    type: "post",
+                    url: "<?php echo U('admin/index/getDistrict'); ?>",
+                    dataType: "json",
+                    data: { "city_id": city },
+                    success: function (data) {
+                        if (data != null && data.length > 0) {
+                            for (var i = 0; i < data.length; i++) {
+                                var opt = new Option(data[i].name, data[i].id);
+                                selArea.options.add(opt);
+                            }
+                        $("#seleAreaFouth").val(district);
+                        }
+                    }
+                });
+    }
+                    // 选择省份弹出市区
+            function GetProvince() {
+                var id = $("#seleAreaNext").find("option:selected").val();
+                var selCity = $("#seleAreaThird")[0];
+                for (var i = selCity.length - 1; i >= 0; i--) {
+                    selCity.options[i] = null;
+                }
+                var opt = new Option("请选择市", "-1");
+                selCity.options.add(opt);
+                $.ajax({
+                    type : "post",
+                    url : "<?php echo U('admin/index/getCity'); ?>",
+                    dataType : "json",
+                    data : {
+                        "province_id" : id
+                    },
+                    success : function(data) {
+                        if (data != null && data.length > 0) {
+                            for (var i = 0; i < data.length; i++) {
+                                var opt = new Option(data[i].name,data[i].id);
+                                selCity.options.add(opt);
+                            }
+                        }
+                    }
+                });
+            };
+            // 选择市区弹出区域
+            function getSelCity() {
+                var id = $("#seleAreaThird").find("option:selected").val();
+                var selArea = $("#seleAreaFouth")[0];
+                for (var i = selArea.length - 1; i >= 0; i--) {
+                    selArea.options[i] = null;
+                }
+                var opt = new Option("请选择区县", "-1");
+                selArea.options.add(opt);
+                $.ajax({
+                    type : "post",
+                    url : "<?php echo U('admin/index/getDistrict'); ?>",
+                    dataType : "json",
+                    data : {
+                        "city_id" : id
+                    },
+                    success : function(data) {
+                        if (data != null && data.length > 0) {
+                            for (var i = 0; i < data.length; i++) {
+                                var opt = new Option(data[i].name,data[i].district_id);
+                                selArea.options.add(opt);
+                            }
+                        }
+                    }
+                });
+            }
+
+
+
+    </script>
 <?php break; case "editormd": ?>
     <div class="form-group item_<?php echo $form['name']; ?> <?php echo (isset($form['extra']['class']) && ($form['extra']['class'] !== '')?$form['extra']['class']:''); ?>">
         <label class="left control-label"><?php echo $form['title']; ?>：</label>
@@ -5293,6 +5448,161 @@
     }
    
 </script>
+<?php break; case "district": ?>
+
+    <!--
+        如果选项的值是自定义数组(必须定义key为title的元素)需要解析，如果选项的值是常规字符串直接显示
+        此处主要是用来给option定义更多的属性，比如data-ia=1，那么option应为
+        $option = array('title' => 标题, 'data-id' => 1);
+    -->
+    <input type="hidden" id="province_id" value="<?php echo $form['value']['province']; ?>" />
+    <input type="hidden" id="city_id" value="<?php echo $form['value']['city']; ?>" />
+    <input type="hidden" id="district_id" value="<?php echo $form['value']['district']; ?>" />
+    <input type="hidden" id="adressid" value="1" />
+    <div class="form-group item_<?php echo $form['name']; ?> <?php echo (isset($form['extra']['class']) && ($form['extra']['class'] !== '')?$form['extra']['class']:''); ?>">
+
+        <label class="left control-label"><?php echo $form['title']; ?>：</label>
+        <div class="right">
+             <select name="province" id="seleAreaNext"  class="form-control lyui-select select inputBg"  style="width:150px;" onchange="GetProvince();getSelCity();">
+                 <option value="">请选择省</option>
+            </select>
+            <select name="city" id="seleAreaThird"  class="form-control lyui-select select inputBg" style="width:150px;" onchange="getSelCity();" >
+                <option value="">请选择市</option>
+            </select>
+            <select name="district" id="seleAreaFouth"  class="form-control lyui-select select inputBg" style="width:150px;" >
+                <option value="-1">请选择区/县</option>
+            </select>
+        </div>
+    </div>
+    <script>    
+    var province=$("#provinceid").val();
+    var city=$("#cityid").val();
+    var district=$("#districtid").val();
+    var selProvince=$("#seleAreaNext")[0];
+    for (var i = selProvince.length - 1; i >= 0; i--) {
+        selProvince.options[i] = null;
+    }
+    var opt = new Option("请选择省", "-1");
+    selProvince.options.add(opt);
+        //添加省
+        $.ajax({
+            type : "post",
+            url : "<?php echo U('admin/index/getprovince'); ?>",
+            dataType : "json",
+            success : function(data) {
+                if (data != null && data.length > 0) {
+                    for (var i = 0; i < data.length; i++) {
+                        var opt = new Option(data[i].name, data[i].id);
+                        selProvince.options.add(opt);
+                    }
+                    $("#seleAreaNext").val(province);
+                }
+            }
+        });
+    var address_id=$("#adressid").val();
+    if(address_id!=0){
+        //查询这个收货地址的详细地址
+        //加载市
+                var selCity = $("#seleAreaThird")[0];
+                for (var i = selCity.length - 1; i >= 0; i--) {
+                    selCity.options[i] = null;
+                }
+                var opt = new Option("请选择市", "-1");
+                selCity.options.add(opt);
+                $.ajax({
+                    type: "post",
+                    url: "<?php echo U('admin/index/getCity'); ?>",
+                    dataType: "json",
+                    data: { "province_id": province },
+                    success: function (data) {
+                        if (data != null && data.length > 0) {
+                            for (var i = 0; i < data.length; i++) {
+                                var opt = new Option(data[i].name, data[i].id);
+                                selCity.options.add(opt);
+                            }
+                        $("#seleAreaThird").val(city);
+                        }
+                    }
+                });
+                //加载区县
+            var selArea = $("#seleAreaFouth")[0];
+                for (var i = selArea.length - 1; i >= 0; i--) {
+                    selArea.options[i] = null;
+                }
+                var opt = new Option("请选择区/县", "-1");
+                selArea.options.add(opt);
+                $.ajax({
+                    type: "post",
+                    url: "<?php echo U('admin/index/getDistrict'); ?>",
+                    dataType: "json",
+                    data: { "city_id": city },
+                    success: function (data) {
+                        if (data != null && data.length > 0) {
+                            for (var i = 0; i < data.length; i++) {
+                                var opt = new Option(data[i].name, data[i].id);
+                                selArea.options.add(opt);
+                            }
+                        $("#seleAreaFouth").val(district);
+                        }
+                    }
+                });
+    }
+                    // 选择省份弹出市区
+            function GetProvince() {
+                var id = $("#seleAreaNext").find("option:selected").val();
+                var selCity = $("#seleAreaThird")[0];
+                for (var i = selCity.length - 1; i >= 0; i--) {
+                    selCity.options[i] = null;
+                }
+                var opt = new Option("请选择市", "-1");
+                selCity.options.add(opt);
+                $.ajax({
+                    type : "post",
+                    url : "<?php echo U('admin/index/getCity'); ?>",
+                    dataType : "json",
+                    data : {
+                        "province_id" : id
+                    },
+                    success : function(data) {
+                        if (data != null && data.length > 0) {
+                            for (var i = 0; i < data.length; i++) {
+                                var opt = new Option(data[i].name,data[i].id);
+                                selCity.options.add(opt);
+                            }
+                        }
+                    }
+                });
+            };
+            // 选择市区弹出区域
+            function getSelCity() {
+                var id = $("#seleAreaThird").find("option:selected").val();
+                var selArea = $("#seleAreaFouth")[0];
+                for (var i = selArea.length - 1; i >= 0; i--) {
+                    selArea.options[i] = null;
+                }
+                var opt = new Option("请选择区县", "-1");
+                selArea.options.add(opt);
+                $.ajax({
+                    type : "post",
+                    url : "<?php echo U('admin/index/getDistrict'); ?>",
+                    dataType : "json",
+                    data : {
+                        "city_id" : id
+                    },
+                    success : function(data) {
+                        if (data != null && data.length > 0) {
+                            for (var i = 0; i < data.length; i++) {
+                                var opt = new Option(data[i].name,data[i].district_id);
+                                selArea.options.add(opt);
+                            }
+                        }
+                    }
+                });
+            }
+
+
+
+    </script>
 <?php break; case "editormd": ?>
     <div class="form-group item_<?php echo $form['name']; ?> <?php echo (isset($form['extra']['class']) && ($form['extra']['class'] !== '')?$form['extra']['class']:''); ?>">
         <label class="left control-label"><?php echo $form['title']; ?>：</label>

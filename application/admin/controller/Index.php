@@ -62,4 +62,21 @@ class Index extends Admin
             $this->error("缓存清理失败");
         }
     }
+
+    public function getprovince(){
+        $data = db('merchant_district')->where(['level'=>1])->field('id,name')->select();
+        return  json($data);
+    }
+
+    public function getCity(){
+        $province_id = input('param.province_id');
+        $data = db('merchant_district')->where(['upid'=>$province_id])->field('id,name')->select();
+        return  json($data);
+    }
+
+    public function getDistrict(){
+        $city_id = input('param.city_id');
+        $data = db('merchant_district')->where(['upid'=>$city_id])->field('id,name')->select();
+        return  json($data);
+    }
 }
