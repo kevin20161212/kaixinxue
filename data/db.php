@@ -25,7 +25,7 @@ if (@$_SERVER[ENV_PRE.'DEV_MODE'] === 'true') {
             'hostname'   => $_SERVER[ENV_PRE.'DB_HOST'] ? : '127.0.0.1',       // 服务器地址
             'database'   => $_SERVER[ENV_PRE.'DB_NAME'] ? : 'kaixinxue',       // 数据库名
             'username'   => $_SERVER[ENV_PRE.'DB_USER'] ? : 'root',       // 用户名
-            'password'    => $_SERVER[ENV_PRE.'DB_PWD']  ? : '',        // 密码
+            'password'    => $_SERVER[ENV_PRE.'DB_PWD']  ? : 'root',        // 密码
             'hostport'   => $_SERVER[ENV_PRE.'DB_PORT'] ? : '3506',       // 端口
             'prefix' => $_SERVER[ENV_PRE.'DB_PREFIX'] ? : 'yf_',   // 数据库表前缀
         ],
@@ -39,7 +39,7 @@ if (@$_SERVER[ENV_PRE.'DEV_MODE'] === 'true') {
             'hostname'   => '127.0.0.1',       // 服务器地址
             'database'   => 'kaixinxue',       // 数据库名
             'username'   => 'root',       // 用户名
-            'password'    => '',        // 密码
+            'password'    => 'root',        // 密码
             'hostport'   => '3506',       // 端口
             'prefix' => 'yf_',     // 数据库表前缀
         ],

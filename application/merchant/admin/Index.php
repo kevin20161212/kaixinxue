@@ -50,14 +50,6 @@ class Index extends Admin {
             $access_object->where($map)->count(),
             C('ADMIN_PAGE_ROWS')
         );
-        // $data = [];
-        // $data_lists=D('CmsCategory')->treelists();
-        // foreach($data_list as $k=>$v){
-        //     $data_list[$k]['pid'] = M('cms_category')->where(array('id'=>$v['pid']))->getField('title');
-        // }
-        // foreach ($data_lists as $key=>$val) {
-        //     $data[$val['id']] = $val['title_show'];
-        // }
         $attr['name']  = '查看';
         $attr['title'] = '查看';
         $attr['class'] = 'label label-primary-outline label-pill';
@@ -126,6 +118,7 @@ class Index extends Admin {
     public function add(){
         if (request()->isPost()) {
             $data = D("MerchantMember")->create();
+            //dump(D("MerchantMember"));
             dump($data);exit;
             if ($data) {
                 if (D("MerchantMember")->add($data)) {

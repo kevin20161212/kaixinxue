@@ -25,16 +25,24 @@ class MerchantMember extends Model {
      * 我们约定每个模块的数据表都加上相同的前缀，比如微信模块用weixin作为数据表前缀
      * @author youfai.cn <280962430@qq.com>
      */
-    protected $tableName = 'MerchantMember';
+    protected $tableName = 'Merchant_Member';
 
     /**
      * 自动验证规则
      * @author youfai.cn <280962430@qq.com>
      */
     protected $_validate = array(
-        array('name', 'require', '姓名不能为空', self::MUST_VALIDATE, 'regex', self::MODEL_BOTH),
-        array('mobile', 'require', '电话不能为空', self::MUST_VALIDATE, 'regex', self::MODEL_BOTH),
-        // array('content', 'require', '内容不能为空', self::MUST_VALIDATE, 'regex', self::MODEL_BOTH),
+        // array('merch_name', 'require', '机构账号不能为空', self::MUST_VALIDATE, 'regex', self::MODEL_BOTH),
+        // array('title', 'require', '机构名称不能为空', self::MUST_VALIDATE, 'regex', self::MODEL_BOTH),
+        // array('merch_password', 'require', '密码不能为空', self::MUST_VALIDATE, 'regex', self::MODEL_BOTH),
+        // array('describe', 'require', '机构描述不能为空', self::MUST_VALIDATE, 'regex', self::MODEL_BOTH),
+        // array('linkman', 'require', '联系人不能为空', self::MUST_VALIDATE, 'regex', self::MODEL_BOTH),
+        // array('contact_mobile', 'require', '联系人电话不能为空', self::MUST_VALIDATE, 'regex', self::MODEL_BOTH),
+        // array('province', 'require', '省份不能为空', self::MUST_VALIDATE, 'regex', self::MODEL_BOTH),
+        // array('city', 'require', '城市不能为空', self::MUST_VALIDATE, 'regex', self::MODEL_BOTH),
+        // array('district', 'require', '区县不能为空', self::MUST_VALIDATE, 'regex', self::MODEL_BOTH),
+        // array('merch_address', 'require', '机构地址不能为空', self::MUST_VALIDATE, 'regex', self::MODEL_BOTH),
+        // array('merch_mobile', 'require', '机构电话不能为空', self::MUST_VALIDATE, 'regex', self::MODEL_BOTH),
     );
 
     /**
