@@ -1182,7 +1182,6 @@ class Model
         if ($this->autoCheckFields) {
             // 开启字段检测 则过滤非法字段数据
             $fields = $this->getDbFields();
-             dump($fields);exit;
             if (!$fields) {
                 $this->error = 'getDbFields错误';
                 return false;
@@ -1756,7 +1755,7 @@ class Model
      * @return string
      */
     public function getError()
-    {   dump(24332);
+    {  
         return $this->error;
     }
 
@@ -1827,7 +1826,6 @@ class Model
 
             return $fields ? array_keys($fields) : false;
         }
-         dump($this->fields);exit;
         // 修复获取数据库字段错误的问题
         if (!$this->fields) {
            

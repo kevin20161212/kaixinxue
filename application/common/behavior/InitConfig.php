@@ -193,7 +193,7 @@ class InitConfig
         }
         // 默认模块
         $system_config['default_module'] = $system_config['default_module'] ?: C('default_module');
-        // dump($system_config);exit;
+        //dump($system_config);exit;
         C($system_config); // 添加配置
     }
 }

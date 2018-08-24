@@ -8,7 +8,7 @@
     <input type="hidden" id="province_id" value="{$[type]form.value.province}" />
     <input type="hidden" id="city_id" value="{$[type]form.value.city}" />
     <input type="hidden" id="district_id" value="{$[type]form.value.district}" />
-    <input type="hidden" id="adressid" value="1" />
+    <!-- <input type="hidden" id="adressid" value="1" /> -->
     <div class="form-group item_{$[type]form.name} {$[type]form.extra.class|default=''}">
 
         <label class="left control-label">{$[type]form.title}：</label>
@@ -142,7 +142,7 @@
                     success : function(data) {
                         if (data != null && data.length > 0) {
                             for (var i = 0; i < data.length; i++) {
-                                var opt = new Option(data[i].name,data[i].district_id);
+                                var opt = new Option(data[i].name,data[i].id);
                                 selArea.options.add(opt);
                             }
                         }

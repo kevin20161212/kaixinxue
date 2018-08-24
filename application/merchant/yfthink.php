@@ -15,10 +15,10 @@ return array(
     // 模块信息
     'info' => array(
         'name'        => 'merchant',
-        'title'       => '机构模块',
+        'title'       => '用户管理',
         'icon'        => 'fort-awesome',
         'icon_color'  => '#F9B440',
-        'description' => '机构模块',
+        'description' => '用户管理',
         'developer'   => '山东有范网络科技有限公司',
         'website'     => 'http://www.youfai.cn',
         'version'     => '1.6.2',
@@ -68,18 +68,25 @@ return array(
     'admin_menu' => array(
         '1' => array(
             'pid'   => '0',
-            'title' => '机构管理',
+            'title' => '用户管理',
             'icon'  => 'fa-fort-awesome',
         ),
         '2' => array(
             'pid'   => '1',
-            'title' => '机构管理',
-            'icon'  => 'fa-fort-awesome',
+            'title' => '用户管理',
+            'icon'  => 'fa fa-user',
         ),
         '3' => array(
             'pid'   => '2',
             'title' => '机构会员',
             'url'   => 'merchant/Index/index',
+            'icon'  => 'fa fa-graduation-cap ',
+        ),
+        '4' => array(
+            'pid'   => '2',
+            'title' => '用户会员',
+            'url'   => 'merchant/user/index',
+            'icon'  => 'fa fa-users ',
         ),
         '14' => array(
             'pid'   => '3',
@@ -100,62 +107,6 @@ return array(
             'pid'   => '3',
             'title' => '审核2',
             'url'   => 'merchant/Index/unaudit',
-        ),
-        '4' => array(
-            'pid'   => '2',
-            'title' => '分类管理',
-            'url'   => 'merchant/category/index',
-        ),
-        
-        '5' => array(
-            'pid'   => '2',
-            'title' => '导航管理',
-            'url'   => 'merchant/Nav/index',
-        ),
-        '6' => array(
-            'pid'   => '2',
-            'title' => '幻灯片管理',
-            'url'   => 'merchant/Slide/index',
-        ),
-        // '7' => array(
-        //     'pid'   => '2',
-        //     'title' => '友情链接',
-        //     'url'   => 'merchant/Link/index',
-        // ),
-        // '8' => array(
-        //     'pid'   => '2',
-        //     'title' => '公告管理',
-        //     'url'   => 'merchant/Notice/index',
-        // ),
-        '9' => array(
-            'pid'   => '2',
-            'title' => '预约信息',
-            'url'   => 'merchant/apply/index',
-        ),
-        '10' => array(
-            'pid'   => '2',
-            'title' => '职位发布',
-            'url'   => 'merchant/recruit/index',
-        ),
-        '11' => array(
-            'pid'   => '2',
-            'title' => '视频上传',
-            'url'   => 'merchant/video/index',
-        ),
-        '12' => array(
-            'pid'   => '2',
-            'title' => '投标信息',
-            'url'   => 'merchant/tender/index',
-        ),
-        '20' => array(
-            'pid'   => '12',
-            'title' => '新增',
-            'url'   => 'merchant/tender/add',
-        ),
-        '21' => array(
-            'pid'   => '12',
-            'title' => '编辑',
-            'url'   => 'merchant/tender/edit',
         ),
     )
 );
