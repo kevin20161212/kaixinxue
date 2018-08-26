@@ -1,1 +1,1 @@
-http://localhost:88/youfan/admin.php/admin/       admin
+http://localhost:88/youfan/admin.php/admin/       admin123
