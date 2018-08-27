@@ -23,4 +23,8 @@ class Base extends  Controller
     public function success($msg){
         return json(['code'=>1,'msg'=>$msg]);
     }
+
+    public function data($data,$code,$msg){
+        return json(['data'=>$data,'code'=>$code,'msg'=>$msg]);
+    }
 }
