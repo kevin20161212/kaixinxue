@@ -48,7 +48,6 @@ class Nav extends Admin
                 $val['title'] = '<a href="' . U('Admin/Post/index', array('cid' => $val['id'])) . '">' . $val['title'] . '</a>';
             }
         }
-
         // 转换成树状列表
         $tree      = new Tree();
         $data_list = $tree->array2tree($data_list);
