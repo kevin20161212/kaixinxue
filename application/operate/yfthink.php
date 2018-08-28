@@ -14,11 +14,11 @@
 return array(
     // 模块信息
     'info' => array(
-        'name'        => 'course',
-        'title'       => '课程管理',
+        'name'        => 'operate',
+        'title'       => '运营管理',
         'icon'        => 'fort-awesome',
         'icon_color'  => '#F9B440',
-        'description' => '课程管理',
+        'description' => '运营管理',
         'developer'   => '山东有范网络科技有限公司',
         'website'     => 'http://www.youfai.cn',
         'version'     => '1.6.2',
@@ -68,45 +68,51 @@ return array(
     'admin_menu' => array(
         '1' => array(
             'pid'   => '0',
-            'title' => '课程管理',
-            'icon'  => 'fa-fort-awesome',
+            'title' => '运营管理',
+            'icon'  => 'fa-recycle',
         ),
         '2' => array(
             'pid'   => '1',
-            'title' => '课程管理',
+            'title' => '运营管理',
             'icon'  => 'fa fa-folder-open',
         ),
         '3' => array(
             'pid'   => '2',
-            'title' => '课程列表',
-            'url'   => 'merchant/Index/index',
-            'icon'  => 'fa fa-graduation-cap ',
+            'title' => '活动版块',
+            'url'   => 'operate/active/block',
+            'icon'  => 'fa fa-life-ring ',
         ),
         '4' => array(
             'pid'   => '2',
-            'title' => '课程分类',
-            'url'   => 'course/index/cate',
-            'icon'  => 'fa fa-map-signs',
+            'title' => '优惠券',
+            'url'   => 'operate/coupon/index',
+            'icon'  => 'fa fa-money ',
+        ),
+        '5' => array(
+            'pid'   => '2',
+            'title' => '活动专区',
+            'url'   => 'operate/active/index',
+            'icon'  => 'fa fa-users ',
         ),
         '14' => array(
             'pid'   => '3',
             'title' => '新增',
-            'url'   => 'merchant/Index/add',
+            'url'   => 'operate/Index/add',
         ),
         '15' => array(
             'pid'   => '3',
             'title' => '编辑',
-            'url'   => 'merchant/Index/edit',
+            'url'   => 'operate/Index/edit',
         ),
         '16' => array(
             'pid'   => '3',
             'title' => '审核1',
-            'url'   => 'merchant/Index/audit',
+            'url'   => 'operate/Index/audit',
         ),
         '17' => array(
             'pid'   => '3',
             'title' => '审核2',
-            'url'   => 'merchant/Index/unaudit',
+            'url'   => 'operate/Index/unaudit',
         ),
     )
 );

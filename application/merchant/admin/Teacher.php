@@ -11,7 +11,7 @@
 // | 法律责任的风险。如果需要取得官方授权，请联系官方http://www.youfai.cn
 // +----------------------------------------------------------------------
 
-namespace app\Cms\Admin;
+namespace app\merchant\Admin;
 use app\admin\controller\Admin;
 use yfthink\Page;
 
@@ -19,7 +19,7 @@ use yfthink\Page;
  * 默认控制器
  * @author youfai.cn <280962430@qq.com>
  */
-class Apply extends Admin {
+class Teacher extends Admin {
     /**
      * 默认方法
      * @author youfai.cn <280962430@qq.com>
@@ -36,7 +36,7 @@ class Apply extends Admin {
         // 获取所有配置
      
         $p             = !empty($_GET["p"]) ? $_GET['p'] : 1;
-        $access_object = D('cms_apply');
+        $access_object = D('merchant_teacher');
         $data_list     = $access_object
             ->page($p, C('ADMIN_PAGE_ROWS'))
             ->where($map)
@@ -50,7 +50,7 @@ class Apply extends Admin {
         $builder = new \yfthink\builder\ListBuilder();
         $builder->setMetaTitle("列表")  // 设置页面标题
                 ->addTopButton("addnew")    // 添加新增按钮
-                ->addTopButton("delete",array('model'=>'cms/cms_apply'))  // 添加删除按钮
+                ->addTopButton("delete",array('model'=>'Merchant/merchant_teacher'))  // 添加删除按钮
                 //->addSearchItem('keyword', 'text', '关键字','ID/标题')
                 //->setTopAlert($count)
                 ->addTableColumn("id", "ID")
@@ -61,16 +61,16 @@ class Apply extends Admin {
                 ->setTableDataList($data_list)     // 数据列表
                 ->setTableDataPage($page->show())  // 数据列表分页
                 ->addRightButton("edit")           // 添加编辑按钮
-                ->addRightButton("delete",array('model'=>'cms/cms_apply'))  // 添加删除按钮
+                ->addRightButton("delete",array('model'=>'Merchant/merchant_teacher'))  // 添加删除按钮
                 ->display();
     }
 
     public function add(){
         if (request()->isPost()) {
-            $data = D("cms_apply")->create();
+            $data = D("merchant_teacher")->create();
             // dump($model_object);exit;
             if ($data) {
-                if (D("cms_apply")->add($data)) {
+                if (D("merchant_teacher")->add($data)) {
                     $this->success('新增成功', U('index'));
                 } else {
                     $this->error('新增失败');
@@ -84,7 +84,8 @@ class Apply extends Admin {
             $builder = new \yfthink\builder\FormBuilder();
             $builder->setMetaTitle("新增")  // 设置页面标题
                     ->setPostUrl(U("add"))      // 设置表单提交地址
-                    ->addFormItem("name", "text", "姓名", "姓名")
+                    ->addFormItem("name", "text", "教师名", "教师名")
+                    ->addFormItem("des", 'textarea',"介绍","介绍")
                     ->addFormItem('mobile',"text",'电话','电话')
                     ->addFormItem('create_time', 'date', '时间', '时间')
                     ->display();

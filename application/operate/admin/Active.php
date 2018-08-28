@@ -11,7 +11,7 @@
 // | 法律责任的风险。如果需要取得官方授权，请联系官方http://www.youfai.cn
 // +----------------------------------------------------------------------
 
-namespace app\course\Admin;
+namespace app\operate\Admin;
 use app\admin\controller\Admin;
 use yfthink\Page;
 use yfthink\Tree;
@@ -20,28 +20,20 @@ use yfthink\Tree;
  * 默认控制器
  * @author youfai.cn <280962430@qq.com>
  */
-class Index extends Admin {
+class Active extends Admin {
     /**
      * 默认方法
      * @author youfai.cn <280962430@qq.com>
      */
-    public function index() {
-        //dump(2112);exit;
+    public function block() {
         $keyword       = I('keyword', '', 'string');
         $condition     = array('like', '%' . $keyword . '%');
-        if(!empty(I('pid'))){
-            $map['pid'] = I('pid');
-        }
-
-
         $map['id|title'] = array(
             $condition,
         );
-        //dump($map);exit;
-        // 获取所有配置
      
         $p             = !empty($_GET["p"]) ? $_GET['p'] : 1;
-        $access_object = D('MerchantMember');
+        $access_object = D('OperateActiveBlock');
         $data_list     = $access_object
             ->page($p, C('ADMIN_PAGE_ROWS'))
             ->where($map)
@@ -63,16 +55,10 @@ class Index extends Admin {
         $builder->setMetaTitle("列表")  // 设置页面标题
                 ->addTopButton("addnew")    // 添加新增按钮
                 ->addTopButton("delete",array('model'=>'cms/cms_article'))  // 添加删除按钮
-                //->addSearchItem('pid', 'select', '分类','分类',$data)
-                ->search_form_items('pid', 'select', '分类','分类',$data)
-                //->addSearchItem('keyword', 'text', '关键字','ID/文章标题')
-                //->setTopAlert($count)
                 ->addTableColumn("id", "ID")
-                ->addTableColumn("title", "机构名称")
-                ->addTableColumn("linkman", "联系人")
-                ->addTableColumn("contact_mobile", "联系电话")
-                ->addTableColumn("point", "积分")
-                //->addTableColumn("authen_status", "审核状态",'callback','authen_type')
+                ->addTableColumn("title", "活动版块名称")
+                ->addTableColumn("des", "描述")
+                ->addTableColumn('status', '状态', 'status')
                 ->addTableColumn("create_time", "创建时间", "time")
                 ->addTableColumn("right_button", "操作", "btn")
                 ->setTableDataList($data_list)     // 数据列表
@@ -118,37 +104,25 @@ class Index extends Admin {
 
     public function add(){
         if (request()->isPost()) {
-            $data = D("MerchantMember")->create();
+            $data = D("OperateActiveBlock")->create();
             // dump($data);exit;
             if ($data) {
-                if (D("MerchantMember")->add($data)) {
-                    $this->success('新增成功', U('index'));
+                if (D("OperateActiveBlock")->add($data)) {
+                    $this->success('新增成功', U('block'));
                 } else {
                     $this->error('新增失败');
                 }
             } else {
-                $this->error(D("MerchantMember")->getError());
+                $this->error(D("OperateActiveBlock")->getError());
             }
         } else {
             // 使用FormBuilder快速建立表单页面
             $builder = new \yfthink\builder\FormBuilder();
             $builder->setMetaTitle("新增")  // 设置页面标题
                     ->setPostUrl(U("add"))      // 设置表单提交地址
-                    ->addFormItem("title", "text", "机构名称", "机构名称")
-                    ->addFormItem('logo', 'picture', '机构logo', '机构logo')
-                    ->addFormItem('describe', 'textarea', '描述', '描述')
-                    ->addFormItem('merch_name', 'text', "账户名", '账户名')
-                     ->addFormItem('merch_password','password', "账户密码", '账户密码')
-                    ->addFormItem('linkman', 'text', '联系人', '联系人')
-                    ->addFormItem('contact_mobile', 'num', '联系人电话', '联系人电话')
-                    ->addFormItem('province_id', 'district', '城市', '城市')
-                    ->addFormItem('merch_address', 'text', '机构地址', '机构地址')
-                    ->addFormItem('merch_mobile', 'num', '机构电话', '机构电话')
-                    ->addFormItem('merch_lng', 'text', '经度', '经度')
-                    ->addFormItem('merch_lat', 'text', '纬度', '纬度')
-                    ->addFormItem('bank_name', 'select', '银行机构', '银行机构',array('中国工商银行','中国人民银行','中国建设银行','中国交通银行'))
-                    ->addFormItem('bank_num', 'text', '银行卡号', '银行卡号')
-                    ->addFormItem('level', 'text', '等级', '等级')
+                    ->addFormItem("title", "text", "活动版块名称", "活动版块名称")
+                    ->addFormItem('cover', 'picture', '活动图', '活动图')
+                    ->addFormItem('des', 'textarea', '描述', '描述')
                     ->display();
         }
     }

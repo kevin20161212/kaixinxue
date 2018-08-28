@@ -94,4 +94,5 @@ class User extends Model
 			return 3;//账号不存在   
 		}
 	}
+
 }

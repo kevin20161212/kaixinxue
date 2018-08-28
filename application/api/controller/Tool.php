@@ -97,4 +97,15 @@ class Tool extends Base{
 		}
 	}
 	
+	/**
+	 * 获取banner图
+	 */
+	public function banner(){
+		$data = model('tool')->get_banner();
+		if($data){
+			return $this->data($data,1,'获取数据成功');
+		}else{
+			return $this->data([],1,'没有更多数据');
+		}
+	}
 }

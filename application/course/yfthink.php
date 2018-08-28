@@ -69,7 +69,7 @@ return array(
         '1' => array(
             'pid'   => '0',
             'title' => '课程管理',
-            'icon'  => 'fa-fort-awesome',
+            'icon'  => 'fa-book',
         ),
         '2' => array(
             'pid'   => '1',

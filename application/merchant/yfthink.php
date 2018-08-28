@@ -80,9 +80,15 @@ return array(
             'pid'   => '2',
             'title' => '机构会员',
             'url'   => 'merchant/Index/index',
-            'icon'  => 'fa fa-graduation-cap ',
+            'icon'  => 'fa fa-user',
         ),
         '4' => array(
+            'pid'   => '2',
+            'title' => '机构教师',
+            'url'   => 'merchant/teacher/index',
+            'icon'  => 'fa fa-user',
+        ),
+        '5' => array(
             'pid'   => '2',
             'title' => '用户会员',
             'url'   => 'merchant/user/index',

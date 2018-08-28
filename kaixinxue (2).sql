@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 2018-08-27 12:37:26
+-- Generation Time: 2018-08-28 12:40:24
 -- 服务器版本： 10.1.31-MariaDB
 -- PHP Version: 7.2.4
 
@@ -212,7 +212,11 @@ INSERT INTO `yf_admin_config` (`id`, `title`, `name`, `value`, `group`, `type`, 
 (28, '开发模式', 'DEVELOP_MODE', '1', 7, 'toggle', '1:开启\r\n0:关闭', '开发模式下会显示菜单管理、配置管理、数据字典等开发者工具', 1432393583, 1432393583, 1, 1),
 (29, '页面Trace', 'APP_TRACE', '0', 7, 'toggle', '0:关闭\r\n1:开启', '是否显示页面Trace信息', 1387165685, 1387165685, 2, 1),
 (30, '招标平台封面图', 'TENDER_COVER', '95', 1, 'picture', '', '', 0, 0, 0, 1),
-(31, '党务工作top图', 'DWGZ', '', 1, 'picture', '', '', 0, 0, 0, 0);
+(31, '党务工作top图', 'DWGZ', '', 1, 'picture', '', '', 0, 0, 0, 0),
+(32, '短信签名', 'SMS_signname', '有范科技', 5, 'text', '', '', 0, 0, 0, 1),
+(33, '短信accessKeyId', 'SMS_accessKeyId', 'LTAIv4tHEsh5sy1o', 5, 'text', '', '', 0, 0, 0, 1),
+(34, '短信accessKeySecret', 'SMS_accessKeySecret', 'b91QEri8wvn9KBrVgMzs7y9o7oTZ5T', 5, 'text', '', '', 0, 0, 0, 1),
+(35, '短信模板号', 'SMS_TemplateCode', 'SMS_137385020', 5, 'text', '', '', 0, 0, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -309,8 +313,9 @@ INSERT INTO `yf_admin_module` (`id`, `name`, `title`, `logo`, `icon`, `icon_colo
 (4, 'Book', '开发文档', '', 'fa fa-flask', '#F9B440', '开发文档', '山东有范网络科技有限公司', '1.6.2', '', '{\"title\":{\"title\":\"\\u6a21\\u5757\\u540d\\u79f0\",\"type\":\"text\",\"value\":\"\",\"tip\":\"\\u7528\\u4e8e\\u81ea\\u5b9a\\u4e49\\u6a21\\u5757\\u540d\\u79f0\",\"is_dev\":\"1\"},\"logo\":{\"title\":\"\\u6a21\\u5757logo\",\"type\":\"picture\",\"value\":\"\",\"tip\":\"\\u7528\\u4e8e\\u81ea\\u5b9a\\u4e49\\u6a21\\u5757logo\",\"is_dev\":\"1\"}}', NULL, '{\"1\":{\"pid\":\"0\",\"title\":\"\\u5f00\\u53d1\\u6587\\u6863\",\"icon\":\"fa fa-flask\",\"id\":\"1\"},\"2\":{\"pid\":\"1\",\"title\":\"\\u5f00\\u53d1\\u6587\\u6863\",\"icon\":\"fa fa-folder-open-o\",\"id\":\"2\"},\"3\":{\"pid\":\"2\",\"title\":\"\\u5f00\\u53d1\\u6587\\u6863\\u8bbe\\u7f6e\",\"icon\":\"fa fa-wrench\",\"url\":\"Book\\/Index\\/module_config\",\"id\":\"3\"},\"4\":{\"pid\":\"2\",\"title\":\"\\u5f00\\u53d1\\u6587\\u6863\\u5217\\u8868\",\"icon\":\"fa fa-list\",\"url\":\"Book\\/Index\\/index\",\"id\":\"4\"},\"5\":{\"pid\":\"4\",\"title\":\"\\u65b0\\u589e\",\"url\":\"Book\\/Index\\/add\",\"id\":\"5\"},\"6\":{\"pid\":\"4\",\"title\":\"\\u7f16\\u8f91\",\"url\":\"Book\\/Index\\/edit\",\"id\":\"6\"},\"7\":{\"pid\":\"4\",\"title\":\"\\u8bbe\\u7f6e\\u72b6\\u6001\",\"url\":\"Book\\/Index\\/setStatus\",\"id\":\"7\"},\"8\":{\"pid\":\"2\",\"title\":\"\\u9605\\u8bfb\",\"url\":\"Book\\/Page\\/index\",\"id\":\"8\"}}', '', 0, 1515035551, 1526433248, 0, 1),
 (12, 'Wechat', '微信模块', '', 'fa-comments-o', '#F9B440', '微信模块', '山东有范网络科技有限公司', '1.6.2', '{\"center\":[{\"title\":\"\\u6d4b\\u8bd5\\u5bfc\\u822a\",\"icon\":\"fa-comments-o\",\"url\":\"Cms\\/Index\\/index\",\"color\":\"#398CD2\"}],\"main\":[{\"title\":\"\\u6d4b\\u8bd5\\u5bfc\\u822a\",\"icon\":\"fa-comments-o\",\"url\":\"Cms\\/Index\\/index\"}]}', '{\"title\":\"\",\"logo\":\"\"}', NULL, '{\"1\":{\"pid\":\"0\",\"title\":\"\\u5fae\\u4fe1\\u7ba1\\u7406\",\"icon\":\"fa-comments-o\",\"id\":\"1\"},\"2\":{\"pid\":\"1\",\"title\":\"\\u516c\\u4f17\\u53f7\\u914d\\u7f6e\",\"icon\":\"fa fa-folder-open-o\",\"id\":\"2\"},\"3\":{\"pid\":\"2\",\"title\":\"\\u5fae\\u4fe1\\u6388\\u6743\\u7ed1\\u5b9a\",\"url\":\"wechat\\/config\\/index\",\"icon\":\"fa fa-cog font-icon\",\"id\":\"3\"},\"4\":{\"pid\":\"2\",\"title\":\"\\u5173\\u6ce8\\u9ed8\\u8ba4\\u56de\\u590d\",\"url\":\"wechat\\/keys\\/subscribe\",\"icon\":\"fa fa-comment-o font-icon\",\"id\":\"4\"},\"5\":{\"pid\":\"2\",\"title\":\"\\u65e0\\u53cd\\u9988\\u9ed8\\u8ba4\\u56de\\u590d\",\"url\":\"wechat\\/keys\\/defaults\",\"icon\":\"fa fa-commenting font-icon\",\"id\":\"5\"},\"6\":{\"pid\":\"2\",\"title\":\"\\u5fae\\u4fe1\\u5173\\u952e\\u5b57\\u7ba1\\u7406\",\"url\":\"wechat\\/keys\\/index\",\"icon\":\"fa fa-hashtag font-icon\",\"id\":\"6\"},\"7\":{\"pid\":\"1\",\"title\":\"\\u5fae\\u4fe1\\u670d\\u52a1\\u5b9a\\u5236\",\"icon\":\"fa fa-folder-open-o\",\"id\":\"7\"},\"8\":{\"pid\":\"7\",\"title\":\"\\u5fae\\u4fe1\\u83dc\\u5355\\u7ba1\\u7406\",\"url\":\"wechat\\/menu\\/index\",\"icon\":\"fa fa-gg-circle font-icon\",\"id\":\"8\"},\"9\":{\"pid\":\"7\",\"title\":\"\\u5fae\\u4fe1\\u56fe\\u6587\\u7ba1\\u7406\",\"url\":\"wechat\\/news\\/index\",\"icon\":\"fa fa-map-o font-icon\",\"id\":\"9\"},\"10\":{\"pid\":\"1\",\"title\":\"\\u5fae\\u4fe1\\u7c89\\u4e1d\\u7ba1\\u7406\",\"icon\":\"fa fa-folder-open-o\",\"id\":\"10\"},\"11\":{\"pid\":\"10\",\"title\":\"\\u5fae\\u4fe1\\u6807\\u7b7e\\u7ba1\\u7406\",\"url\":\"wechat\\/tags\\/index\",\"icon\":\"fa fa-tags font-icon\",\"id\":\"11\"},\"12\":{\"pid\":\"10\",\"title\":\"\\u5fae\\u4fe1\\u7c89\\u4e1d\\u5217\\u8868\",\"url\":\"wechat\\/fans\\/index\",\"icon\":\"fa fa-users font-icon\",\"id\":\"12\"},\"13\":{\"pid\":\"10\",\"title\":\"\\u5fae\\u4fe1\\u9ed1\\u540d\\u5355\\u7ba1\\u7406\",\"url\":\"wechat\\/fans_block\\/index\",\"icon\":\"fa fa-user-times font-icon\",\"id\":\"13\"}}', NULL, 0, 1529024685, 1529024685, 0, 1),
 (13, 'Cms', 'CMS模块', '', 'fa-user', '#F9B440', 'CMS模块', '山东有范网络科技有限公司', '1.6.2', '{\"center\":[{\"title\":\"\\u6d4b\\u8bd5\\u5bfc\\u822a\",\"icon\":\"fa-user\",\"url\":\"Cms\\/Index\\/index\",\"color\":\"#398CD2\"}],\"main\":[{\"title\":\"\\u6d4b\\u8bd5\\u5bfc\\u822a\",\"icon\":\"fa-user\",\"url\":\"Cms\\/Index\\/index\"}]}', '{\"title\":{\"title\":\"\\u6a21\\u5757\\u540d\\u79f0\",\"type\":\"text\",\"value\":\"\",\"tip\":\"\\u7528\\u4e8e\\u81ea\\u5b9a\\u4e49\\u6a21\\u5757\\u540d\\u79f0\",\"is_dev\":\"1\"},\"logo\":{\"title\":\"\\u6a21\\u5757logo\",\"type\":\"picture\",\"value\":\"\",\"tip\":\"\\u7528\\u4e8e\\u81ea\\u5b9a\\u4e49\\u6a21\\u5757logo\",\"is_dev\":\"1\"}}', NULL, '{\"1\":{\"pid\":\"0\",\"title\":\"CMS\\u7ba1\\u7406\",\"icon\":\"fa-user\",\"id\":\"1\"},\"2\":{\"pid\":\"1\",\"title\":\"CMS\\u7ba1\\u7406\",\"icon\":\"fa fa-user\",\"id\":\"2\"},\"3\":{\"pid\":\"2\",\"title\":\"\\u6587\\u7ae0\\u7ba1\\u7406\",\"url\":\"Cms\\/Index\\/index\",\"id\":\"3\"},\"4\":{\"pid\":\"2\",\"title\":\"\\u5206\\u7c7b\\u7ba1\\u7406\",\"url\":\"Cms\\/category\\/index\",\"id\":\"4\"},\"5\":{\"pid\":\"2\",\"title\":\"\\u5bfc\\u822a\\u7ba1\\u7406\",\"url\":\"Cms\\/Nav\\/index\",\"id\":\"5\"},\"6\":{\"pid\":\"2\",\"title\":\"\\u5e7b\\u706f\\u7247\\u7ba1\\u7406\",\"url\":\"Cms\\/Slide\\/index\",\"id\":\"6\"},\"7\":{\"pid\":\"2\",\"title\":\"\\u53cb\\u60c5\\u94fe\\u63a5\",\"url\":\"Cms\\/Link\\/index\",\"id\":\"7\"},\"8\":{\"pid\":\"2\",\"title\":\"\\u516c\\u544a\\u7ba1\\u7406\",\"url\":\"Cms\\/Notice\\/index\",\"id\":\"8\"},\"9\":{\"pid\":\"2\",\"title\":\"\\u9884\\u7ea6\\u4fe1\\u606f\",\"url\":\"Cms\\/apply\\/index\",\"id\":\"9\"}}', NULL, 0, 1529057330, 1529462136, 0, 1),
-(14, 'merchant', '用户管理', '', 'fort-awesome', '#F9B440', '用户管理', '山东有范网络科技有限公司', '1.6.2', '{\"center\":[{\"title\":\"\\u6d4b\\u8bd5\\u5bfc\\u822a\",\"icon\":\"fa-user\",\"url\":\"merchant\\/Index\\/index\",\"color\":\"#398CD2\"}],\"main\":[{\"title\":\"\\u6d4b\\u8bd5\\u5bfc\\u822a\",\"icon\":\"fa-user\",\"url\":\"merchant\\/Index\\/index\"}]}', '{\"title\":{\"title\":\"\\u6a21\\u5757\\u540d\\u79f0\",\"type\":\"text\",\"value\":\"\",\"tip\":\"\\u7528\\u4e8e\\u81ea\\u5b9a\\u4e49\\u6a21\\u5757\\u540d\\u79f0\",\"is_dev\":\"1\"},\"logo\":{\"title\":\"\\u6a21\\u5757logo\",\"type\":\"picture\",\"value\":\"\",\"tip\":\"\\u7528\\u4e8e\\u81ea\\u5b9a\\u4e49\\u6a21\\u5757logo\",\"is_dev\":\"1\"}}', NULL, '{\"1\":{\"pid\":\"0\",\"title\":\"\\u7528\\u6237\\u7ba1\\u7406\",\"icon\":\"fa-fort-awesome\",\"id\":\"1\"},\"2\":{\"pid\":\"1\",\"title\":\"\\u7528\\u6237\\u7ba1\\u7406\",\"icon\":\"fa fa-user\",\"id\":\"2\"},\"3\":{\"pid\":\"2\",\"title\":\"\\u673a\\u6784\\u4f1a\\u5458\",\"url\":\"merchant\\/Index\\/index\",\"icon\":\"fa fa-graduation-cap \",\"id\":\"3\"},\"4\":{\"pid\":\"2\",\"title\":\"\\u7528\\u6237\\u4f1a\\u5458\",\"url\":\"merchant\\/user\\/index\",\"icon\":\"fa fa-users \",\"id\":\"4\"},\"14\":{\"pid\":\"3\",\"title\":\"\\u65b0\\u589e\",\"url\":\"merchant\\/Index\\/add\",\"id\":\"14\"},\"15\":{\"pid\":\"3\",\"title\":\"\\u7f16\\u8f91\",\"url\":\"merchant\\/Index\\/edit\",\"id\":\"15\"},\"16\":{\"pid\":\"3\",\"title\":\"\\u5ba1\\u68381\",\"url\":\"merchant\\/Index\\/audit\",\"id\":\"16\"},\"17\":{\"pid\":\"3\",\"title\":\"\\u5ba1\\u68382\",\"url\":\"merchant\\/Index\\/unaudit\",\"id\":\"17\"}}', NULL, 0, 1534559772, 1535075925, 0, 1),
-(15, 'course', '课程管理', '', 'fort-awesome', '#F9B440', '课程管理', '山东有范网络科技有限公司', '1.6.2', '{\"center\":[{\"title\":\"\\u6d4b\\u8bd5\\u5bfc\\u822a\",\"icon\":\"fa-user\",\"url\":\"merchant\\/Index\\/index\",\"color\":\"#398CD2\"}],\"main\":[{\"title\":\"\\u6d4b\\u8bd5\\u5bfc\\u822a\",\"icon\":\"fa-user\",\"url\":\"merchant\\/Index\\/index\"}]}', '{\"title\":{\"title\":\"\\u6a21\\u5757\\u540d\\u79f0\",\"type\":\"text\",\"value\":\"\",\"tip\":\"\\u7528\\u4e8e\\u81ea\\u5b9a\\u4e49\\u6a21\\u5757\\u540d\\u79f0\",\"is_dev\":\"1\"},\"logo\":{\"title\":\"\\u6a21\\u5757logo\",\"type\":\"picture\",\"value\":\"\",\"tip\":\"\\u7528\\u4e8e\\u81ea\\u5b9a\\u4e49\\u6a21\\u5757logo\",\"is_dev\":\"1\"}}', NULL, '{\"1\":{\"pid\":\"0\",\"title\":\"\\u8bfe\\u7a0b\\u7ba1\\u7406\",\"icon\":\"fa-fort-awesome\",\"id\":\"1\"},\"2\":{\"pid\":\"1\",\"title\":\"\\u8bfe\\u7a0b\\u7ba1\\u7406\",\"icon\":\"fa fa-folder-open\",\"id\":\"2\"},\"3\":{\"pid\":\"2\",\"title\":\"\\u8bfe\\u7a0b\\u5217\\u8868\",\"url\":\"merchant\\/Index\\/index\",\"icon\":\"fa fa-graduation-cap \",\"id\":\"3\"},\"4\":{\"pid\":\"2\",\"title\":\"\\u8bfe\\u7a0b\\u5206\\u7c7b\",\"url\":\"course\\/index\\/cate\",\"icon\":\"fa fa-map-signs\",\"id\":\"4\"},\"14\":{\"pid\":\"3\",\"title\":\"\\u65b0\\u589e\",\"url\":\"merchant\\/Index\\/add\",\"id\":\"14\"},\"15\":{\"pid\":\"3\",\"title\":\"\\u7f16\\u8f91\",\"url\":\"merchant\\/Index\\/edit\",\"id\":\"15\"},\"16\":{\"pid\":\"3\",\"title\":\"\\u5ba1\\u68381\",\"url\":\"merchant\\/Index\\/audit\",\"id\":\"16\"},\"17\":{\"pid\":\"3\",\"title\":\"\\u5ba1\\u68382\",\"url\":\"merchant\\/Index\\/unaudit\",\"id\":\"17\"}}', NULL, 0, 1535349920, 1535352624, 0, 1);
+(14, 'merchant', '用户管理', '', 'fort-awesome', '#F9B440', '用户管理', '山东有范网络科技有限公司', '1.6.2', '{\"center\":[{\"title\":\"\\u6d4b\\u8bd5\\u5bfc\\u822a\",\"icon\":\"fa-user\",\"url\":\"merchant\\/Index\\/index\",\"color\":\"#398CD2\"}],\"main\":[{\"title\":\"\\u6d4b\\u8bd5\\u5bfc\\u822a\",\"icon\":\"fa-user\",\"url\":\"merchant\\/Index\\/index\"}]}', '{\"title\":{\"title\":\"\\u6a21\\u5757\\u540d\\u79f0\",\"type\":\"text\",\"value\":\"\",\"tip\":\"\\u7528\\u4e8e\\u81ea\\u5b9a\\u4e49\\u6a21\\u5757\\u540d\\u79f0\",\"is_dev\":\"1\"},\"logo\":{\"title\":\"\\u6a21\\u5757logo\",\"type\":\"picture\",\"value\":\"\",\"tip\":\"\\u7528\\u4e8e\\u81ea\\u5b9a\\u4e49\\u6a21\\u5757logo\",\"is_dev\":\"1\"}}', NULL, '{\"1\":{\"pid\":\"0\",\"title\":\"\\u7528\\u6237\\u7ba1\\u7406\",\"icon\":\"fa-fort-awesome\",\"id\":\"1\"},\"2\":{\"pid\":\"1\",\"title\":\"\\u7528\\u6237\\u7ba1\\u7406\",\"icon\":\"fa fa-user\",\"id\":\"2\"},\"3\":{\"pid\":\"2\",\"title\":\"\\u673a\\u6784\\u4f1a\\u5458\",\"url\":\"merchant\\/Index\\/index\",\"icon\":\"fa fa-user\",\"id\":\"3\"},\"4\":{\"pid\":\"2\",\"title\":\"\\u673a\\u6784\\u6559\\u5e08\",\"url\":\"merchant\\/teacher\\/index\",\"icon\":\"fa fa-user\",\"id\":\"4\"},\"5\":{\"pid\":\"2\",\"title\":\"\\u7528\\u6237\\u4f1a\\u5458\",\"url\":\"merchant\\/user\\/index\",\"icon\":\"fa fa-users \",\"id\":\"5\"},\"14\":{\"pid\":\"3\",\"title\":\"\\u65b0\\u589e\",\"url\":\"merchant\\/Index\\/add\",\"id\":\"14\"},\"15\":{\"pid\":\"3\",\"title\":\"\\u7f16\\u8f91\",\"url\":\"merchant\\/Index\\/edit\",\"id\":\"15\"},\"16\":{\"pid\":\"3\",\"title\":\"\\u5ba1\\u68381\",\"url\":\"merchant\\/Index\\/audit\",\"id\":\"16\"},\"17\":{\"pid\":\"3\",\"title\":\"\\u5ba1\\u68382\",\"url\":\"merchant\\/Index\\/unaudit\",\"id\":\"17\"}}', NULL, 0, 1534559772, 1535451559, 0, 1),
+(15, 'course', '课程管理', '', 'fort-awesome', '#F9B440', '课程管理', '山东有范网络科技有限公司', '1.6.2', '{\"center\":[{\"title\":\"\\u6d4b\\u8bd5\\u5bfc\\u822a\",\"icon\":\"fa-user\",\"url\":\"merchant\\/Index\\/index\",\"color\":\"#398CD2\"}],\"main\":[{\"title\":\"\\u6d4b\\u8bd5\\u5bfc\\u822a\",\"icon\":\"fa-user\",\"url\":\"merchant\\/Index\\/index\"}]}', '{\"title\":{\"title\":\"\\u6a21\\u5757\\u540d\\u79f0\",\"type\":\"text\",\"value\":\"\",\"tip\":\"\\u7528\\u4e8e\\u81ea\\u5b9a\\u4e49\\u6a21\\u5757\\u540d\\u79f0\",\"is_dev\":\"1\"},\"logo\":{\"title\":\"\\u6a21\\u5757logo\",\"type\":\"picture\",\"value\":\"\",\"tip\":\"\\u7528\\u4e8e\\u81ea\\u5b9a\\u4e49\\u6a21\\u5757logo\",\"is_dev\":\"1\"}}', NULL, '{\"1\":{\"pid\":\"0\",\"title\":\"\\u8bfe\\u7a0b\\u7ba1\\u7406\",\"icon\":\"fa-book\",\"id\":\"1\"},\"2\":{\"pid\":\"1\",\"title\":\"\\u8bfe\\u7a0b\\u7ba1\\u7406\",\"icon\":\"fa fa-folder-open\",\"id\":\"2\"},\"3\":{\"pid\":\"2\",\"title\":\"\\u8bfe\\u7a0b\\u5217\\u8868\",\"url\":\"merchant\\/Index\\/index\",\"icon\":\"fa fa-graduation-cap \",\"id\":\"3\"},\"4\":{\"pid\":\"2\",\"title\":\"\\u8bfe\\u7a0b\\u5206\\u7c7b\",\"url\":\"course\\/index\\/cate\",\"icon\":\"fa fa-map-signs\",\"id\":\"4\"},\"14\":{\"pid\":\"3\",\"title\":\"\\u65b0\\u589e\",\"url\":\"merchant\\/Index\\/add\",\"id\":\"14\"},\"15\":{\"pid\":\"3\",\"title\":\"\\u7f16\\u8f91\",\"url\":\"merchant\\/Index\\/edit\",\"id\":\"15\"},\"16\":{\"pid\":\"3\",\"title\":\"\\u5ba1\\u68381\",\"url\":\"merchant\\/Index\\/audit\",\"id\":\"16\"},\"17\":{\"pid\":\"3\",\"title\":\"\\u5ba1\\u68382\",\"url\":\"merchant\\/Index\\/unaudit\",\"id\":\"17\"}}', NULL, 0, 1535349920, 1535451412, 0, 1),
+(16, 'operate', '运营管理', '', 'fort-awesome', '#F9B440', '运营管理', '山东有范网络科技有限公司', '1.6.2', '{\"center\":[{\"title\":\"\\u6d4b\\u8bd5\\u5bfc\\u822a\",\"icon\":\"fa-user\",\"url\":\"merchant\\/Index\\/index\",\"color\":\"#398CD2\"}],\"main\":[{\"title\":\"\\u6d4b\\u8bd5\\u5bfc\\u822a\",\"icon\":\"fa-user\",\"url\":\"merchant\\/Index\\/index\"}]}', '{\"title\":{\"title\":\"\\u6a21\\u5757\\u540d\\u79f0\",\"type\":\"text\",\"value\":\"\",\"tip\":\"\\u7528\\u4e8e\\u81ea\\u5b9a\\u4e49\\u6a21\\u5757\\u540d\\u79f0\",\"is_dev\":\"1\"},\"logo\":{\"title\":\"\\u6a21\\u5757logo\",\"type\":\"picture\",\"value\":\"\",\"tip\":\"\\u7528\\u4e8e\\u81ea\\u5b9a\\u4e49\\u6a21\\u5757logo\",\"is_dev\":\"1\"}}', NULL, '{\"1\":{\"pid\":\"0\",\"title\":\"\\u8fd0\\u8425\\u7ba1\\u7406\",\"icon\":\"fa-recycle\",\"id\":\"1\"},\"2\":{\"pid\":\"1\",\"title\":\"\\u8fd0\\u8425\\u7ba1\\u7406\",\"icon\":\"fa fa-folder-open\",\"id\":\"2\"},\"3\":{\"pid\":\"2\",\"title\":\"\\u6d3b\\u52a8\\u7248\\u5757\",\"url\":\"operate\\/active\\/block\",\"icon\":\"fa fa-life-ring \",\"id\":\"3\"},\"4\":{\"pid\":\"2\",\"title\":\"\\u4f18\\u60e0\\u5238\",\"url\":\"operate\\/coupon\\/index\",\"icon\":\"fa fa-money \",\"id\":\"4\"},\"5\":{\"pid\":\"2\",\"title\":\"\\u6d3b\\u52a8\\u4e13\\u533a\",\"url\":\"operate\\/active\\/index\",\"icon\":\"fa fa-users \",\"id\":\"5\"},\"14\":{\"pid\":\"3\",\"title\":\"\\u65b0\\u589e\",\"url\":\"operate\\/Index\\/add\",\"id\":\"14\"},\"15\":{\"pid\":\"3\",\"title\":\"\\u7f16\\u8f91\",\"url\":\"operate\\/Index\\/edit\",\"id\":\"15\"},\"16\":{\"pid\":\"3\",\"title\":\"\\u5ba1\\u68381\",\"url\":\"operate\\/Index\\/audit\",\"id\":\"16\"},\"17\":{\"pid\":\"3\",\"title\":\"\\u5ba1\\u68382\",\"url\":\"operate\\/Index\\/unaudit\",\"id\":\"17\"}}', NULL, 0, 1535439075, 1535451415, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -379,7 +384,8 @@ INSERT INTO `yf_admin_nav` (`id`, `group`, `pid`, `title`, `type`, `value`, `tar
 (39, 'top', 0, '开发文档', 'module', 'Book', '', 'fa fa-flask', '', '', 1531292280, 1531292280, 0, 1),
 (40, 'top', 0, '开发文档', 'module', 'Book', '', 'fa fa-flask', '', '', 1533881717, 1533881717, 0, 1),
 (41, 'top', 0, 'merchant模块', 'module', 'merchant', '', 'fa-user', '', '', 1534559772, 1534559772, 0, 1),
-(42, 'top', 0, '课程管理', 'module', 'course', '', 'fort-awesome', '', '', 1535349920, 1535349920, 0, 1);
+(42, 'top', 0, '课程管理', 'module', 'course', '', 'fort-awesome', '', '', 1535349920, 1535349920, 0, 1),
+(43, 'top', 0, '运营管理', 'module', 'operate', '', 'fort-awesome', '', '', 1535439075, 1535439075, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -481,7 +487,8 @@ CREATE TABLE `yf_admin_upload` (
 INSERT INTO `yf_admin_upload` (`id`, `uid`, `name`, `path`, `url`, `ext`, `size`, `md5`, `sha1`, `location`, `download`, `create_time`, `update_time`, `sort`, `status`) VALUES
 (1, 0, '下载.jpg', '/uploads/admin/image/2018-08-17/5b768ebb81f00.jpg', '', 'jpg', 9857, '7f790d076855c1253038aa1df9e32431', 'b3cb2adc1f44a2150ff6de63e38d53f6e6c174a5', 'Local', 0, 0, 0, 0, 0),
 (2, 0, 'logo.png', '/uploads/merchant/image/2018-08-20/5b7a868dab630.png', '', 'png', 7396, '894e8e22a139e3f9175b6acace62d9c9', 'bac41a6eb08f017b3712996535cda9bd957019ba', 'Local', 0, 0, 0, 0, 0),
-(3, 0, '64.jpg', '/uploads/merchant/image/2018-08-20/5b7a8b88cc588.jpg', '', 'jpg', 2563, '93e6521e8d91121bd1bf138fd7723bc2', '861eeb9b7be845a9db5d9bc8f32bb7985efa909c', 'Local', 0, 0, 0, 0, 0);
+(3, 0, '64.jpg', '/uploads/merchant/image/2018-08-20/5b7a8b88cc588.jpg', '', 'jpg', 2563, '93e6521e8d91121bd1bf138fd7723bc2', '861eeb9b7be845a9db5d9bc8f32bb7985efa909c', 'Local', 0, 0, 0, 0, 0),
+(4, 0, 'timg.jpg', '/uploads/operate/image/2018-08-28/5b8518bba1d10.jpg', '', 'jpg', 243280, '4d8d9ba544a9b6b8bdbbf7f6b005f777', 'eee9ce79ca84d763eddaa008f369b31e57012e34', 'Local', 0, 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -521,6 +528,19 @@ INSERT INTO `yf_admin_user` (`id`, `user_type`, `nickname`, `username`, `passwor
 -- --------------------------------------------------------
 
 --
+-- 表的结构 `yf_app_send_code`
+--
+
+CREATE TABLE `yf_app_send_code` (
+  `id` int(11) NOT NULL,
+  `mobile` varchar(20) COLLATE utf8_bin NOT NULL COMMENT '电话',
+  `code` int(11) NOT NULL COMMENT '验证码',
+  `create_time` varchar(20) COLLATE utf8_bin NOT NULL COMMENT '创建时间'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+-- --------------------------------------------------------
+
+--
 -- 表的结构 `yf_app_user`
 --
 
@@ -550,7 +570,8 @@ CREATE TABLE `yf_app_user` (
 --
 
 INSERT INTO `yf_app_user` (`id`, `user_name`, `password`, `avatar`, `nikname`, `mobile`, `bank_num`, `bank_name`, `province`, `city`, `district`, `email`, `token`, `score`, `level`, `rand`, `status`, `create_time`) VALUES
-(7, '15266476590', 'e373aec3e088a83ce9abee1e6438b9aa', 0, '15266476590', '15266476590', '', '', 1, 0, 0, '', 'MTUzNzkzMzA1MrGbka6Gucbgh46_Z6', '0.00', 0, 'mpBIuM', 1, '');
+(7, '15266476590', 'e373aec3e088a83ce9abee1e6438b9aa', 0, '15266476590', '15266476590', '', '', 1, 0, 0, '', 'MTUzNzkzMzA1MrGbka6Gucbgh46_Z6', '0.00', 0, 'mpBIuM', 1, ''),
+(9, '15266486590', '266e5be613e734549c62e9bcbf54a186', 0, '15266486590', '15266486590', '', '', 0, 0, 0, '', 'MTUzODAyOTA5OLJ1jbCRvLnPkrGoob', '0.00', 0, 'GVXzkR', 1, '1535426589');
 
 -- --------------------------------------------------------
 
@@ -953,6 +974,7 @@ CREATE TABLE `yf_course_category` (
   `pid` int(11) NOT NULL COMMENT '父级id',
   `title` varchar(255) COLLATE utf8_bin NOT NULL COMMENT '名称',
   `type` varchar(255) COLLATE utf8_bin NOT NULL,
+  `icon` int(11) NOT NULL COMMENT '图标',
   `sort` int(11) NOT NULL,
   `create_time` varchar(20) COLLATE utf8_bin NOT NULL,
   `status` tinyint(2) NOT NULL DEFAULT '1'
@@ -962,15 +984,15 @@ CREATE TABLE `yf_course_category` (
 -- 转存表中的数据 `yf_course_category`
 --
 
-INSERT INTO `yf_course_category` (`id`, `group`, `pid`, `title`, `type`, `sort`, `create_time`, `status`) VALUES
-(1, '', 0, '美术书法', '', 0, '1535362187', 1),
-(2, '', 0, '舞蹈瑜伽', '', 0, '1535362540', 1),
-(3, '', 1, '简笔画', '', 0, '1535364634', 1),
-(4, '', 1, '水彩画', '', 0, '1535364682', 1),
-(5, '', 1, '素描', '', 0, '1535364702', 1),
-(6, '', 2, 'hi-pop', '', 0, '1535364717', 1),
-(7, '', 2, 'breaking', '', 0, '1535364751', 1),
-(8, '', 2, '机械舞', '', 0, '1535364776', 1);
+INSERT INTO `yf_course_category` (`id`, `group`, `pid`, `title`, `type`, `icon`, `sort`, `create_time`, `status`) VALUES
+(1, '', 0, '美术书法', '', 0, 0, '1535362187', 1),
+(2, '', 0, '舞蹈瑜伽', '', 0, 0, '1535362540', 1),
+(3, '', 1, '简笔画', '', 0, 0, '1535364634', 1),
+(4, '', 1, '水彩画', '', 0, 0, '1535364682', 1),
+(5, '', 1, '素描', '', 0, 0, '1535364702', 1),
+(6, '', 2, 'hi-pop', '', 0, 0, '1535364717', 1),
+(7, '', 2, 'breaking', '', 0, 0, '1535364751', 1),
+(8, '', 2, '机械舞', '', 0, 0, '1535364776', 1);
 
 -- --------------------------------------------------------
 
@@ -46122,6 +46144,59 @@ INSERT INTO `yf_merchant_member` (`id`, `merch_name`, `merch_password`, `title`,
 (1, 'shangdonglanxiang', 'shangdonglanxiang', '山东蓝翔', 0, '厨师、培训', '张三', '15266456530', 2, 56, 891, '110路', '4006532012', '', '', 2147483647, '2', 0.00, 0, 0, '1535072483'),
 (2, 'shandongxinhua', 'shandongxinhua', '山东新华', 0, '电脑培训', '李四', '15266486590', 12, 200, 2315, '111路', '400478679', '', '', 2147483647, '2', 0.00, 0, 0, '1535074572');
 
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `yf_merchant_teacher`
+--
+
+CREATE TABLE `yf_merchant_teacher` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) COLLATE utf8_bin NOT NULL COMMENT '用户名',
+  `des` text COLLATE utf8_bin NOT NULL COMMENT '描述',
+  `password` varchar(255) COLLATE utf8_bin NOT NULL COMMENT '密码',
+  `avatar` int(11) NOT NULL COMMENT '头像',
+  `nikname` varchar(20) COLLATE utf8_bin NOT NULL COMMENT '昵称',
+  `mobile` varchar(20) COLLATE utf8_bin NOT NULL COMMENT '电话',
+  `bank_num` varchar(20) COLLATE utf8_bin NOT NULL COMMENT '银行卡号',
+  `bank_name` varchar(20) COLLATE utf8_bin NOT NULL COMMENT '银行机构名',
+  `province` int(11) NOT NULL COMMENT '省',
+  `city` int(11) NOT NULL COMMENT '城市',
+  `district` int(11) NOT NULL COMMENT '县区',
+  `email` varchar(20) COLLATE utf8_bin NOT NULL COMMENT '邮箱',
+  `token` varchar(30) COLLATE utf8_bin NOT NULL COMMENT 'token命令',
+  `score` decimal(10,2) NOT NULL COMMENT '积分',
+  `level` int(11) NOT NULL COMMENT '等级',
+  `rand` varchar(12) COLLATE utf8_bin NOT NULL,
+  `status` int(1) NOT NULL DEFAULT '0' COMMENT '状态',
+  `create_time` varchar(20) COLLATE utf8_bin NOT NULL COMMENT '创建时间'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `yf_operate_active_block`
+--
+
+CREATE TABLE `yf_operate_active_block` (
+  `id` int(11) NOT NULL,
+  `title` varchar(255) COLLATE utf8_bin NOT NULL,
+  `des` varchar(255) COLLATE utf8_bin NOT NULL,
+  `cover` int(11) NOT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT '1',
+  `create_time` varchar(20) COLLATE utf8_bin NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- 转存表中的数据 `yf_operate_active_block`
+--
+
+INSERT INTO `yf_operate_active_block` (`id`, `title`, `des`, `cover`, `status`, `create_time`) VALUES
+(1, '爱体验', '学宝观察员', 4, 1, '1535449299'),
+(2, '学必买', '最强开学季', 0, 1, '1535449386'),
+(3, '有名师', '清华池毕业', 0, 1, '1535449429'),
+(4, '限时购', '夏令营', 0, 1, '1535449482');
+
 --
 -- Indexes for dumped tables
 --
@@ -46202,6 +46277,12 @@ ALTER TABLE `yf_admin_upload`
 ALTER TABLE `yf_admin_user`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `username` (`username`);
+
+--
+-- Indexes for table `yf_app_send_code`
+--
+ALTER TABLE `yf_app_send_code`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `yf_app_user`
@@ -46300,6 +46381,12 @@ ALTER TABLE `yf_merchant_member`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `yf_operate_active_block`
+--
+ALTER TABLE `yf_operate_active_block`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- 在导出的表使用AUTO_INCREMENT
 --
 
@@ -46319,7 +46406,7 @@ ALTER TABLE `yf_admin_addon`
 -- 使用表AUTO_INCREMENT `yf_admin_config`
 --
 ALTER TABLE `yf_admin_config`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '配置ID', AUTO_INCREMENT=35;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '配置ID', AUTO_INCREMENT=36;
 
 --
 -- 使用表AUTO_INCREMENT `yf_admin_group`
@@ -46337,13 +46424,13 @@ ALTER TABLE `yf_admin_hook`
 -- 使用表AUTO_INCREMENT `yf_admin_module`
 --
 ALTER TABLE `yf_admin_module`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'ID', AUTO_INCREMENT=16;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'ID', AUTO_INCREMENT=17;
 
 --
 -- 使用表AUTO_INCREMENT `yf_admin_nav`
 --
 ALTER TABLE `yf_admin_nav`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'ID', AUTO_INCREMENT=43;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'ID', AUTO_INCREMENT=44;
 
 --
 -- 使用表AUTO_INCREMENT `yf_admin_post`
@@ -46361,7 +46448,7 @@ ALTER TABLE `yf_admin_slider`
 -- 使用表AUTO_INCREMENT `yf_admin_upload`
 --
 ALTER TABLE `yf_admin_upload`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'ID', AUTO_INCREMENT=4;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'ID', AUTO_INCREMENT=5;
 
 --
 -- 使用表AUTO_INCREMENT `yf_admin_user`
@@ -46370,10 +46457,16 @@ ALTER TABLE `yf_admin_user`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'UID', AUTO_INCREMENT=4;
 
 --
+-- 使用表AUTO_INCREMENT `yf_app_send_code`
+--
+ALTER TABLE `yf_app_send_code`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
+--
 -- 使用表AUTO_INCREMENT `yf_app_user`
 --
 ALTER TABLE `yf_app_user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- 使用表AUTO_INCREMENT `yf_book_index`
@@ -46458,6 +46551,12 @@ ALTER TABLE `yf_merchant_district`
 --
 ALTER TABLE `yf_merchant_member`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- 使用表AUTO_INCREMENT `yf_operate_active_block`
+--
+ALTER TABLE `yf_operate_active_block`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
