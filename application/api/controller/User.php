@@ -12,7 +12,7 @@ class User extends Base{
 	 */
 	public function register(){
 		$mobile = input('mobile',0);
-		//$verification_code = input('verification_code','');
+		$verification_code = input('verification_code','');
 		$password = input('password','');
 		$password_again = input('password_again','');
 		if(!is_mobile($mobile)){
@@ -24,8 +24,11 @@ class User extends Base{
 		if($password != $password_again){
 			return $this->error('两次密码不一致');
 		}
-		//$result = Sms::auth_code($mobile,$verification_code);
-	 	//if(!$result) return $this->error('验证码错误');
+		if(!$verification_code){
+			return $this->error('请输入验证码');
+		}
+		$result = model('sms')->auth_code($mobile,$verification_code);
+	 	if($result == 1) return $this->error('验证码过期');
 		$result = model('user')->user_register($mobile,$password);
 		
 		if($result){
@@ -72,4 +75,43 @@ class User extends Base{
 		}
 	}
 	
+
+	/**
+	 * 重置密码
+	 */
+	public function reset_password(){
+		$mobile = input('mobile','');
+		$verification_code = input('verification_code','');
+		$password = input('password','');
+		$password_again = input('password_again','');
+		if(!is_mobile($mobile)){
+			return $this->error('请输入正确手机号码');
+		}
+		if(!$password){
+			return $this->error('请输入正确密码');
+		}
+		if($password != $password_again){
+			return $this->error('两次密码不一致');
+		}
+		if(!$verification_code){
+			return $this->error('请输入验证码');
+		}
+		$result = model('sms')->auth_code($mobile,$verification_code);
+	 	if($result == 1) return $this->error('验证码过期');
+		$data = model('user')->reset_password($mobile,$password);
+		switch ($data) {
+			case '1':
+			  return $this->success('重置密码成功');
+			break;
+			case '2':
+			  return $this->error('重置密码失败');
+			break;
+			case '3':
+			  return $this->error('该账户不存在');
+			break;
+			default:
+			break;
+		}
+		
+	}
 }

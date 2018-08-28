@@ -75,4 +75,23 @@ class User extends Model
 		}
 		return $info;
 	}
+
+
+	/**
+	 * 重置密码
+	 */
+	public function reset_password($mobile,$password){
+		$info = $this->get_user_info(['mobile'=>$mobile]);
+		if ($info) {
+			$password = user_md5($password);
+			$data = db('app_user')->where(['id'=>$info['id']])->update(['password'=>$password]);
+			if($data){
+				return 1;//修改密码成功
+			}else{
+				return 2;//重置密码失败  
+			}
+		}else{
+			return 3;//账号不存在   
+		}
+	}
 }
