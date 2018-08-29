@@ -136,7 +136,7 @@ class User extends Model
      * @author <youfai@youfai.cn>
      */
     public function login($username, $password, $map = null)
-    {
+    {   
         //去除前后空格
         $username = trim($username);
 
@@ -155,7 +155,20 @@ class User extends Model
         // dump($user_info);
         // echo '</pre>';
         if (!$user_info) {
-            $this->error = '用户不存在或被禁用！';
+            //机构登陆
+            $where['status'] =array('eq', 1);
+            $where['merch_name'] = $username;
+            $mech = db('merchant_member')->where($where)->find();
+            if(!$mech){
+                $this->error = '用户不存在或被禁用！';
+            }else{
+                //dump(user_md5($password));exit;
+                if (user_md5($password) !== $mech['merch_password']) {
+                    $this->error = '密码错误！';
+                } else {
+                    return $mech;
+                }
+            }
         } else {
             // if (user_md5($password) !== $user_info['password']) {
             //     $this->error = '密码错误！';
@@ -173,12 +186,31 @@ class User extends Model
     public function auto_login($user)
     {
         // 记录登录SESSION和COOKIES
-        $auth = array(
-            'uid'      => $user['id'],
-            'username' => $user['username'],
-            'nickname' => $user['nickname'],
-            'avatar'   => $user['avatar'],
-        );
+        // 机构
+        if(isset($user['merch_name'])){
+            $auth = array(
+                'uid'      => $user['id'],
+                'username' => $user['merch_name'],
+                'nickname' => $user['merch_name'],
+                'avatar'   => $user['logo'],
+                'type'   => 2,
+            );  
+        }else{
+            $auth = array(
+                'uid'      => $user['id'],
+                'username' => $user['username'],
+                'nickname' => $user['nickname'],
+                'avatar'   => $user['avatar'],
+                'type'   => 1,
+            );  
+        }
+        // $auth = array(
+        //     'uid'      => $user['id'],
+        //     'username' => $user['username'],
+        //     'nickname' => $user['nickname'],
+        //     'avatar'   => $user['avatar'],
+        // );
+       
         session('user_auth', $auth);
         session('user_auth_sign', $this->data_auth_sign($auth));
         return $this->is_login();

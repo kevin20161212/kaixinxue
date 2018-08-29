@@ -118,7 +118,7 @@ class Index extends Admin {
     public function add(){
         if (request()->isPost()) {
             $data = D("MerchantMember")->create();
-            // dump($data);exit;
+            //dump($data);exit;
             if ($data) {
                 if (D("MerchantMember")->add($data)) {
                     $this->success('新增成功', U('index'));
@@ -154,6 +154,7 @@ class Index extends Admin {
     public function edit($id){
         if (request()->isPost()) {
             $data = D("MerchantMember")->create();
+            dump($data);exit;
             if ($data) {
                 if (D("MerchantMember")->save($data)) {
                     $this->success('更新成功', U('index'));
@@ -173,7 +174,7 @@ class Index extends Admin {
                     ->addFormItem('logo', 'picture', '机构logo', '机构logo')
                     ->addFormItem('describe', 'textarea', '描述', '描述')
                     ->addFormItem('merch_name', 'text', "账户名", '账户名')
-                     ->addFormItem('merch_password','password', "账户密码", '账户密码')
+                    ->addFormItem('merch_password','password', "账户密码", '账户密码','')
                     ->addFormItem('linkman', 'text', '联系人', '联系人')
                     ->addFormItem('contact_mobile', 'num', '联系人电话', '联系人电话')
                     ->addFormItem('province_id', 'district', '城市', '城市')

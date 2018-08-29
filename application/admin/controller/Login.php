@@ -45,22 +45,30 @@ class Login extends Controller
             if (!$user_info) {
                 $this->error($user_object->getError());
             }
-
+            //dump($user_info);exit;
             // 验证管理员表里是否有该用户
             $account_object = D('Admin/Access');
+            
             $where['uid']   = $user_info['id'];
-            $account_info   = $account_object->where($where)->find();
+            //机构
+            if(isset($user_info['merch_name'])){
+                $where1['uid'] = $user_info['id'];
+                $where1['type'] = 2;
+                $account_info   = $account_object->where($where1)->find();
+            }else{
+                $account_info   = $account_object->where($where)->find();
+            }
+            //$account_info   = $account_object->where($where)->find();
             if (!$account_info) {
                 $this->error('该用户没有管理员权限' . $account_object->getError());
             }
-
             // 设置登录状态
             $uid = $user_object->auto_login($user_info);
-
             // 跳转
-            if (0 < $account_info['uid'] && $account_info['uid'] === $uid) {
+            if (0 < $account_info['uid'] && $account_info['uid'] == $uid) {
                 $this->success('登录成功！', U('Admin/Index/index'));
             } else {
+                //dump(2143214);exit;
                 $this->logout();
             }
         } else {
